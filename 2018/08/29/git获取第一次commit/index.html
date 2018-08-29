@@ -8,12 +8,12 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    码客库
+    git获取第一次commit提交记录 | 码客库
   </title>
   <meta name="description" content="爱生活、爱技术、爱分享">
   
   <meta name="keywords" content="
-  
+  git
   ">
   
   <meta name="author" content="zxy">
@@ -93,7 +93,7 @@
         <a href="/tags" class="header-toolbar-left"><i
                   class="fa fa-tags"></i> Tags </a>
         <a href="/tags"
-           class="header-toolbar-right"> 7 </a>
+           class="header-toolbar-right"> 9 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i
@@ -127,15 +127,16 @@
     <i class="fa fa-user-o"></i>
     zxy
 
-    <span class="post-date float-right" title="{{moment(1535551174107).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1535500800000).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1535551174107).fromNow()}}
+      {{moment(1535500800000).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>Untitle</h1>
-    
+    <h1>git获取第一次commit提交记录</h1>
+    <p>使用git，我们写代码会进行<code>commit</code>代码到仓库中，一个项目commit多了后，比如想看看最开始此项目是怎么搭建起来的，就可以追随到第一次提交的版本中，这时候需要找到第一次提交的<code>commit hash id</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git rev-list --max-parents=0 HEAD</span><br><span class="line">获取历史最早提交的commit id</span><br><span class="line"></span><br><span class="line">git log —reverse</span><br><span class="line">使用历史日志 倒序输出</span><br><span class="line"></span><br><span class="line">git log --pretty=oneline —reverse  |  head -1</span><br><span class="line">使用历史日志 倒序输出</span><br></pre></td></tr></table></figure>
   </article>
 </div>
 
