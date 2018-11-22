@@ -8,12 +8,12 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    docker-pm2发布node服务 | 码客库
+    斐波拉契数列js实现 | 码客库
   </title>
   <meta name="description" content="爱生活、爱技术、爱分享">
   
   <meta name="keywords" content="
-  docker,node,pm2
+  斐波拉契
   ">
   
   <meta name="author" content="zxy">
@@ -127,19 +127,26 @@
     <i class="fa fa-user-o"></i>
     zxy
 
-    <span class="post-date float-right" title="{{moment(1536019200000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1542859332540).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1536019200000).fromNow()}}
+      {{moment(1542859332540).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>docker-pm2发布node服务</h1>
-    <p>1、第一步新建Dockerfile<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">From node</span><br><span class="line">RUN mkdir -p /home/IM_LTS</span><br><span class="line">WORKDIR /home/IM_LTS</span><br><span class="line">COPY . /home/IM_LTS</span><br><span class="line">RUN npm install</span><br><span class="line">EXPOSE <span class="number">30001</span></span><br><span class="line">CMD npm run start   <span class="comment">// 这里只能用CMD 不能用RUN</span></span><br></pre></td></tr></table></figure></p>
-<p>2、修改pm2为前台执行, 加上<code>--no-daemon</code>选项<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"dev"</span>: <span class="string">"cross-env NODE_ENV=development supervisor --harmony index.js"</span>,</span><br><span class="line">    <span class="attr">"local"</span>: <span class="string">"cross-env NODE_ENV=local supervisor --harmony index.js"</span>,</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"cross-env NODE_ENV=production pm2 start index.js --no-daemon --node-args='--harmony' --name 'node-lts'"</span>,</span><br><span class="line">    <span class="attr">"stop"</span>: <span class="string">"cross-env NODE_ENV=production pm2 stop index.js --name 'node-lts'"</span>,</span><br><span class="line">    <span class="attr">"restart"</span>: <span class="string">"cross-env NODE_ENV=production pm2 restart index.js --no-daemon --node-args='--harmony' --name 'node-lts'"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>至此完毕</p>
-</blockquote>
+    <h1>斐波拉契数列js实现</h1>
+    <ol>
+<li>递归(这种方法容易造成浏览器假死)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fb1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> fb1(n - <span class="number">1</span>) + fb1(n - <span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>尾调用优化</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在方法1的递归方法基础上进行尾调用优化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fb</span>(<span class="params">n, res1 = <span class="number">1</span>, res2 = <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> res2;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fb(n - <span class="number">1</span>, res2, res1 + res2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fb(<span class="number">6</span>));</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>迭代方式</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fb</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res1 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> res2 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> sum = res2;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">    sum = res1 + res2;</span><br><span class="line">    res1 = res2;</span><br><span class="line">    res2 = sum;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </article>
 </div>
