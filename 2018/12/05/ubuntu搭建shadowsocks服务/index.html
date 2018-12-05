@@ -150,7 +150,7 @@
 <blockquote>
 <p>此时就可以在你本地使用客户端连接软件进行连接，如图：<br><img src="/images/shadowsocks/1.jpg" alt="ssserver-客户端配置"></p>
 </blockquote>
-<h3 id="如果是使用浏览配置sock5代理"><a href="#如果是使用浏览配置sock5代理" class="headerlink" title="如果是使用浏览配置sock5代理"></a>如果是使用浏览配置sock5代理</h3><ul>
+<h3 id="如果是使用浏览器配置sock5代理"><a href="#如果是使用浏览器配置sock5代理" class="headerlink" title="如果是使用浏览器配置sock5代理"></a>如果是使用浏览器配置sock5代理</h3><ul>
 <li>编写配置文件<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># config-borswer.json</span><br><span class="line">&#123;</span><br><span class="line">  "server": "43.225.***.***",           // config-server.json 里你的服务器真实ip</span><br><span class="line">  "server_port": 6550,                  // config-server.json 里你配置的port</span><br><span class="line">  "local_address": "43.225.***.***",    // 和server保持一样即可</span><br><span class="line">  "local_port": 6551,               // 浏览器访问代理的端口</span><br><span class="line">  "password": "******",             // 密码需要是config-server.json文件里的一样</span><br><span class="line">  "timeout": 300,</span><br><span class="line">  "method": "rc4-md5"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
