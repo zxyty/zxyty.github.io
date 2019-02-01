@@ -8,12 +8,12 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    Docker安装部署taiga项目 | 码客库
+    开发人员良心工具 | 码客库
   </title>
   <meta name="description" content="爱生活、爱技术、爱分享">
   
   <meta name="keywords" content="
-  docker,taiga
+  开发
   ">
   
   <meta name="author" content="zxy">
@@ -127,18 +127,19 @@
     <i class="fa fa-user-o"></i>
     zxy
 
-    <span class="post-date float-right" title="{{moment(1541635200000).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1549001656502).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1541635200000).fromNow()}}
+      {{moment(1549001656502).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>Docker安装部署taiga项目</h1>
-    <h3 id="安装docker依赖"><a href="#安装docker依赖" class="headerlink" title="安装docker依赖"></a>安装docker依赖</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull postgres:laster</span><br><span class="line">docker pull ipedrazas/taiga-back</span><br><span class="line">docker pull ipedrazas/taiga-front</span><br></pre></td></tr></table></figure>
-<h3 id="启用postgres-5433端口随意-我只是热衷而已。。。"><a href="#启用postgres-5433端口随意-我只是热衷而已。。。" class="headerlink" title="启用postgres 5433端口随意 我只是热衷而已。。。"></a>启用postgres 5433端口随意 我只是热衷而已。。。</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p <span class="number">5433</span>:<span class="number">5432</span> -d --name taiga-postgres  postgres</span><br></pre></td></tr></table></figure>
-<p><code>这里的端口必须是8000</code> 因为前端的代码里写的8000端口<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name taiga-back  -p <span class="number">8000</span>:<span class="number">8000</span> -e API_NAME=www.zxyty.com --link taiga-postgres:postgres ipedrazas/taiga-back</span><br><span class="line">docker run -d --name taiga-front -p <span class="number">8929</span>:<span class="number">80</span> -e API_NAME=www.zxyty.com --link taiga-back:taiga-back --volumes-from taiga-back ipedrazas/taiga-front</span><br></pre></td></tr></table></figure></p>
-<h3 id="初始化数据"><a href="#初始化数据" class="headerlink" title="初始化数据"></a>初始化数据</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --link taiga-postgres:postgres --rm postgres sh -c "su postgres --command 'createuser -h "'$POSTGRES_PORT_5432_TCP_ADDR'" -p "'$POSTGRES_PORT_5432_TCP_PORT'" -d -r -s taiga'"</span><br><span class="line">docker run -it --link taiga-postgres:postgres --rm postgres sh -c "su postgres --command 'createdb -h "'$POSTGRES_PORT_5432_TCP_ADDR'" -p "'$POSTGRES_PORT_5432_TCP_PORT'" -O taiga taiga'"</span><br><span class="line">docker run -it --rm --link taiga-postgres:postgres ipedrazas/taiga-back bash regenerate.sh</span><br></pre></td></tr></table></figure>
+    <h1>开发人员良心工具</h1>
+    <ol>
+<li><code>asciinema</code> 一款终端命令行记录和回放软件<a href="https://asciinema.org/" target="_blank" rel="noopener">点击访问</a><br><img src="/images/开发工具/代码回放.jpg" alt="代码回放"></li>
+<li><code>carbon</code> 创建精美的代码图片，博客使用非常好用<a href="https://carbon.now.sh/" target="_blank" rel="noopener">点击访问</a><br><img src="/images/开发工具/carbon.png" alt="代码回放"></li>
+</ol>
+
   </article>
 </div>
 
