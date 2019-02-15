@@ -135,13 +135,14 @@
 
   <article class="post-content">
     <h1>linux系统nvm指定版本安装</h1>
-    <p>选择你想要安装的<code>nvm</code>版本</p>
+    <h2 id="直接获取当前已存在的nvm版本"><a href="#直接获取当前已存在的nvm版本" class="headerlink" title="直接获取当前已存在的nvm版本"></a>直接获取当前已存在的nvm版本</h2><p>选择你想要安装的<code>nvm</code>版本</p>
 <p>可以从<a href="https://github.com/creationix/nvm/releases">nvm_github_release</a>中找到最新的版本号, 如下:<br><img src="./images/nvm最新版本查看.jpg" alt="nvm最新版本查看"></p>
 <p>这里查找到最新版本为0.34.0，然后执行命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure>
 <p>最后导出环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
 <p>查看是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm --version</span><br><span class="line"></span><br><span class="line"><span class="comment">#echo 0.34.0</span></span><br></pre></td></tr></table></figure></p>
 <p>ok.</p>
+<h2 id="续"><a href="#续" class="headerlink" title="续"></a>续</h2><p>使用指定版本的node<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nvm ls-remote   <span class="comment"># 获取远程node版本</span></span><br><span class="line"></span><br><span class="line">nvm install v10.15.1    <span class="comment"># 安装指定版本node</span></span><br><span class="line"></span><br><span class="line">nvm <span class="built_in">alias</span> default v10.15.1  <span class="comment"># 设置v10.15.1为node默认版本</span></span><br><span class="line"></span><br><span class="line">nvm use v10.15.1    <span class="comment"># 使用v10.15.1 版本的node</span></span><br></pre></td></tr></table></figure></p>
 
   </article>
 </div>
