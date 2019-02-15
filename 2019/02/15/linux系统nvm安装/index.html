@@ -8,12 +8,12 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    Vscode-Threejs代码智能提示 | 码客库
+    linux系统nvm指定版本安装 | 码客库
   </title>
   <meta name="description" content="爱生活、爱技术、爱分享">
   
   <meta name="keywords" content="
-  vscode,threejs
+  nvm
   ">
   
   <meta name="author" content="zxy">
@@ -127,24 +127,21 @@
     <i class="fa fa-user-o"></i>
     zxy
 
-    <span class="post-date float-right" title="{{moment(1534918134892).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1550211343780).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1534918134892).fromNow()}}
+      {{moment(1550211343780).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>Vscode-Threejs代码智能提示</h1>
-    <p>在vscode里要进行智能提示，其实很简单，只有引入<code>ts</code>的申明文件就行，这里以<code>threejs</code>为例:</p>
-<ul>
-<li><p>使用npm安装<code>@type/three</code></p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i @<span class="built_in">type</span>/three</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>再建一个<code>jsconfig.json</code>的空文件在<code>/</code>项目目录下<br>安装完了<code>ts</code>以后会出现如图所示的目录结构：<br><img src="/images/vscode/1534918819275.jpg" alt="vscode-threejs"><br>最后就可以愉快的使用申明文件里的语法提示了</p>
-</li>
-<li><p>靠外置的声明文件也不靠谱，要不是更新不及时，要不就是写的不对，要不就是各种 any 糊弄过去了</p>
-</li>
-</ul>
+    <h1>linux系统nvm指定版本安装</h1>
+    <p>选择你想要安装的<code>nvm</code>版本</p>
+<p>可以从<a href="https://github.com/creationix/nvm/releases">nvm_github_release</a>中找到最新的版本号, 如下:<br><img src="./images/nvm最新版本查看.jpg" alt="nvm最新版本查看"></p>
+<p>这里查找到最新版本为0.34.0，然后执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>最后导出环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>查看是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm --version</span><br><span class="line"></span><br><span class="line"><span class="comment">#echo 0.34.0</span></span><br></pre></td></tr></table></figure></p>
+<p>ok.</p>
 
   </article>
 </div>
