@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    linux安装nginx | 码客库
+  </title>
+  <meta name="description" content="爱生活、爱技术、爱分享">
+  
+  <meta name="keywords" content="
+  运维
+  ">
+  
+  <meta name="author" content="zxy">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        <!-- 
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+         -->
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://avatars1.githubusercontent.com/u/17245817?s=460&amp;v=4"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 19 </a>
+      </li>
+      <!-- <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 23 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 13 </a>
+      </li> -->
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">码客库</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    zxy
+
+    <span class="post-date float-right" title="{{moment(1550726819242).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1550726819242).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>linux安装nginx</h1>
+    <h3 id="前篇"><a href="#前篇" class="headerlink" title="前篇"></a>前篇</h3><p>安装准备环境</p>
+<ul>
+<li><p>nginx的编译需要c++，同时prce（重定向支持）和openssl（https支持）也需要安装。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 请顺序安装依赖</span></span><br><span class="line">yum install gcc-c++  </span><br><span class="line">yum -y install pcre*  </span><br><span class="line">yum -y install openssl*</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载需要安装的nginx版本<br>  到<code>http://nginx.org/download/</code>选择对应的版本进行下载，如<code>nginx-1.9.9.tar.gz</code><br>  <img src="/images/运维/nginx版本.jpg" alt="nginx版本"></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载</span></span><br><span class="line">[root@admin ~] mkdir nginx-source</span><br><span class="line">[root@admin ~] <span class="built_in">cd</span> nginx-source</span><br><span class="line"></span><br><span class="line">[root@admin nginx-source] wget http://nginx.org/download/nginx-1.9.9.tar.gz</span><br><span class="line">[root@admin nginx-source] tar -zxvf nginx-1.9.9.tar.gz</span><br><span class="line">[root@admin nginx-source] ls</span><br><span class="line">nginx-1.9.9 nginx-1.9.9.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p>设置安装目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@admin ~] <span class="built_in">cd</span> nginx-source/nginx-1.9.9</span><br><span class="line">[root@admin nginx-1.9.9] ./configure --prefix=/usr/<span class="built_in">local</span>/nginx</span><br></pre></td></tr></table></figure></p>
+<p>执行安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@admin nginx-1.9.9] make </span><br><span class="line">[root@admin nginx-1.9.9] make install</span><br></pre></td></tr></table></figure></p>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>进入到安装目录启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@admin nginx-1.9.9] cd /usr/local/nginx/sbin</span><br><span class="line"></span><br><span class="line">[root@admin sbin] ./nginx</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加启动服务"><a href="#添加启动服务" class="headerlink" title="添加启动服务"></a>添加启动服务</h3><ul>
+<li><p>添加nginx为系统服务(service nginx start/stop/restart)</p>
+<ul>
+<li><p>在/etc/init.d/目录下编写脚本，新建名为nginx的文件然后把脚本代码粘贴进去</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh </span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># nginx - this script starts and stops the nginx daemon </span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># chkconfig:   - 85 15 </span></span><br><span class="line"><span class="comment"># description: Nginx is an HTTP(S) server, HTTP(S) reverse \ </span></span><br><span class="line"><span class="comment">#               proxy and IMAP/POP3 proxy server </span></span><br><span class="line"><span class="comment"># processname: nginx </span></span><br><span class="line"><span class="comment"># config:      /etc/nginx/nginx.conf </span></span><br><span class="line"><span class="comment"># config:      /etc/sysconfig/nginx </span></span><br><span class="line"><span class="comment"># pidfile:     /var/run/nginx.pid </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Source function library. </span></span><br><span class="line">. /etc/rc.d/init.d/<span class="built_in">functions</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># Source networking configuration. </span></span><br><span class="line">. /etc/sysconfig/network </span><br><span class="line"></span><br><span class="line"><span class="comment"># Check that networking is up. </span></span><br><span class="line">[ <span class="string">"<span class="variable">$NETWORKING</span>"</span> = <span class="string">"no"</span> ] &amp;&amp; <span class="built_in">exit</span> 0 </span><br><span class="line"></span><br><span class="line">nginx=<span class="string">"/usr/local/nginx/sbin/nginx"</span> </span><br><span class="line">prog=$(basename <span class="variable">$nginx</span>) </span><br><span class="line"></span><br><span class="line">NGINX_CONF_FILE=<span class="string">"/usr/local/nginx/conf/nginx.conf"</span> </span><br><span class="line"></span><br><span class="line">[ -f /etc/sysconfig/nginx ] &amp;&amp; . /etc/sysconfig/nginx </span><br><span class="line"></span><br><span class="line">lockfile=/var/lock/subsys/nginx </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">start</span></span>() &#123; </span><br><span class="line">    [ -x <span class="variable">$nginx</span> ] || <span class="built_in">exit</span> 5 </span><br><span class="line">    [ -f <span class="variable">$NGINX_CONF_FILE</span> ] || <span class="built_in">exit</span> 6 </span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Starting <span class="variable">$prog</span>: "</span> </span><br><span class="line">    daemon <span class="variable">$nginx</span> -c <span class="variable">$NGINX_CONF_FILE</span> </span><br><span class="line">    retval=$? </span><br><span class="line">    <span class="built_in">echo</span> </span><br><span class="line">    [ <span class="variable">$retval</span> -eq 0 ] &amp;&amp; touch <span class="variable">$lockfile</span> </span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$retval</span> </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">stop</span></span>() &#123; </span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Stopping <span class="variable">$prog</span>: "</span> </span><br><span class="line">    killproc <span class="variable">$prog</span> -QUIT </span><br><span class="line">    retval=$? </span><br><span class="line">    <span class="built_in">echo</span> </span><br><span class="line">    [ <span class="variable">$retval</span> -eq 0 ] &amp;&amp; rm -f <span class="variable">$lockfile</span> </span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$retval</span> </span><br><span class="line">killall -9 nginx </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">restart</span></span>() &#123; </span><br><span class="line">    configtest || <span class="built_in">return</span> $? </span><br><span class="line">    stop </span><br><span class="line">    sleep 1 </span><br><span class="line">    start </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">reload</span></span>() &#123; </span><br><span class="line">    configtest || <span class="built_in">return</span> $? </span><br><span class="line">    <span class="built_in">echo</span> -n $<span class="string">"Reloading <span class="variable">$prog</span>: "</span> </span><br><span class="line">    killproc <span class="variable">$nginx</span> -HUP </span><br><span class="line">RETVAL=$? </span><br><span class="line">    <span class="built_in">echo</span> </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">force_reload</span></span>() &#123; </span><br><span class="line">    restart </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">configtest</span></span>() &#123; </span><br><span class="line"><span class="variable">$nginx</span> -t -c <span class="variable">$NGINX_CONF_FILE</span> </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">rh_status</span></span>() &#123; </span><br><span class="line">    status <span class="variable">$prog</span> </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">rh_status_q</span></span>() &#123; </span><br><span class="line">    rh_status &gt;/dev/null 2&gt;&amp;1 </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span> </span><br><span class="line">    start) </span><br><span class="line">        rh_status_q &amp;&amp; <span class="built_in">exit</span> 0 </span><br><span class="line">    <span class="variable">$1</span> </span><br><span class="line">        ;; </span><br><span class="line">    stop) </span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 0 </span><br><span class="line">        <span class="variable">$1</span> </span><br><span class="line">        ;; </span><br><span class="line">    restart|configtest) </span><br><span class="line">        <span class="variable">$1</span> </span><br><span class="line">        ;; </span><br><span class="line">    reload) </span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 7 </span><br><span class="line">        <span class="variable">$1</span> </span><br><span class="line">        ;; </span><br><span class="line">    force-reload) </span><br><span class="line">        force_reload </span><br><span class="line">        ;; </span><br><span class="line">    status) </span><br><span class="line">        rh_status </span><br><span class="line">        ;; </span><br><span class="line">    condrestart|try-restart) </span><br><span class="line">        rh_status_q || <span class="built_in">exit</span> 0 </span><br><span class="line">            ;; </span><br><span class="line">    *)    </span><br><span class="line">    <span class="built_in">echo</span> $<span class="string">"Usage: <span class="variable">$0</span> &#123;start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest&#125;"</span> </span><br><span class="line">        <span class="built_in">exit</span> 2 </span><br><span class="line"></span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行配置生效</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 /etc/init.d/nginx</span><br><span class="line">chkconfig --add nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证、重启服务</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx reload</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/运维/nginx重启.jpg" alt="nginx重启"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>结束.ok.</p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/zxyty" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2018 zxy</li>
+      <li><a href="https://github.com/zxyty">Home</a></li>
+      
+      <li><a href="https://github.com/zxyty">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+</html>

@@ -87,19 +87,19 @@
         <a href="/archives" class="header-toolbar-left"><i
                   class="fa fa-file-text"></i> Posts </a>
         <a href="/archives"
-           class="header-toolbar-right"> 18 </a>
+           class="header-toolbar-right"> 19 </a>
       </li>
       <!-- <li>
         <a href="/tags" class="header-toolbar-left"><i
                   class="fa fa-tags"></i> Tags </a>
         <a href="/tags"
-           class="header-toolbar-right"> 22 </a>
+           class="header-toolbar-right"> 23 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i
                   class="fa fa-folder-open"></i> Categories </a>
         <a href="/categories"
-           class="header-toolbar-right"> 11 </a>
+           class="header-toolbar-right"> 13 </a>
       </li> -->
     </ul>
     <h2 class="header-title">
@@ -137,7 +137,7 @@
     <h1>Docker-Mysql8.0安装及初始化配置</h1>
     <ul>
 <li><p>docker安装运行mysql</p>
-<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker search mysql</span><br><span class="line">docker pull mysql</span><br><span class="line">docker <span class="keyword">run</span><span class="bash"> --name mysql_demo -p 3306:3306 -e MYSQL_ROOT_PASSWORD=密码 -d mysql</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker search mysql</span><br><span class="line">docker pull mysql</span><br><span class="line">docker <span class="keyword">run</span> --name mysql_demo -p 3306:3306 -e MYSQL_ROOT_PASSWORD=密码 -d mysql</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置mysql，进入到mysql的容器</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mysql_demo /bin/bash</span><br><span class="line">mysql -u root -p</span><br><span class="line">----&gt;输入密码</span><br><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
