@@ -8,12 +8,12 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    斐波拉契数列js实现 | 码客库
+    docker-使用yum安装 | 码客库
   </title>
   <meta name="description" content="爱生活、爱技术、爱分享">
   
   <meta name="keywords" content="
-  斐波拉契
+  docker
   ">
   
   <meta name="author" content="zxy">
@@ -127,26 +127,28 @@
     <i class="fa fa-user-o"></i>
     zxy
 
-    <span class="post-date float-right" title="{{moment(1542859332540).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1550987992384).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1542859332540).fromNow()}}
+      {{moment(1550987992384).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>斐波拉契数列js实现</h1>
-    <ol>
-<li>递归(这种方法容易造成浏览器假死)</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fb1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> fb1(n - <span class="number">1</span>) + fb1(n - <span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>尾调用优化</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在方法1的递归方法基础上进行尾调用优化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fb</span>(<span class="params">n, res1 = <span class="number">1</span>, res2 = <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> res2;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fb(n - <span class="number">1</span>, res2, res1 + res2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fb(<span class="number">6</span>));</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>迭代方式</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fb</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res1 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> res2 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> sum = res2;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">    sum = res1 + res2;</span><br><span class="line">    res1 = res2;</span><br><span class="line">    res2 = sum;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h1>docker-使用yum安装</h1>
+    <p>测试安装环境</p>
+<ul>
+<li>centos 6.5 <code>失败</code></li>
+<li>centos 7.0 <code>失败</code></li>
+<li>centos 7.2 <code>失败</code></li>
+<li>centos 7.5 <code>成功</code></li>
+</ul>
+<h4 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
+<h4 id="从国内镜像获取yum-repo"><a href="#从国内镜像获取yum-repo" class="headerlink" title="从国内镜像获取yum repo"></a>从国内镜像获取yum repo</h4><p>推荐使用<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学开源软件镜像站</a></p>
+<p>下载repo 到 /etc/yum.repos.d/<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure></p>
+<p>再使用<code>yum repolist</code> 查看yum使用已经有docker repo的安装源,有则可以进行安装<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d/</span><br><span class="line">yum repolist</span><br></pre></td></tr></table></figure></p>
+<p>安装docker-ce<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce</span><br></pre></td></tr></table></figure></p>
+<p>添加国内dockerhub镜像加速器<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/docker</span><br><span class="line">vi /etc/docker/daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>启动docker服务<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker.service</span><br></pre></td></tr></table></figure></p>
 
   </article>
 </div>
