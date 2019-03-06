@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    码客库
+  </title>
+  <meta name="description" content="爱生活、爱技术、爱分享">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="zxy">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href="">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        <!-- 
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+         -->
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://avatars1.githubusercontent.com/u/17245817?s=460&amp;v=4"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 24 </a>
+      </li>
+      <!-- <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 28 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 15 </a>
+      </li> -->
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">码客库</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    zxy
+
+    <span class="post-date float-right" title="{{moment(1538962828646).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1538962828646).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Untitle</h1>
+    <h3 id="极光推送账号"><a href="#极光推送账号" class="headerlink" title="极光推送账号"></a>极光推送账号</h3><ol>
+<li>账号 shandudata 密码 Shandudata@2018</li>
+</ol>
+<h3 id="Android项目配置"><a href="#Android项目配置" class="headerlink" title="Android项目配置"></a>Android项目配置</h3><ol>
+<li><p>settings.gradle 配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">include <span class="string">':jcore-react-native'</span></span><br><span class="line">project(<span class="string">':jcore-react-native'</span>).projectDir = <span class="keyword">new</span> File(rootProject.projectDir, <span class="string">'../node_modules/jcore-react-native/android'</span>)</span><br><span class="line"></span><br><span class="line">include <span class="string">':jpush-react-native'</span></span><br><span class="line">project(<span class="string">':jpush-react-native'</span>).projectDir = <span class="keyword">new</span> File(rootProject.projectDir, <span class="string">'../node_modules/jpush-react-native/android'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>android-build.gradle 配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">    <span class="comment">// 这里与极光推送 后台配置的应用包名一致：com.example</span></span><br><span class="line">    applicationId <span class="string">"com.example"</span></span><br><span class="line"></span><br><span class="line">    minSdkVersion <span class="number">16</span></span><br><span class="line">    targetSdkVersion <span class="number">26</span></span><br><span class="line">    versionCode <span class="number">1</span></span><br><span class="line">    versionName <span class="string">"1.0"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里新增配置</span></span><br><span class="line">    manifestPlaceholders = [</span><br><span class="line">        JPUSH_APPKEY: <span class="string">"9b65e821e1f045880ca7f024"</span>,   <span class="comment">// 极光推送生成的应用key</span></span><br><span class="line">        APP_CHANNEL : <span class="string">"default"</span>                     <span class="comment">// 默认</span></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    ndk &#123;</span><br><span class="line">        abiFilters <span class="string">"armeabi-v7a"</span>, <span class="string">"x86"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>AndroidManifest.xml 配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span>&gt;</span></span><br><span class="line">...</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta-data</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"JPUSH_APPKEY"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:value</span>=<span class="string">"$&#123;JPUSH_APPKEY&#125;"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta-data</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">"JPUSH_CHANNEL"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:value</span>=<span class="string">"$&#123;APP_CHANNEL&#125;"</span> /&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>package包集成</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> List&lt;ReactPackage&gt; <span class="title">getPackages</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">// Add additional packages you require here</span></span><br><span class="line"><span class="comment">// No need to add RnnPackage and MainReactPackage</span></span><br><span class="line">    <span class="keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(</span><br><span class="line">        <span class="comment">// eg. new VectorIconsPackage()</span></span><br><span class="line">        <span class="keyword">new</span> LottiePackage(),</span><br><span class="line">        <span class="keyword">new</span> SvgPackage(),</span><br><span class="line">        <span class="keyword">new</span> RNSentryPackage(MainApplication.<span class="keyword">this</span>),</span><br><span class="line">        <span class="keyword">new</span> AMapGeolocationPackage(),</span><br><span class="line">        <span class="keyword">new</span> SplashScreenReactPackage(),</span><br><span class="line">        <span class="keyword">new</span> ImagePickerPackage(),</span><br><span class="line">        <span class="keyword">new</span> JPushPackage(<span class="keyword">false</span>, <span class="keyword">false</span>)  <span class="comment">// 新增</span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="ios配置"><a href="#ios配置" class="headerlink" title="ios配置"></a>ios配置</h3><ol>
+<li>在 iOS 工程中设置 TARGETS-&gt; BUILD Phases -&gt; LinkBinary with Libraries 找到 UserNotifications.framework 把 status 设为 optional  </li>
+<li><p>在 iOS 工程中如果找不到头文件可能要在 TARGETS-&gt; BUILD SETTINGS -&gt; Search Paths -&gt; Header Search Paths 添加如下路径</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(SRCROOT)/../node_modules/jpush-react-native/ios/RCTJPushModule</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 xcode8 之后需要点开推送选项： TARGETS -&gt; Capabilities -&gt; Push Notification 设为 on 状态</p>
+</li>
+</ol>
+<h3 id="ios集成证书配置"><a href="#ios集成证书配置" class="headerlink" title="ios集成证书配置"></a>ios集成证书配置</h3><ol>
+<li><a href="https://docs.jiguang.cn/jpush/client/iOS/ios_cer_guide/" target="_blank" rel="noopener">具体参考官方介绍</a></li>
+</ol>
+<h3 id="调用推送"><a href="#调用推送" class="headerlink" title="调用推送"></a>调用推送</h3><ol>
+<li><p>使用<a href="https://docs.jiguang.cn/jpush/server/push/server_overview/" target="_blank" rel="noopener">REST API v3</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --insecure -X POST -v https:<span class="comment">//api.jpush.cn/v3/push -H "Content-Type: application/json" -u "9b65e821e1f045880ca7f024:90cd1ef396c86675417be793"  -d  '&#123;"platform":"all","audience":"all","notification":&#123;"alert":"Hi,JPush!"&#125;&#125;'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.jiguang.cn/jpush/#/app/9b65e821e1f045880ca7f024/push/notification" target="_blank" rel="noopener">使用极光后台管理系统推送</a></p>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/zxyty" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2018 zxy</li>
+      <li><a href="https://github.com/zxyty">Home</a></li>
+      
+      <li><a href="https://github.com/zxyty">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+</html>
