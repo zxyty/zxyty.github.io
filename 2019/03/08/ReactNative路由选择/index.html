@@ -8,9 +8,13 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    码客库
+    ReactNative路由选择 | 码客库
   </title>
   <meta name="description" content="爱生活、爱技术、爱分享">
+  
+  <meta name="keywords" content="
+  react-native-navigation
+  ">
   
   <meta name="author" content="zxy">
 
@@ -76,117 +80,81 @@
 </nav>
 
 <div class="main-container">
-  
-
-<div class="container-lg">
-  
-
-<div class="blog-intro">
-  <div class="blog-intro-user">
-    <img class="avatar" src="https://avatars1.githubusercontent.com/u/17245817?s=460&amp;v=4">
-    <div class="user-name">
-      <div class="blog-title">码客库</div>
-      <div class="blog-author">zxy</div>
-        <ul class="user-detail mobile-only">
-    
-    <li>
-      <i class="fa fa-map-marker"></i>
-      Cheng du
-    </li>
-    
-    <li>
-      <i class="fa fa-envelope-o"></i>
-      <a href="mailto:zxy@zxyty.com">zxy@zxyty.com</a>
-    </li>
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="https://github.com/zxyty">https://github.com/zxyty</a>
-    </li>
-  </ul>
-    </div>
-    <div class="blog-description">
-      爱生活、爱技术、爱分享
-    </div>
-  </div>
-
-  <ul class="user-detail desktop-only">
-    
-    <li>
-      <i class="fa fa-map-marker"></i>
-      Cheng du
-    </li>
-    
-    <li>
-      <i class="fa fa-envelope-o"></i>
-      <a href="mailto:zxy@zxyty.com">zxy@zxyty.com</a>
-    </li>
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="https://github.com/zxyty">https://github.com/zxyty</a>
-    </li>
-  </ul>
-
-  <div class="social-media desktop-only">
-    <h4>Social Media</h4>
-    <ul>
-      
-      <li class="social-media-item"><a href="https://github.com/zxyty" target="_blank"><i class="fa fa-github"></i></a></li>
-      
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 25 </a>
+      </li>
+      <!-- <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 30 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 16 </a>
+      </li> -->
     </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">码客库</a>
+      
+      
+    </h2>
   </div>
-</div>
 
-
-  <div class="blog-detail">
-    
-<nav class="blog-detail-nav desktop-only">
-  <ul class="clearfix">
-    <li class="">
-      <a href="/">Overview</a></li>
-    <li class="">
-      <a href="/archives">Posts <span class="counter">25</span></a>
-    </li>
-    <!-- <li class="selected">
-      <a href="/categories">Categories <span
-                class="counter">16</span></a></li>
-    <li class="">
-      <a href="/tags">Tags <span class="counter">30</span></a></li> -->
-  </ul>
-</nav>
-
-    <div class="body-secondary">
-      <ul class="archive-list">
-        
-        <li class="archive-list-item">
-          <h2><a href="/2019/02/21/linux安装nginx/">linux安装nginx</a></h2>
-          <p>
-               前篇  安装准备环境 
- 
-  nginx的编译需要c++，同时prce（重定向支持）和openssl（https支持）也需要安装。 
-        1   2   3   4        # 请顺序安装依赖    yum install gcc-c++     yum -y instal...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/运维/">运维</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/nginx/"><i class="fa fa-folder-open"></i> nginx</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1550726819242).fromNow()}}</span>
-          </div>
-        </li>
-        
-      </ul>
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
     </div>
   </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    zxy
+
+    <span class="post-date float-right" title="{{moment(1552053345696).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1552053345696).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>ReactNative路由选择</h1>
+    <p>考虑：</p>
+<ul>
+<li>适用性</li>
+<li>简易性</li>
+<li>可扩展性</li>
+<li>性能稳定</li>
+<li>文档可查<ul>
+<li><a href="https://wix.github.io/react-native-navigation/#/" target="_blank" rel="noopener">React Native Navigation Docs</a></li>
+</ul>
+</li>
+</ul>
+
+  </article>
 </div>
+
+
+    
+
+
+
 
 </div>
 

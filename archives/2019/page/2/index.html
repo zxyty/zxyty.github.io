@@ -145,10 +145,10 @@
   <ul class="clearfix">
     <li class="">
       <a href="/">Overview</a></li>
-    <li class="">
+    <li class="selected">
       <a href="/archives">Posts <span class="counter">25</span></a>
     </li>
-    <!-- <li class="selected">
+    <!-- <li class="">
       <a href="/categories">Categories <span
                 class="counter">16</span></a></li>
     <li class="">
@@ -160,26 +160,27 @@
       <ul class="archive-list">
         
         <li class="archive-list-item">
-          <h2><a href="/2019/02/23/git子模块/">git子模块</a></h2>
+          <h2><a href="/2019/02/01/mongoose错误集/">Mongoose错误集</a></h2>
           <p>
-             有种情况我们经常会遇到：某个工作中的项目需要包含并使用另一个项目。 也许是第三方库，或者你独立开发的，用于多个父项目的库。 现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。 
- 而一般当我们项目很大，有很多第三方或者公用的类库，我们需要在项目里引进时候，可以考虑使用 ...
+             错误 1:  Unknown modifier: $pushAll  
+ 
+ 报以上错误信息一般是因为 model 里面对应的某个字段 xxx 是数组，然后在使用 xxx.push 的时候，就会出现这个错误 比如有以下 model： 
+ 
+      1   2   3   4   5   6  ...
           </p>
           <ul class="tag-list clearfix">
             
-            <li class="tag-list-item"><a href="/tags/submodule/">submodule</a></li>
-            
-            <li class="tag-list-item"><a href="/tags/子模块/">子模块</a></li>
+            <li class="tag-list-item"><a href="/tags/错误处理/">错误处理</a></li>
             
           </ul>
           <div class="post-info">
             <span>
               
-              <a class="category-link" href="/categories/git/"><i class="fa fa-folder-open"></i> git</a>
+              <a class="category-link" href="/categories/Mongoose/"><i class="fa fa-folder-open"></i> Mongoose</a>
               
             </span>
-            <span><i class="fa fa-tag"></i> 2 </span>
-            <span>Published {{moment(1550900849521).fromNow()}}</span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1548998810665).fromNow()}}</span>
           </div>
         </li>
         
