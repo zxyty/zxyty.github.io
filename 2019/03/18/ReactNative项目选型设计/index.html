@@ -8,12 +8,12 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    docker-使用yum安装 | 码客库
+    ReactNative项目选型设计 | 码客库
   </title>
   <meta name="description" content="爱生活、爱技术、爱分享">
   
   <meta name="keywords" content="
-  docker
+  react-native-navigation
   ">
   
   <meta name="author" content="zxy">
@@ -127,28 +127,106 @@
     <i class="fa fa-user-o"></i>
     zxy
 
-    <span class="post-date float-right" title="{{moment(1550987992384).format('MMM DD, YYYY, h:mm:ss A')}}">
+    <span class="post-date float-right" title="{{moment(1552879617423).format('MMM DD, YYYY, h:mm:ss A')}}">
       <i class="fa fa-pencil-square-o"></i>
-      {{moment(1550987992384).fromNow()}}
+      {{moment(1552879617423).fromNow()}}
     </span>
   </h3>
 
   <article class="post-content">
-    <h1>docker-使用yum安装</h1>
-    <p>测试安装环境</p>
+    <h1>ReactNative项目选型设计</h1>
+    <h3 id="React-Native项目架构设计"><a href="#React-Native项目架构设计" class="headerlink" title="React-Native项目架构设计"></a>React-Native项目架构设计</h3><h4 id="路由-react-native-navigation-wix-v2"><a href="#路由-react-native-navigation-wix-v2" class="headerlink" title="路由(react-native-navigation wix v2)"></a>路由(react-native-navigation wix v2)</h4><p>考虑：</p>
 <ul>
-<li>centos 6.5 <code>失败</code></li>
-<li>centos 7.0 <code>失败</code></li>
-<li>centos 7.2 <code>失败</code></li>
-<li>centos 7.5 <code>成功</code></li>
+<li>适用性</li>
+<li>简易性</li>
+<li>可扩展性</li>
+<li>性能稳定</li>
+<li>文档可查<ul>
+<li><a href="https://wix.github.io/react-native-navigation/#/" target="_blank" rel="noopener">React Native Navigation Docs</a></li>
+<li>DeepLink</li>
 </ul>
-<h4 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
-<h4 id="从国内镜像获取yum-repo"><a href="#从国内镜像获取yum-repo" class="headerlink" title="从国内镜像获取yum repo"></a>从国内镜像获取yum repo</h4><p>推荐使用<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学开源软件镜像站</a></p>
-<p>下载repo 到 /etc/yum.repos.d/<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure></p>
-<p>再使用<code>yum repolist</code> 查看yum使用已经有docker repo的安装源,有则可以进行安装<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d/</span><br><span class="line">yum repolist</span><br></pre></td></tr></table></figure></p>
-<p>安装docker-ce<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce</span><br></pre></td></tr></table></figure></p>
-<p>添加国内dockerhub镜像加速器<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/docker</span><br><span class="line">vi /etc/docker/daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>启动docker服务<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker.service</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h4 id="数据流-redux-dva"><a href="#数据流-redux-dva" class="headerlink" title="数据流(redux/dva)"></a>数据流(redux/dva)</h4><ul>
+<li>react-redux</li>
+<li>dva-core</li>
+</ul>
+<h4 id="数据状态持久化-redux-persist"><a href="#数据状态持久化-redux-persist" class="headerlink" title="数据状态持久化(redux-persist)"></a>数据状态持久化(redux-persist)</h4><ul>
+<li>whiteList</li>
+<li>blackList</li>
+</ul>
+<h4 id="异常错误捕获-sentry"><a href="#异常错误捕获-sentry" class="headerlink" title="异常错误捕获(sentry)"></a>异常错误捕获(sentry)</h4><ul>
+<li>context</li>
+</ul>
+<h4 id="热更新-code-push"><a href="#热更新-code-push" class="headerlink" title="热更新(code-push)"></a>热更新(code-push)</h4><ul>
+<li>更新界面</li>
+<li>静默/强制</li>
+</ul>
+<h4 id="调试输出-reactotron"><a href="#调试输出-reactotron" class="headerlink" title="调试输出(reactotron)"></a>调试输出(reactotron)</h4><ul>
+<li>reactotron-react-native </li>
+<li>reactotron-redux </li>
+</ul>
+<h4 id="推送-jpush"><a href="#推送-jpush" class="headerlink" title="推送(jpush)"></a>推送(jpush)</h4><ul>
+<li>极光推送</li>
+</ul>
+<h4 id="第三方登录集成"><a href="#第三方登录集成" class="headerlink" title="第三方登录集成"></a>第三方登录集成</h4><ul>
+<li>微信</li>
+<li>QQ</li>
+</ul>
+<h4 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h4><ul>
+<li>朋友圈</li>
+<li>QQ空间</li>
+<li>微信好友</li>
+<li>QQ好友</li>
+</ul>
+<h4 id="页面统计-baiduMobStat"><a href="#页面统计-baiduMobStat" class="headerlink" title="页面统计(baiduMobStat)"></a>页面统计(baiduMobStat)</h4><ul>
+<li>埋点</li>
+<li>行为报告</li>
+</ul>
+<h4 id="本地国际化-i18n"><a href="#本地国际化-i18n" class="headerlink" title="本地国际化(i18n)"></a>本地国际化(i18n)</h4><ul>
+<li>FormatMessage</li>
+</ul>
+<h4 id="Touchable设计"><a href="#Touchable设计" class="headerlink" title="Touchable设计"></a>Touchable设计</h4><ul>
+<li>页面跳转(禁用所有按钮可重复操作)</li>
+</ul>
+<h4 id="icon-image管理"><a href="#icon-image管理" class="headerlink" title="icon/image管理"></a>icon/image管理</h4><ul>
+<li>统一使用svg</li>
+</ul>
+<h4 id="动画效果"><a href="#动画效果" class="headerlink" title="动画效果"></a>动画效果</h4><ul>
+<li>Lottie(View)</li>
+</ul>
+<h4 id="图片放大器"><a href="#图片放大器" class="headerlink" title="图片放大器"></a>图片放大器</h4><ul>
+<li>暂无解决方案（希望找到类似微信等图片查看器效果的插件）</li>
+</ul>
+<h4 id="socket方案"><a href="#socket方案" class="headerlink" title="socket方案"></a>socket方案</h4><ul>
+<li>SocketIo</li>
+<li>WebSocket</li>
+</ul>
+<h4 id="启动屏"><a href="#启动屏" class="headerlink" title="启动屏"></a>启动屏</h4><ul>
+<li>暂无解决方案（需调研）</li>
+</ul>
+<h4 id="UI库"><a href="#UI库" class="headerlink" title="UI库"></a>UI库</h4><ul>
+<li>暂无</li>
+</ul>
+<h4 id="手势控件"><a href="#手势控件" class="headerlink" title="手势控件"></a>手势控件</h4><ul>
+<li>下拉刷新</li>
+<li>上拉刷新</li>
+</ul>
+<h4 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h4><ul>
+<li>canvas绘图组件</li>
+<li>map地图</li>
+<li>时间选择器</li>
+<li>省市区选择器</li>
+<li>支付组件</li>
+<li>统计报表<ul>
+<li>svg</li>
+<li>chart<ul>
+<li>worker 计算数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
   </article>
 </div>
