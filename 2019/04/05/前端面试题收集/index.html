@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    前端面试题收集 | 码客库
+  </title>
+  <meta name="description" content="爱生活、爱技术、爱分享">
+  
+  <meta name="keywords" content="
+  前端面试
+  ">
+  
+  <meta name="author" content="zxy">
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <link rel="icon" type="image/x-icon" href>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        <!-- 
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+         -->
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://avatars1.githubusercontent.com/u/17245817?s=460&amp;v=4"> <i class="fa fa-caret-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives" class="header-toolbar-right"> 29 </a>
+      </li>
+      <!-- <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 37 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 20 </a>
+      </li> -->
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">码客库</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    zxy
+
+    <span class="post-date float-right" title="{{moment(1554446169588).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1554446169588).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>前端面试题收集</h1>
+    <h3 id="2019-03-20"><a href="#2019-03-20" class="headerlink" title="2019-03-20"></a>2019-03-20</h3><ol>
+<li>自我介绍；</li>
+<li>react的生命周期；</li>
+<li>react第一次render了会干什么；</li>
+<li>react render后再获取新的数据进行渲染会执行怎么样的流程，画出来（diff？）；</li>
+<li>es6的新特性有哪些；</li>
+<li>让你架构react native项目的选型设计，你会考虑什么，怎么设计；</li>
+<li>react native怎么做性能优化；</li>
+<li>热更新设计；</li>
+<li>web与原生端通信原理jsBridge；</li>
+<li>react组件间如何通信；</li>
+<li><code>a = [], a[0] = 0, a[100] = 100</code> 问<code>a</code>的长度是多少，此时用<code>foeach</code>遍历<code>a</code>会遍历多少次；</li>
+<li>arr=[{grade: 40},{grade: 60},{grade: 50}, {grade: 60}], 过滤掉grade&gt;=60的对象，并返回数据，可以怎么做；</li>
+<li>setTimeout(fn, 0)为什么不是立即执行；</li>
+<li>设计一个带了超时的fetch；</li>
+<li>匿名函数和箭头函数的差异；</li>
+<li>Node如何写一个搞崩多核cpu的程序；</li>
+<li>SocketIo的运用，和Cluster一起使用有什么问题；</li>
+<li>Mongoose的聚合查询；</li>
+<li>一个博客FlatList组件和一个帖子FlatList组件，现在要根据请求回来的数据，重新抽离出一个新的组件来使用，你会怎么做；</li>
+<li>Http/Https的区别，怎么使用用Http传输加密数据；</li>
+<li>redux中你怎么请求数据；</li>
+<li>解释下控制反转和依赖注入；</li>
+<li>让你最难忘的一次项目经历；</li>
+<li>你有什么问题要问；</li>
+</ol>
+<h3 id="2019-03-21"><a href="#2019-03-21" class="headerlink" title="2019-03-21"></a>2019-03-21</h3><ol>
+<li>webpack 有哪些优化打包的手段；</li>
+<li>webpack cdn配置</li>
+<li>webpack怎么打包成多个js</li>
+<li>setState是异步还是同步，原理机制；</li>
+<li>http强缓存和协商缓存；</li>
+<li>Manifest的原理；</li>
+<li>原码、反码、补码原理；</li>
+<li>1234567890.12 怎么用正则转换成 1,234,567,890.12；</li>
+<li><p>bind的使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">var</span> a = &#123; <span class="attr">x</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> b = &#123; <span class="attr">x</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> c = &#123; <span class="attr">x</span>: <span class="number">3</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> echoFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echoFunc();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func1 = echoFunc.bind(a);</span><br><span class="line">func1();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func2 = echoFunc.bind(a).bind(b);</span><br><span class="line">func2();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func3 = echoFunc.bind(a).bind(b).bind(c);</span><br><span class="line">func3();</span><br><span class="line"><span class="comment">// node环境：undefined,1,1,1</span></span><br><span class="line"><span class="comment">// 浏览器：4,1,1,1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现Promise；</p>
+</li>
+</ol>
+<h3 id="2019-04-03"><a href="#2019-04-03" class="headerlink" title="2019-04-03"></a>2019-04-03</h3><ol>
+<li>媒体查询兼容不同浏览器的写法<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在写css样式的时候，有时候需要兼容IE不同的版本，这个时候可以用到媒体查询来处理 */</span></span><br><span class="line"><span class="comment">/* 一，支持IE10及以上 */</span></span><br><span class="line">@<span class="keyword">media</span> screen and (-ms-high-contrast: active), (-ms-high-contrast: none) &#123;</span><br><span class="line">   <span class="selector-tag">css</span>代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 二，支持IE9及以上 */</span></span><br><span class="line">@<span class="keyword">media</span> screen and (min-width:<span class="number">0</span>\<span class="number">0</span>) &#123;</span><br><span class="line">   <span class="selector-tag">css</span>代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 三，支持IE8及以上 */</span></span><br><span class="line">@<span class="keyword">media</span> screen\<span class="number">0</span> &#123;</span><br><span class="line">   <span class="selector-tag">css</span>代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 四，仅支持IE8 */</span></span><br><span class="line">@<span class="keyword">media</span> \<span class="number">0s</span>creen &#123;</span><br><span class="line">   <span class="selector-tag">css</span>代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 五，支持IE8及以下 */</span></span><br><span class="line">@<span class="keyword">media</span> \<span class="number">0s</span>creen\,screen\<span class="number">9</span> &#123;</span><br><span class="line">   <span class="selector-tag">css</span>代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 六，支持IE7及以下 */</span></span><br><span class="line">@<span class="keyword">media</span> screen\<span class="number">9</span> &#123;</span><br><span class="line">   <span class="selector-tag">css</span>代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 七，仅支持谷歌 */</span></span><br><span class="line">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio:<span class="number">0</span>) &#123;</span><br><span class="line">   <span class="selector-tag">css</span>代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://github.com/zxyty" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2018 zxy</li>
+      <li><a href="https://github.com/zxyty">Home</a></li>
+      
+      <li><a href="https://github.com/zxyty">Github</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<script src="https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js"></script>
+</html>
