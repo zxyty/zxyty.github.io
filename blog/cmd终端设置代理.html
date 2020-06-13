@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head><meta name="generator" content="Hexo 3.9.0">
-    <title>DDA算法 — zxyty</title>
+    <title>cmd终端设置代理 — zxyty</title>
     <meta charset="utf-8">
     <meta name="msapplication-TileColor" content="#4fc08d">
     <meta name="theme-color" content="#4fc08d">
@@ -112,7 +112,7 @@
   
     
     <li>
-      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link current">cmd终端设置代理</a>
     </li>
   
     
@@ -187,7 +187,7 @@
   
     
     <li>
-      <a href="/blog/DDA.html" class="sidebar-link current">DDA算法</a>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
     </li>
   
     
@@ -261,71 +261,23 @@
   
   
     
-      <h1>DDA算法</h1>
+      <h1>cmd终端设置代理</h1>
     
   
     
       
-        <span>八月 13, 2018</span>
+        <span>四月 25, 2019</span>
       
     
   
-    <h4 id="直线段的扫面转换算法"><a href="#直线段的扫面转换算法" class="headerlink" title="直线段的扫面转换算法"></a>直线段的扫面转换算法</h4><p>数学上，直线上的点有无穷多个。但当在计算机光栅显示器屏幕上表示这条直线时需要做一些处理<br><img src="/images/dda/1534137194716.jpg" alt="计算机光栅化直线01"></p>
-<p>为了在光栅显示器上用这些 离散的像素点逼近这条直 线，需要知道这些像素点的 x，y坐标。<br><img src="/images/dda/1534137231608.jpg" alt="直线段方程"><br>求出过<code>p0</code>,<code>p1</code>的直线段方程:<br><pre><code class="hljs javascript">y = kx + b  
-k = (y1 - y2) / (x1 - x2)   <span class="hljs-comment">// (x1 != x2)</span></code></pre></p>
-<p>假设x已知，即从x的起点x0开始 ，沿x方向前进一个像素(步长 = 1)，可以计算出相应的y值。<br>因为像素的坐标是整数，所以y值 还要进行取整处理<br>把数学上的一个点扫描转换一个屏幕像素点<br><pre><code class="hljs cmd">如:
-p(<span class="hljs-number">1</span>.<span class="hljs-number">7</span>，<span class="hljs-number">0</span>.<span class="hljs-number">8</span>) -&gt;取整 -&gt; p(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
-p(<span class="hljs-number">1</span>.<span class="hljs-number">7</span>, <span class="hljs-number">0</span>.<span class="hljs-number">8</span>) -&gt; (+<span class="hljs-number">0</span>.<span class="hljs-number">5</span>) -&gt; p(<span class="hljs-number">2</span>.<span class="hljs-number">2</span>, <span class="hljs-number">1</span>.<span class="hljs-number">3</span>) -&gt;取整 -&gt; p(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)</code></pre></p>
-<p>直线是最基本的图形，一个动画或真实感图形往往需要调用成千上万次画线程序，因此直线算法的好坏与效率将直接影响图形的质量和显示速度。<br>回顾下刚才的算法：<br>y = kx + b<br>计算机为了提高效率，把计算量减下来，选择一些算法把乘法取消了</p>
-<h4 id="DDA算法"><a href="#DDA算法" class="headerlink" title="DDA算法"></a>DDA算法</h4><p>引进图形学中一个很重要的思想—增量思想<br><img src="/images/dda/1534137305802.jpg" alt="增量思想"> $$ y_i = kx_i + b $$ $$ y_{i+1} = kx_{i+1} + b $$ $$ =k(x_i + 1) +b $$ $$ =kx_i + k +b $$ $$ =y_i +b $$ $$ y_{i+1} = y_{i} + k $$</p>
-<ul>
-<li>这个式子的含义是:当前步的y值等于前一步的y值 加上斜率k，这样就把原来一个乘法和加法变成了一个加法！</li>
-</ul>
-<h4 id="DDA算法演示例子"><a href="#DDA算法演示例子" class="headerlink" title="DDA算法演示例子"></a>DDA算法演示例子</h4><p>用DDA扫描转换连接两点P0(0,0)和P1(5,3)的直线段。画出线段如下： <img src="/images/dda/1534137324428.jpg" alt> $$ k = \frac {y_1 - y_0}{x_1 - x_0} = \frac {3 - 0}{5 - 0} = 0.6 &lt; 1 $$ </p>
-<table>
-<thead>
-<tr>
-<th>x</th>
-<th>y</th>
-<th>int(y + 0.5) 取整</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> 0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td> 1</td>
-<td>0+<code>0.6</code></td>
-<td>1</td>
-</tr>
-<tr>
-<td> 2</td>
-<td>0.6+<code>0.6</code></td>
-<td>1</td>
-</tr>
-<tr>
-<td> 3</td>
-<td>1.2+<code>0.6</code></td>
-<td>2</td>
-</tr>
-<tr>
-<td> 4</td>
-<td>1.8+<code>0.6</code></td>
-<td>2</td>
-</tr>
-<tr>
-<td> 5</td>
-<td>2.4+<code>0.6</code></td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-<p>$$计算过程, 根据DDA增量算法:  y_{i+1} = y_i + k<br>这里k = 0.6  $$</p>
-<h4 id="DDA不是最优"><a href="#DDA不是最优" class="headerlink" title="DDA不是最优"></a>DDA不是最优</h4><p>1、浮点数运算<br>2、限制在斜截式方程</p>
+    <pre><code class="hljs shell">设置代理
+netsh winhttp set proxy www.zxyty.com:6550
+取消代理
+netsh winhttp reset proxy
+查看代理
+netsh winhttp show proxy
 
+set http_proxy=http://www.zxyty.com:6551</code></pre>
     
     
       <div class="guide-links">
@@ -335,7 +287,7 @@ p(<span class="hljs-number">1</span>.<span class="hljs-number">7</span>, <span c
         
         
         
-          <span style="float: right;"><a href="/blog/Docker安装taiga项目.html">Docker安装部署taiga项目</a> →</span>
+          <span style="float: right;"><a href="/blog/Vscode远程开发，本地翻墙神器.html">Vscode远程开发，本地翻墙神器</a> →</span>
         
       </div>
     

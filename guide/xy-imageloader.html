@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>xy-imageloader — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "guide"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link current">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link current">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/guide/index.html" class="sidebar-link">组件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/guide/xy-imageloader.html" class="sidebar-link current">xy-imageloader</a>
+    </li>
+  
+    
+    <li>
+      <a href="/guide/xy-share-component.html" class="sidebar-link">xy-share-component</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content guide with-sidebar xy-imageloader-guide">
+  
+  
+    
+      <h1>xy-imageloader</h1>
+    
+  
+    
+      
+        <span>五月 16, 2020</span>
+      
+    
+  
+    <p>安装：<br><pre><code class="hljs shell">npm i --save xy-imageloader</code></pre></p>
+<ul>
+<li>普通加载</li>
+</ul>
+<pre><code class="hljs js">imgLoader(<span class="hljs-string">"./lena.png"</span>).then(<span class="hljs-function"><span class="hljs-params">image</span> =&gt;</span> &#123;
+  ...
+&#125;)</code></pre>
+<ul>
+<li>普通加载, ImageData</li>
+</ul>
+<pre><code class="hljs js">getImageData(<span class="hljs-string">"./lena.png"</span>).then(<span class="hljs-function"><span class="hljs-params">imageData</span> =&gt;</span> &#123;
+  ...
+&#125;)</code></pre>
+<ul>
+<li>模板匹配示例</li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> imgLoader, &#123; getImageData, rgbToGary &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-imageloader'</span>;
+<span class="hljs-keyword">import</span> rgbToGary <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-imageloader/lib/color'</span>;
+<span class="hljs-keyword">import</span> &#123; getTemplatePos &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-imageloader/lib/util'</span>;
+
+<span class="hljs-built_in">Promise</span>.all([imgLoader(<span class="hljs-string">"./lena.png"</span>), imgLoader(<span class="hljs-string">"./search.png"</span>)]).then(
+  <span class="hljs-function">(<span class="hljs-params">values: any</span>) =&gt;</span> &#123;
+    <span class="hljs-built_in">Promise</span>.all([getImageData(values[<span class="hljs-number">0</span>]), getImageData(values[<span class="hljs-number">1</span>])]).then(
+      <span class="hljs-function">(<span class="hljs-params">dataValues: any</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> model = rgbToGary(dataValues[<span class="hljs-number">0</span>]);
+        <span class="hljs-keyword">const</span> search = rgbToGary(dataValues[<span class="hljs-number">1</span>]);
+        <span class="hljs-keyword">const</span> posi = getTemplatePos(
+          model,
+          search,
+          dataValues[<span class="hljs-number">0</span>].width,
+          dataValues[<span class="hljs-number">0</span>].height,
+          dataValues[<span class="hljs-number">1</span>].width,
+          dataValues[<span class="hljs-number">1</span>].height,
+          <span class="hljs-string">"CV_TM_CCOEFF_NORMED"</span>
+        );
+        <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+        canvas.width = dataValues[<span class="hljs-number">0</span>].width;
+        canvas.height = dataValues[<span class="hljs-number">0</span>].height;
+        <span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">"2d"</span>);
+
+        ctx?.drawImage(values[<span class="hljs-number">0</span>], <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        ctx.strokeStyle = <span class="hljs-string">"red"</span>;
+        ctx?.strokeRect(
+          posi.x,
+          posi.y,
+          dataValues[<span class="hljs-number">1</span>].width,
+          dataValues[<span class="hljs-number">1</span>].height
+        );
+        <span class="hljs-built_in">document</span>.body.appendChild(canvas);
+      &#125;
+    );
+  &#125;
+);</code></pre>
+<ul>
+<li>比对图片</li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-keyword">async</span> componentDidMount() &#123;
+  <span class="hljs-keyword">const</span> canvas1 = <span class="hljs-keyword">await</span> loadCanvas(<span class="hljs-string">'./11.png'</span>);
+  <span class="hljs-keyword">const</span> ctx1 = canvas1.getContext(<span class="hljs-string">'2d'</span>);
+  <span class="hljs-keyword">const</span> imageData1 = ctx1!.getImageData(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas1.width, canvas1.height);
+  <span class="hljs-keyword">const</span> rgb1 = getRGBColor(imageData1);
+  <span class="hljs-keyword">const</span> gray1 = rgbToGary(rgb1);
+  <span class="hljs-keyword">const</span> threshold1 = OtsuAlgorithm(gray1);
+  <span class="hljs-keyword">const</span> [newImageData1] = convertBinarization(imageData1, threshold1, <span class="hljs-literal">true</span>);
+  <span class="hljs-built_in">document</span>.body.appendChild(canvas1);
+
+  <span class="hljs-keyword">const</span> canvas2 = <span class="hljs-keyword">await</span> loadCanvas(<span class="hljs-string">'./22.png'</span>);
+  <span class="hljs-keyword">const</span> ctx2 = canvas2.getContext(<span class="hljs-string">'2d'</span>);
+  <span class="hljs-keyword">const</span> imageData2 = ctx2!.getImageData(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas2.width, canvas2.height);
+  <span class="hljs-keyword">const</span> rgb2 = getRGBColor(imageData2);
+  <span class="hljs-keyword">const</span> gray2 = rgbToGary(rgb2);
+  <span class="hljs-keyword">const</span> threshold2 = OtsuAlgorithm(gray2);
+  <span class="hljs-keyword">const</span> [newImageData2, cropedOffsetX, cropedOffsetY] = convertBinarization(
+    imageData2,
+    threshold2,
+    <span class="hljs-literal">true</span>,
+  );
+  <span class="hljs-built_in">document</span>.body.appendChild(canvas2);
+
+  <span class="hljs-keyword">const</span> gutter = <span class="hljs-number">100</span>; <span class="hljs-comment">// 定义合并不同点间隔大小</span>
+  <span class="hljs-keyword">const</span> difference = compareImage(newImageData1, newImageData2, gutter);
+  difference.forEach(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> &#123;
+    canvas2.getContext(<span class="hljs-string">'2d'</span>)!.strokeStyle = <span class="hljs-string">'red'</span>;
+    canvas2
+      .getContext(<span class="hljs-string">'2d'</span>)!
+      .strokeRect(d.x + cropedOffsetX, d.y + cropedOffsetY, d.w, d.h);
+  &#125;);
+&#125;</code></pre>
+<ul>
+<li>图片边缘扩展</li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-comment">// 可以扩展边缘为 空缺（黑） | 边缘复制 | 边缘镜像</span>
+getImageData(<span class="hljs-string">"./lena.png"</span>).then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> &#123;
+  <span class="hljs-keyword">const</span> newImageData = borderExpand(data, <span class="hljs-string">"BORDER_REPLICATE"</span>, <span class="hljs-number">33</span>);
+
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+  canvas.width = newImageData.width;
+  canvas.height = newImageData.height;
+  <span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">"2d"</span>);
+
+  ctx.putImageData(newImageData, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-built_in">document</span>.body.insertBefore(canvas, <span class="hljs-built_in">document</span>.body.children[<span class="hljs-number">0</span>]);
+&#125;);</code></pre>
+<ul>
+<li>Sobel算子提取图像边缘</li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> imageLoader, &#123; getImageData &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-imageloader'</span>;
+<span class="hljs-keyword">import</span> &#123; convertSobel &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-imageloader/lib/filter'</span>;
+
+imageLoader(<span class="hljs-string">'./122.png'</span>).then(<span class="hljs-keyword">async</span> res =&gt; &#123;
+  <span class="hljs-keyword">const</span> imageData = <span class="hljs-keyword">await</span> getImageData(res);
+  <span class="hljs-keyword">const</span> data = convertSobel(imageData);
+
+  <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
+  canvas.width = data.width;
+  canvas.height = data.height;
+  <span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">'2d'</span>);
+  ctx?.putImageData(data, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-built_in">document</span>.body.appendChild(canvas);
+&#125;);</code></pre>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/guide/xy-share-component.html">xy-share-component</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/guide/index.html">组件</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

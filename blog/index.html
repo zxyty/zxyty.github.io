@@ -112,6 +112,11 @@
   
     
     <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
       <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
     </li>
   
@@ -147,22 +152,22 @@
   
     
     <li>
-      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
-    </li>
-  
-    
-    <li>
       <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
     </li>
   
     
     <li>
-      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
     </li>
   
     
     <li>
       <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
     </li>
   
     
@@ -256,7 +261,7 @@
   
   
     
-<p style="text-align: center;">「共计 35 篇文章」</p>
+<p style="text-align: center;">「共计 36 篇文章」</p>
 <ul class="timeline timeline-centered" style="padding-left: 0;">
     
     
@@ -459,6 +464,36 @@ Maven.
             <div class="timeline-info"></div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
+                <h2 class="timeline-title">四月 2019</h2>
+            </div>
+        </li>
+        
+        <li class="timeline-item">
+            <div class="timeline-info">
+                <span class="gradient-text">四月 25, 2019</span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <a class="timeline-title" target="_self" href="/blog/cmd终端设置代理.html">cmd终端设置代理</a>
+                <p>
+                    设置代理
+netsh winhttp set proxy www.zxyty.com:6550
+取消代理
+netsh winhttp reset proxy
+查看代理
+netsh winhttp show proxy
+
+set http_proxy=http://www.zxyty.com:6551
+                </p>
+            </div>
+        </li>
+    
+        
+        
+        <li class="timeline-item period">
+            <div class="timeline-info"></div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
                 <h2 class="timeline-title">三月 2019</h2>
             </div>
         </li>
@@ -642,16 +677,13 @@ flatten 用法：概念：可以理解为将嵌套数组的维数减少，flatte
             </div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <a class="timeline-title" target="_self" href="/blog/极光推送.html">极光推送RN集成</a>
+                <a class="timeline-title" target="_self" href="/blog/Docker安装taiga项目.html">Docker安装部署taiga项目</a>
                 <p>
-                    
-
-Android项目配置
-settings.gradle 配置
-include ':jcore-react-native'
-project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
-
-include ':...
+                    安装docker依赖docker pull postgres:laster
+docker pull ipedrazas/taiga-back
+docker pull ipedrazas/taiga-front
+启用postgres 5433端口随意 我只是热衷而已。。。docker run -p 5433:5432 -d --name taiga-postgres  postgres
+这里的...
                 </p>
             </div>
         </li>
@@ -664,13 +696,16 @@ include ':...
             </div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <a class="timeline-title" target="_self" href="/blog/Docker安装taiga项目.html">Docker安装部署taiga项目</a>
+                <a class="timeline-title" target="_self" href="/blog/极光推送.html">极光推送RN集成</a>
                 <p>
-                    安装docker依赖docker pull postgres:laster
-docker pull ipedrazas/taiga-back
-docker pull ipedrazas/taiga-front
-启用postgres 5433端口随意 我只是热衷而已。。。docker run -p 5433:5432 -d --name taiga-postgres  postgres
-这里的...
+                    
+
+Android项目配置
+settings.gradle 配置
+include ':jcore-react-native'
+project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
+
+include ':...
                 </p>
             </div>
         </li>
@@ -1061,17 +1096,13 @@ const xxxSchema = new mongoose.Schema(
             </div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <a class="timeline-title" target="_self" href="/blog/linux安装nginx.html">linux安装nginx</a>
+                <a class="timeline-title" target="_self" href="/blog/linux系统nvm安装.html">linux系统nvm指定版本安装</a>
                 <p>
-                    前篇安装准备环境
-
-nginx的编译需要c++，同时prce（重定向支持）和openssl（https支持）也需要安装。
-  # 请顺序安装依赖
-yum install gcc-c++  
-yum -y install pcre*  
-yum -y install openssl*
-
-下载需要安装的nginx版本  到http://nginx.org/download/选择对应的版本进行下载...
+                    直接获取当前已存在的nvm版本选择你想要安装的nvm版本
+可以从nvm_github_release中找到最新的版本号, 如下:
+这里查找到最新版本为0.34.0，然后执行命令
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+最后导出环境变量source ~/.bashrc...
                 </p>
             </div>
         </li>
@@ -1084,13 +1115,17 @@ yum -y install openssl*
             </div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <a class="timeline-title" target="_self" href="/blog/linux系统nvm安装.html">linux系统nvm指定版本安装</a>
+                <a class="timeline-title" target="_self" href="/blog/linux安装nginx.html">linux安装nginx</a>
                 <p>
-                    直接获取当前已存在的nvm版本选择你想要安装的nvm版本
-可以从nvm_github_release中找到最新的版本号, 如下:
-这里查找到最新版本为0.34.0，然后执行命令
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-最后导出环境变量source ~/.bashrc...
+                    前篇安装准备环境
+
+nginx的编译需要c++，同时prce（重定向支持）和openssl（https支持）也需要安装。
+  # 请顺序安装依赖
+yum install gcc-c++  
+yum -y install pcre*  
+yum -y install openssl*
+
+下载需要安装的nginx版本  到http://nginx.org/download/选择对应的版本进行下载...
                 </p>
             </div>
         </li>
