@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>Mongoose踩坑路 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link current">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>Mongoose踩坑路</h1>
+    
+  
+    
+      
+        <span>三月 21, 2018</span>
+      
+    
+  
+    <ul>
+<li>错误 1: <code>Unknown modifier: $pushAll</code></li>
+</ul>
+<blockquote>
+<p>报以上错误信息一般是因为 model 里面对应的某个字段<code>xxx</code>是数组，然后在使用<code>xxx.push</code>的时候，就会出现这个错误<br>比如有以下 model：</p>
+</blockquote>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> xxxSchema = <span class="hljs-keyword">new</span> mongoose.Schema(
+  &#123;
+    <span class="hljs-attr">xxx</span>: [
+      &#123;
+        <span class="hljs-attr">name</span>: <span class="hljs-built_in">String</span>,
+        <span class="hljs-attr">kind</span>: <span class="hljs-built_in">String</span> <span class="hljs-comment">// 字段类型   int boolean string  千万不要写成type了 mmp</span>
+      &#125;
+    ]
+  &#125;,
+  &#123;
+    <span class="hljs-attr">usePushEach</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">versionKey</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 去掉__v键</span>
+  &#125;
+);</code></pre>
+<p><code>xxx</code>就是一个数组，为了解决 push 问题，需要加上<code>usePushEach: true</code>这个配置才行<br>这才能够使用以下的语句进行保存更新</p>
+<pre><code class="hljs javascript">xxxSchema.methods.addField = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">field</span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.fields.push(&#123;&#125;);
+  <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.save();
+&#125;;</code></pre>
+<ul>
+<li>错误 2: 聚合函数使用 aggregate 使用\$group 报错<br>类似</li>
+</ul>
+<pre><code class="hljs javascript"><span class="hljs-built_in">Error</span>:
+Assert: command failed: &#123;
+	<span class="hljs-string">"ok"</span> : <span class="hljs-number">0</span>,
+	<span class="hljs-string">"errmsg"</span> : <span class="hljs-string">"The field 'tag' must be an accumulator object"</span>,
+	<span class="hljs-string">"code"</span> : <span class="hljs-number">40234</span>,
+	<span class="hljs-string">"codeName"</span> : <span class="hljs-string">"Location40234"</span>
+&#125; : aggregate failed</code></pre>
+<p>造成原因：需要指定<code>_id</code>来作为分组依据:</p>
+<pre><code class="hljs javascript">db.getCollection(<span class="hljs-string">"movies"</span>).aggregate([
+  &#123;
+    <span class="hljs-attr">$unwind</span>: <span class="hljs-string">"$tags"</span>
+  &#125;,
+  &#123;
+    <span class="hljs-attr">$group</span>: &#123;
+      <span class="hljs-comment">// tags: "$tags",  </span>
+      <span class="hljs-attr">_id</span>: <span class="hljs-string">"$tags"</span>,    <span class="hljs-comment">// 这里必须是_id 而不是tags的标志</span>
+      <span class="hljs-attr">count</span>: &#123; <span class="hljs-attr">$sun</span>: <span class="hljs-number">1</span> &#125;  <span class="hljs-comment">// 分组求和</span>
+    &#125;
+  &#125;
+]);</code></pre>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/Vscode-Threejs代码智能提示.html">Vscode-Threejs代码智能提示</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/DDA.html">DDA算法</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

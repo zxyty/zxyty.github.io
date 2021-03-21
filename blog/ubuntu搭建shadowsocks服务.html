@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>ubuntu搭建shadowsocks服务 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link current">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>ubuntu搭建shadowsocks服务</h1>
+    
+  
+    
+      
+        <span>七月 23, 2018</span>
+      
+    
+  
+    <h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><pre><code class="hljs javascript">$ apt-<span class="hljs-keyword">get</span> install python-pip
+$ pip install shadowsocks</code></pre>
+<h3 id="编写配置文件"><a href="#编写配置文件" class="headerlink" title="编写配置文件"></a>编写配置文件</h3><ul>
+<li>服务端文件<pre><code class="hljs javascript"># config-server.json
+&#123;
+  "server": "43.225.***.***",   // 你的服务器真实ip
+  "server_port": 6550,          // 服务器连接端口
+  "local_address": "127.0.0.1",
+  "local_port": 1080,
+  "password": "******",
+  "timeout": 300,
+  "method": "rc4-md5"
+&#125;</code></pre>
+</li>
+</ul>
+<blockquote>
+<p>其中<code>server</code>要配置成真实的ip 不能是127.0.0.1等</p>
+</blockquote>
+<blockquote>
+<p>配置完成后即可运行命令启动服务</p>
+</blockquote>
+<pre><code class="hljs bash">ssserver -c ./config-server.json -d start   <span class="hljs-comment">#后台执行</span></code></pre>
+<blockquote>
+<p>此时就可以在你本地使用客户端连接软件进行连接，如图：<br><img src="/images/shadowsocks/1.jpg" alt="ssserver-客户端配置"></p>
+</blockquote>
+<h3 id="如果是使用浏览器配置sock5代理"><a href="#如果是使用浏览器配置sock5代理" class="headerlink" title="如果是使用浏览器配置sock5代理"></a>如果是使用浏览器配置sock5代理</h3><ul>
+<li>编写配置文件<pre><code class="hljs javascript"># config-borswer.json
+&#123;
+  "server": "43.225.***.***",           // config-server.json 里你的服务器真实ip
+  "server_port": 6550,                  // config-server.json 里你配置的port
+  "local_address": "43.225.***.***",    // 和server保持一样即可
+  "local_port": 6551,               // 浏览器访问代理的端口
+  "password": "******",             // 密码需要是config-server.json文件里的一样
+  "timeout": 300,
+  "method": "rc4-md5"
+&#125;</code></pre>
+</li>
+</ul>
+<blockquote>
+<p>配置完成后即可运行命令启动服务<br><pre><code class="hljs bash">sslocal -c ./config-borswer.json -d start <span class="hljs-comment"># 后台执行</span></code></pre></p>
+</blockquote>
+<blockquote>
+<p>接着 浏览器配置代理服务器即可 如图<br><img src="/images/shadowsocks/2.jpg" alt="ssserver-borwser"></p>
+</blockquote>
+<hr>
+<h3 id="后续补充"><a href="#后续补充" class="headerlink" title="后续补充"></a>后续补充</h3><h4 id="使用Dockerfile-构建shadowsocks-docker镜像服务-2019-2-25"><a href="#使用Dockerfile-构建shadowsocks-docker镜像服务-2019-2-25" class="headerlink" title="使用Dockerfile 构建shadowsocks-docker镜像服务 (2019-2-25)"></a>使用Dockerfile 构建shadowsocks-docker镜像服务 (2019-2-25)</h4><ul>
+<li><p>构建思路：</p>
+<ul>
+<li>使用alpine作为基础，在此之上，安装python、pip后，安装所需要的shadowsocks。</li>
+<li>导出所需要的环境变量（监听地址、密码、加密方式等）。</li>
+<li><p>修改openssl.py源文件，因为openssl升级到1.1.0版本后，shadowsocks2.8.2版本不对应，这里使用<code>ADD</code>命令直接替换覆盖的源文件。</p>
+<pre><code class="hljs py"><span class="hljs-comment"># libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)</span>
+libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+<span class="hljs-comment"># libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)</span>
+libcrypto.EVP_CIPHER_CTX_reset(self._ctx)</code></pre>
+</li>
+<li><p>使用<code>ENTRYPOINT</code>启动构建配置文件的sh文件。</p>
+</li>
+<li>导出容器端口，使宿主机能够监听端口，从而实现外部访问。（需要在<code>docker run</code>的时候手动接收端口如: <code>-p 6551:6551 -p 6550:6550</code>）</li>
+<li>生成配置文件后，先在容器里执行服务端<code>ssserver</code>进程，然后再执行客户端<code>sslocal</code>进程。(ssserver -c /data/shadowsocks/server.json -d start &amp;&amp; sslocal -c /data/shadowsocks/broswer.json start)</li>
+</ul>
+</li>
+<li><p>Dockerfile详情</p>
+<pre><code class="hljs Dockerfile"><span class="hljs-keyword">FROM</span> alpine:latest
+<span class="hljs-keyword">RUN</span><span class="bash"> apk update &amp;&amp; \
+    apk add py-pip &amp;&amp; \
+    pip install shadowsocks</span>
+
+<span class="hljs-comment"># 这里应该使用容器的ip 172.17.0.2</span>
+<span class="hljs-keyword">ENV</span> SERVER_HOST=<span class="hljs-number">172.17</span>.<span class="hljs-number">0.2</span> \
+    SERVER_PORT=<span class="hljs-number">6550</span> \
+    BROSWER_PORT=<span class="hljs-number">6551</span> \
+    SERVER_PASSWORD=uljshdcULJSHDCty \
+    SERVER_METHOD=<span class="hljs-string">'rc4-md5'</span>
+
+<span class="hljs-comment"># 修改源文件</span>
+<span class="hljs-comment"># openssl升级到1.1.0版本后，shadowsocks2.8.2版本不对应</span>
+<span class="hljs-comment"># https://blog.csdn.net/shelldawn/article/details/83578218</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> rm /usr/lib/python2.7/site-packages/shadowsocks/crypto/openssl.py</span>
+
+<span class="hljs-keyword">ADD</span><span class="bash"> openssl.py /usr/lib/python2.7/site-packages/shadowsocks/crypto/</span>
+
+<span class="hljs-keyword">VOLUME</span><span class="bash"> /data/shadowsocks</span>
+
+<span class="hljs-keyword">ADD</span><span class="bash"> shadowsocks.config.sh /bin/</span>
+
+<span class="hljs-keyword">CMD</span><span class="bash"> ssserver -c /data/shadowsocks/server.json -d start &amp;&amp; sslocal -c /data/shadowsocks/broswer.json start</span>
+
+<span class="hljs-keyword">ENTRYPOINT</span><span class="bash"> [<span class="hljs-string">"/bin/shadowsocks.config.sh"</span>]</span>
+
+<span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">6550</span>
+<span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">6551</span></code></pre>
+</li>
+<li><p>构建镜像</p>
+<pre><code class="hljs sh">docker build -t shadowsocks:v1.0.0 ./</code></pre>
+</li>
+<li><p>运行容器</p>
+<pre><code class="hljs sh"><span class="hljs-comment"># 设置参数并运行</span>
+<span class="hljs-comment"># 环境变量根据情况而自行设定</span>
+docker run --rm --name sss1 -p 6551:6551 -p 6550:6550 -e <span class="hljs-string">"SERVER_HOST=172.17.0.2"</span> -e <span class="hljs-string">"SERVER_PASSWORD=uljshdcULJSHDCty"</span> shadowsocks:v1.0.0</code></pre>
+</li>
+<li><p>ip地址获取<br>首先获取自己的网络ip段</p>
+<pre><code class="hljs sh">docker network ls
+
+<span class="hljs-comment"># 如</span>
+NETWORK ID          NAME                DRIVER              SCOPE
+154ed73a253c        bridge              bridge              <span class="hljs-built_in">local</span>
+997c88951572        host                host                <span class="hljs-built_in">local</span>
+86affb36c194        none                null                <span class="hljs-built_in">local</span></code></pre>
+</li>
+<li><p>一般情况下都是bridge</p>
+<pre><code class="hljs sh">docker network inspect bridge</code></pre>
+</li>
+</ul>
+<p><img src="/images/shadowsocks/3.png" alt="ssserver-borwser"></p>
+<ul>
+<li><p>然后再根据对用的ip段推断下一个容器的ip，一般是最后一个ip值加1</p>
+</li>
+<li><p>镜像发布<br>最后此镜像也被公开了，可以直接访问查看，以及使用，欢迎star试用：<br><a href="https://hub.docker.com/r/zxyty/shadowsocks" target="_blank" rel="noopener">zxyty/shadowsocks</a></p>
+</li>
+</ul>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/Mongoose踩坑路.html">Mongoose踩坑路</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/DDA.html">DDA算法</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

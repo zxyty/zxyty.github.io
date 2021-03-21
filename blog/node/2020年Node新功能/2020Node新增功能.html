@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>Node 2020年新增功能 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link current">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>Node 2020年新增功能</h1>
+    
+  
+    
+      
+        <span>十二月 08, 2019</span>
+      
+    
+  
+    <blockquote>
+<p>在2019年，Node.js成立10周年了，可用的软件包数量npm超过了100万。Node.js本身的下载量继续增长，同比增长40％。另一个重要的里程碑是Node.js最近加入了OpenJS基金会，该基金会承诺改善项目的健康状况和可持续性，并改善与整个JavaScript社区的协作。如您所见，在相对较短的时间内发生了很多事情！每年Node.js社区蓬勃发展，到2020年没有放缓的迹象。Node.js的下一个主要版本正在探索许多有趣的功能。在这篇文章中，我将探讨Node.js社区在2020年可以期待的一些最重要的更新。</p>
+</blockquote>
+<h2 id="Node-js版本13中的新增功能？"><a href="#Node-js版本13中的新增功能？" class="headerlink" title="Node.js版本13中的新增功能？"></a>Node.js版本13中的新增功能？</h2><p>截至撰写本文时，Node.js的最新版本是13。已经有许多功能和更新，我们可以在2020年之前开始试用。以下是一些要点:</p>
+<blockquote>
+<ul>
+<li>ECMAScript模块</li>
+<li>WebAssembly支持</li>
+<li>诊断报告</li>
+<li>对日期，时间，数字和货币格式的全面国际化支持</li>
+<li>QUIC协议支持</li>
+<li>V8 JavaScript引擎性能更新</li>
+</ul>
+</blockquote>
+<p>在深入探讨这些更新的细节之前，让我们看一下我们对Node.js发布时间表的期望。</p>
+<h2 id="2020年的Node-js发布过程"><a href="#2020年的Node-js发布过程" class="headerlink" title="2020年的Node.js发布过程"></a>2020年的Node.js发布过程</h2><p>每六个月发布一次Node.js的新主要版本，一个十月发布，一个四月发布。该主要版本称为当前版本。撰写本文时，Node.js 的当前版本为13，于2019年10月发布。<br>编号为奇数的版本（例如v9，v11和v13）于每年的十月发布，寿命很短，因此不适合生产。您可能会认为奇数版本是Beta版本。它们设计用于测试导致Node.js的下一个偶数版本的新功能和更改。<br>偶数版本（例如v8，v10和v12）于每年四月发布。发布后，以前的奇数版本将停止接收更新。尽管比奇数版本更稳定，但它将在接下来的六个月中继续积极开发。您可以将前六个月视为发布候选阶段。<br>一旦偶数版本有六个月的持续使用时间，它将进入一个新的生命阶段，称为长期支持（LTS）。LTS阶段被认为可以投入生产。在接下来的12个月中，LTS版本将收到错误修复，安全更新和其他改进，目的是不破坏任何现有应用程序。<br>LTS之后，有最后的维护阶段。在维护期间，Node.js版本将仅收到严重的错误和安全修复程序。维护阶段持续18个月。维护18个月后，它被视为报废（EOL），并且不再受支持。<br><img src="/images/node/2020年Node新功能/2.jpg" alt="life"></p>
+<h2 id="预计2020年发布时间表"><a href="#预计2020年发布时间表" class="headerlink" title="预计2020年发布时间表"></a>预计2020年发布时间表</h2><p>我们应该期望在2020年看到以下发布时间表。</p>
+<h3 id="2020年1月至3月"><a href="#2020年1月至3月" class="headerlink" title="2020年1月至3月"></a>2020年1月至3月</h3><blockquote>
+<ul>
+<li>13.x是当前版本，并且正在积极开发中</li>
+<li>10.x和12.x是LTS</li>
+</ul>
+</blockquote>
+<h3 id="2020年4月"><a href="#2020年4月" class="headerlink" title="2020年4月"></a>2020年4月</h3><blockquote>
+<ul>
+<li>14.x发布并成为当前版本</li>
+<li>14.x版本发布后，13.x工作立即停止</li>
+<li>10.x进入维护</li>
+</ul>
+</blockquote>
+<h3 id="2020年10月"><a href="#2020年10月" class="headerlink" title="2020年10月"></a>2020年10月</h3><blockquote>
+<ul>
+<li>15.x发布并成为当前版本</li>
+<li>14.x进入LTS</li>
+<li>12.x进入维护</li>
+</ul>
+</blockquote>
+<p><img src="/images/node/2020年Node新功能/3.jpg" alt="Node.js 2020新功能发布时间表"></p>
+<blockquote>
+<p>注意：节点8.x生命周期终止（EOL）由于其对OpenSSL-1.0.2的依赖关系而计划于2019年底进行，而ESSL也计划于2019年底进行生命周期终止。 ，计划将8.x应用程序迁移到10.x或12.x。</p>
+</blockquote>
+<h2 id="支持ECMAScript模块"><a href="#支持ECMAScript模块" class="headerlink" title="支持ECMAScript模块"></a>支持ECMAScript模块</h2><p>从v13.2.0开始，Node.js既支持传统的CommonJS模块又支持新的标准ECMAScript（ES）模块。这意味着您最终可以为浏览器中运行的客户端JavaScript 使用import和export可能已经使用的语法。另外，请务必注意，Node.js中的ES模块默认情况下启用了JavaScript 严格模式，因此您不必”use strict”;在每个文件的顶部进行指定。</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// message file</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendMessage</span> </span>&#123; ... &#125;
+<span class="hljs-keyword">export</span> &#123; sendMessage &#125;;
+
+<span class="hljs-comment">// index file</span>
+<span class="hljs-keyword">import</span> &#123; sendMessage &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"./message"</span>;</code></pre>
+<p>但是，您仍然需要做一些工作以使Node.js知道您正在使用ES模块。两种最常用的方法是使用.mjs文件扩展名或”type”: “module”在最近的父package.json文件中指定。</p>
+<p>选项1：将.js文件重命名为.mjs文件。<br>选项2：更新根package.json文件，或将a添加package.json到包含ES模块的文件夹中，并指定typeas module。<br><pre><code class="hljs javascript">&#123;
+   <span class="hljs-string">"type"</span>: <span class="hljs-string">"module"</span>
+&#125;</code></pre></p>
+<p>另一种可能性是在根package.json文件中启用ES模块，然后重命名所有CommonJS模块文件以使用.cjs扩展名。</p>
+<p>就个人而言，我发现.mjs和.cjs扩展有点麻烦，因此很高兴看到有一些方法可以指定package.json文件使用ES和CommonJS模块。</p>
+<h2 id="Node-js可以导入W​​ebAssembly模块"><a href="#Node-js可以导入W​​ebAssembly模块" class="headerlink" title="Node.js可以导入W​​ebAssembly模块"></a>Node.js可以导入W​​ebAssembly模块</h2><p>除了ES模块支持之外，还可以导入W​​ebAssembly（Wasm）模块！WebAssembly模块是一种可移植的已编译二进制格式，可以比JavaScript更快地解析并以本机速度执行。可以使用诸如C / C ++，Go，C＃，Java，Python，Elixir，Rust等语言创建WebAssembly模块。</p>
+<p>在撰写本文时，WebAssembly模块支持仍处于试验阶段。要启用此功能，必须在执行Node.js应用程序时传递命令行标志。例如：<br><pre><code class="hljs javascript">node --experimental-wasm-modules index.js</code></pre></p>
+<p>例如，假设您有一个实现为WebAssembly模块的图像处理库。使用此Wasm模块的语法可能如下所示。<br><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> imageUtils <span class="hljs-keyword">from</span> <span class="hljs-string">"./imageUtils.wasm"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">"fs"</span>;
+<span class="hljs-function">(<span class="hljs-params"> <span class="hljs-keyword">async</span> (</span>) =&gt;</span> &#123;
+   <span class="hljs-keyword">const</span> image = <span class="hljs-keyword">await</span> fs.promises.readFile( <span class="hljs-string">"./image.png"</span> );
+   <span class="hljs-keyword">const</span> updatedImage = <span class="hljs-keyword">await</span> imageUtils.rotate90degrees( image );
+&#125; )();</code></pre></p>
+<p>也可以使用<code>import()</code>Node.js中的新动态语句导入WebAssembly模块。</p>
+<pre><code class="hljs javascript"><span class="hljs-meta">"use strict"</span>;
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-function">(<span class="hljs-params"> <span class="hljs-keyword">async</span> (</span>) =&gt;</span> &#123;
+   <span class="hljs-keyword">const</span> imageUtils = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>( <span class="hljs-string">"./imageUtils.wasm"</span> );
+   <span class="hljs-keyword">const</span> image = <span class="hljs-keyword">await</span> fs.promises.readFile( <span class="hljs-string">"./image.png"</span> );
+   <span class="hljs-keyword">const</span> updatedImage = <span class="hljs-keyword">await</span> imageUtils.rotate90degrees( image );
+&#125; )();</code></pre>
+<h2 id="WebAssembly系统界面（WASI）"><a href="#WebAssembly系统界面（WASI）" class="headerlink" title="WebAssembly系统界面（WASI）"></a>WebAssembly系统界面（WASI）</h2><p>与JavaScript相似，WebAssembly在设计时考虑到安全性，以防止访问任何底层操作系统（有时称为“沙盒”）。但是，有时，Node.js中控件中的WebAssembly模块可能会受益于能够进行系统级调用。</p>
+<p>这是新的WebAssembly系统接口（WASI）出现的地方。WASI被设计为用于对基础系统（例如主机应用程序，本机操作系统等）进行调用的标准接口。</p>
+<p>最初对WASI的支持已提交给Node.js项目。WASI是我们可能会在2020年看到的另一个令人兴奋的功能！</p>
+<h2 id="诊断报告将于2020年发布"><a href="#诊断报告将于2020年发布" class="headerlink" title="诊断报告将于2020年发布"></a>诊断报告将于2020年发布</h2><p>诊断报告是人类可读的JSON格式的过程信息摘要，包括调用堆栈，操作系统信息，已加载的模块以及旨在帮助支持应用程序的其他有用数据。这些报告可以在未处理的异常，致命错误，过程信号或使用新的process.reportAPI时触发。可以将Node.js配置为将诊断报告保存到指定的文件夹和文件名。</p>
+<p>在撰写本文时，诊断报告仍处于实验阶段。要启用此功能，必须在执行Node.js应用程序时传递命令行标志。例如：<br><pre><code class="hljs shell">node --experimental-report --report-uncaught-exception --report-filename=./diagnostics.json index.js</code></pre></p>
+<h2 id="国际化支持在2020年扩大"><a href="#国际化支持在2020年扩大" class="headerlink" title="国际化支持在2020年扩大"></a>国际化支持在2020年扩大</h2><p>从v13.x开始，Node.js带有完整的ICU（Unicode国际组件）进行编译。ICU是成熟且流行的全球化库。在许多功能中，ICU支持以下格式的设置：格式化数字，日期，时间和货币，执行时间计算和字符串比较以及在Unicode和其他字符集之间转换文本。</p>
+<h2 id="2020年的其他Node-js更新"><a href="#2020年的其他Node-js更新" class="headerlink" title="2020年的其他Node.js更新"></a>2020年的其他Node.js更新</h2><ul>
+<li>QUIC协议支持：具有增强的性能和可靠性的现代连接应用程序传输。</li>
+<li>更好的Python 3构建支持：到2020年，应该可以使用Python 3构建Node.js和本机模块。</li>
+<li>更新的V8 JavaScript引擎： V8 v7.8和7.9提高了性能和Wasm支持。</li>
+<li>稳定的工作线程API： Node.js中的工作线程支持并行的，占用大量CPU的JavaScript操作。</li>
+</ul>
+<p class="otherpageurl">翻译自: <a href="https://developer.okta.com/blog/2019/12/04/whats-new-nodejs-2020" target="_blank" rel="noopener">What’s New for Node.js in 2020</a></p>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/Vscode远程开发，本地翻墙神器.html">Vscode远程开发，本地翻墙神器</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

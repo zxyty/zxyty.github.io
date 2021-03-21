@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>docker-pm2发布node服务 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link current">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>docker-pm2发布node服务</h1>
+    
+  
+    
+      
+        <span>九月 04, 2018</span>
+      
+    
+  
+    <p>1、第一步新建Dockerfile<br><pre><code class="hljs javascript">From node
+RUN mkdir -p /home/IM_LTS
+WORKDIR /home/IM_LTS
+COPY . /home/IM_LTS
+RUN npm install
+EXPOSE <span class="hljs-number">30001</span>
+CMD npm run start   <span class="hljs-comment">// 这里只能用CMD 不能用RUN</span></code></pre></p>
+<p>2、修改pm2为前台执行, 加上<code>--no-daemon</code>选项<br><pre><code class="hljs javascript">&#123;
+    <span class="hljs-string">"scripts"</span>: &#123;
+    <span class="hljs-string">"dev"</span>: <span class="hljs-string">"cross-env NODE_ENV=development supervisor --harmony index.js"</span>,
+    <span class="hljs-string">"local"</span>: <span class="hljs-string">"cross-env NODE_ENV=local supervisor --harmony index.js"</span>,
+    <span class="hljs-string">"start"</span>: <span class="hljs-string">"cross-env NODE_ENV=production pm2 start index.js --no-daemon --node-args='--harmony' --name 'node-lts'"</span>,
+    <span class="hljs-string">"stop"</span>: <span class="hljs-string">"cross-env NODE_ENV=production pm2 stop index.js --name 'node-lts'"</span>,
+    <span class="hljs-string">"restart"</span>: <span class="hljs-string">"cross-env NODE_ENV=production pm2 restart index.js --no-daemon --node-args='--harmony' --name 'node-lts'"</span>
+  &#125;
+&#125;</code></pre></p>
+<blockquote>
+<p>至此完毕</p>
+</blockquote>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/Docker安装taiga项目.html">Docker安装部署taiga项目</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

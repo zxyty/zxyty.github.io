@@ -1,0 +1,532 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>纯前端实现图片的模板匹配 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link current">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>纯前端实现图片的模板匹配</h1>
+    
+  
+    
+      
+        <span>四月 25, 2020</span>
+      
+    
+  
+    <h3 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h3><p>模板匹配是指在当前图像A里寻找与图像B最相似的部分，本文中将图像A称为模板图像，将图像B称为搜索匹配图像。</p>
+<p>引言：一般在<code>Opencv</code>里实现此种功能非常方便：直接调用<br><pre><code class="hljs py">result = cv2.matchTemplate(templ, search, method)</code></pre></p>
+<ul>
+<li>templ 为原始图像</li>
+<li>search 为搜索匹配图像，它的尺寸必须小于或等于原始图像</li>
+<li>method 表示匹配方式</li>
+</ul>
+<p>method一般取值：</p>
+<ul>
+<li>差值平方和匹配 <code>CV_TM_SQDIFF</code>, 以方差为依据进行匹配。如果完全匹配，结果为0，不匹配则值为很大</li>
+<li>标准化差值平方和匹配 <code>CV_TM_SQDIFF_NORMED</code>, 这个方法其实和差值平方和算法是类似的。只不过对图像和模板进行了标准化操作，这种标准化操作可以保证当模板和图像各个像素的亮度都乘上了同一个系数时，相关度不发生变化</li>
+<li>相关匹配, <code>CV_TM_CCORR</code>, 这类方法采用模板和图像的互相关计算作为相似度的度量方法，所以较大的数表示匹配程度较高，0标识最坏的匹配效果</li>
+<li>标准化相关匹配 <code>CV_TM_CCORR_NORMED</code>, 这个方法和 标准化差值平方和匹配 类似，都是去除了亮度线性变化对相似度计算的影响。可以保证图像和模板同时变亮或变暗k倍时结果不变</li>
+<li>相关系数匹配 <code>CV_TM_CCOEFF</code>, 这种方法也叫做相关匹配，但是和上面的 CV_TM_CCORR 匹配方法还是有不通过的。简单的说，这里是把图像和模板都减去了各自的平均值，使得这两幅图像都没有直流分量</li>
+<li>标准相关系数匹配 <code>CV_TM_CCOEFF_NORMED</code>, 这是 OpenCV 支持的最复杂的一种相似度算法。这里的相关运算就是数理统计学科的相关系数计算方法。具体的说，就是在减去了各自的平均值之外，还要各自除以各自的方差。经过减去平均值和除以方差这么两步操作之后，无论是我们的待检图像还是模板都被标准化了，这样可以保证图像和模板分别改变光照亮不影响计算结果。计算出的相关系数被限制在了 -1 到 1 之间，1 表示完全相同，-1 表示两幅图像的亮度正好相反，0 表示两幅图像之间没有线性关系</li>
+</ul>
+<blockquote>
+<p>参考 <a href="https://blog.csdn.net/liyuanbhu/article/details/49837661" target="_blank" rel="noopener">OpenCV 学习笔记（模板匹配）</a></p>
+</blockquote>
+<p>当然这里我们不是主要将Opencv的api的，只是单独提出来，说明在前端实现对应的算法，就能进行模板匹配。</p>
+<p>比如以<code>CV_TM_SQDIFF</code>算法为例：</p>
+<ul>
+<li>遍历的起始坐标从原图A的左数第1各像素值开始</li>
+<li>以搜索匹配B图的大小（w <em> h）匹配比较原图上对应空间上(w </em> h)的像素值</li>
+<li>依次进行A图右移一像素去匹配B图，直到A图右侧(w)小于B图的w，然后换行再匹配</li>
+<li>重复进行到A图距离底部不支持h大于B图的高度</li>
+<li>最后找出最小误差值</li>
+</ul>
+<p>我们的目标是实现这两张图的匹配：<br><img src="https://ae01.alicdn.com/kf/Hd859bf1f421b47209bcced2eff9931e41.jpg" alt="原图A"><br><img src="https://ae01.alicdn.com/kf/H3d6047ac2f1f499f9ea7f252d0bf6660c.jpg" alt="搜索图B"></p>
+<p>这里实现对应的js算法<br><pre><code class="hljs js"><span class="hljs-comment">/**
+ * 差值平方和匹配 CV_TM_SQDIFF
+ * <span class="hljs-doctag">@param </span>template 匹配的图片灰度值[x,x,x,...] w * h 长度的灰度图片数据
+ * <span class="hljs-doctag">@param </span>search 搜索的图片灰度值[x,x,x,...] w * h 长度的灰度图片数据
+ * <span class="hljs-doctag">@param </span>tWidth 匹配图片的width
+ * <span class="hljs-doctag">@param </span>tHeight 匹配图片的height
+ * <span class="hljs-doctag">@param </span>sWidth 搜索图片的width
+ * <span class="hljs-doctag">@param </span>sHeight 搜索图片的height
+ * <span class="hljs-doctag">@param </span>type 匹配方式
+ */</span>
+<span class="hljs-keyword">const</span> cvTmSqDiff = <span class="hljs-function">(<span class="hljs-params">template, search, tWidth, tHeight, sWidth, sHeight</span>) =&gt;</span> &#123;
+  <span class="hljs-keyword">let</span> minValue = <span class="hljs-literal">Infinity</span>;
+  <span class="hljs-keyword">let</span> x = <span class="hljs-number">-1</span>;
+  <span class="hljs-keyword">let</span> y = <span class="hljs-number">-1</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> th = <span class="hljs-number">0</span>; th &lt; tHeight; th += <span class="hljs-number">1</span>) &#123;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> tW = <span class="hljs-number">0</span>; tW &lt; tWidth; tW += <span class="hljs-number">1</span>) &#123;
+      <span class="hljs-keyword">if</span> (tW + sWidth &gt; tWidth || th + sHeight &gt; tHeight) &#123;
+        <span class="hljs-keyword">continue</span>;
+      &#125;
+      <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> sH = <span class="hljs-number">0</span>; sH &lt; sHeight; sH += <span class="hljs-number">1</span>) &#123;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> sW = <span class="hljs-number">0</span>; sW &lt; sWidth; sW += <span class="hljs-number">1</span>) &#123;
+          <span class="hljs-keyword">const</span> tValue = template[(th + sH) * tWidth + tW + sW];
+          <span class="hljs-keyword">const</span> sValue = search[sH * sWidth + sW];
+          sum += (tValue - sValue) * (tValue - sValue);
+        &#125;
+      &#125;
+      <span class="hljs-keyword">if</span> (minValue &gt; sum) &#123;
+        minValue = sum;
+        x = tW;
+        y = th;
+      &#125;
+      <span class="hljs-keyword">if</span> (sum === <span class="hljs-number">0</span>) &#123;
+        <span class="hljs-keyword">return</span> &#123; x, y &#125;;
+      &#125;
+    &#125;
+  &#125;
+  <span class="hljs-keyword">return</span> &#123; x, y &#125;;
+&#125;;</code></pre></p>
+<p>因此根据上述算法的可行性，我们可以先将A图和B图进行<code>RGB</code>值转<code>Gary</code>值：<br>借鉴OpenCV中的转换方式<br><pre><code class="hljs js">Gray = <span class="hljs-number">0.299</span>*r + <span class="hljs-number">0.587</span>*g + <span class="hljs-number">0.114</span>*b</code></pre></p>
+<p>再将转换好A图和B图的灰度值进行匹配比较：<br><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123;x, y&#125; = cvTmSqDiff(template, search, tWidth, tHeight, sWidth, sHeight);</code></pre></p>
+<p>得到的<code>x</code>、<code>y</code>则是在原图A上的对应匹配成功的坐标，加上对应B图的大小，我们则可以在原图的基础上画出一个矩形框表示匹配的区域：<br><img src="https://ae01.alicdn.com/kf/H0daddea0e1aa43e3b7ce4a06c32894c42.jpg" alt="result"></p>
+<h3 id="前端分步实现"><a href="#前端分步实现" class="headerlink" title="前端分步实现"></a>前端分步实现</h3><p>上面大概讲了匹配的大致实现思路，下面开始正式的js代码实现：</p>
+<ul>
+<li><p>1、加载原图A和原图B</p>
+<pre><code class="hljs js"><span class="hljs-built_in">Promise</span>.all([imgLoader(<span class="hljs-string">"./lena.png"</span>), imgLoader(<span class="hljs-string">"./search.png"</span>)]).then(
+    <span class="hljs-function">(<span class="hljs-params">values: any</span>) =&gt;</span> &#123;
+        ...
+    &#125;
+);</code></pre>
+</li>
+<li><p>2、得到图片数据的rgb值，并转化为灰度值</p>
+<pre><code class="hljs js"><span class="hljs-built_in">Promise</span>.all([getImageData(values[<span class="hljs-number">0</span>]), getImageData(values[<span class="hljs-number">1</span>])]).then(
+    <span class="hljs-function">(<span class="hljs-params">dataValues: any</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> model = rgbToGary(dataValues[<span class="hljs-number">0</span>]);
+        <span class="hljs-keyword">const</span> search = rgbToGary(dataValues[<span class="hljs-number">1</span>]);
+        ...
+    &#125;
+);</code></pre>
+</li>
+<li><p>3、获取对应的匹配坐标</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> posi = getTemplatePos(
+    model,
+    search,
+    dataValues[<span class="hljs-number">0</span>].width,
+    dataValues[<span class="hljs-number">0</span>].height,
+    dataValues[<span class="hljs-number">1</span>].width,
+    dataValues[<span class="hljs-number">1</span>].height,
+    <span class="hljs-string">"CV_TM_CCOEFF_NORMED"</span>
+);</code></pre>
+</li>
+<li><p>4、绘制原图和匹配到矩形框</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+canvas.width = dataValues[<span class="hljs-number">0</span>].width;
+canvas.height = dataValues[<span class="hljs-number">0</span>].height;
+<span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">"2d"</span>);
+
+ctx.drawImage(values[<span class="hljs-number">0</span>], <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+ctx.strokeStyle = <span class="hljs-string">"red"</span>;
+ctx.strokeRect(
+    posi.x,
+    posi.y,
+    dataValues[<span class="hljs-number">1</span>].width,
+    dataValues[<span class="hljs-number">1</span>].height
+);
+<span class="hljs-built_in">document</span>.body.appendChild(canvas);</code></pre>
+</li>
+</ul>
+<p>上述所用的的函数<code>imgLoader getImageData rgbToGary getTemplatePos</code> 都可以在这里找到<a href="https://github.com/zxyty/xy-imageloader" target="_blank" rel="noopener">xy-imageloader</a><br>也可以npm安装：npm i xy-imageloader </p>
+<p>完整代码<br><pre><code class="hljs ts"><span class="hljs-keyword">import</span> imgLoader, &#123; getImageData, rgbToGary &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"xy-imageloader"</span>;
+<span class="hljs-keyword">import</span> &#123; getTemplatePos &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"xy-imageloader/lib/utils"</span>;
+<span class="hljs-built_in">Promise</span>.all([imgLoader(<span class="hljs-string">"./lena.png"</span>), imgLoader(<span class="hljs-string">"./search.png"</span>)]).then(
+    <span class="hljs-function">(<span class="hljs-params">values: <span class="hljs-built_in">any</span></span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">Promise</span>.all([getImageData(values[<span class="hljs-number">0</span>]), getImageData(values[<span class="hljs-number">1</span>])]).then(
+            <span class="hljs-function">(<span class="hljs-params">dataValues: <span class="hljs-built_in">any</span></span>) =&gt;</span> &#123;
+            <span class="hljs-keyword">const</span> model = rgbToGary(dataValues[<span class="hljs-number">0</span>]);
+            <span class="hljs-keyword">const</span> search = rgbToGary(dataValues[<span class="hljs-number">1</span>]);
+            <span class="hljs-keyword">const</span> posi = getTemplatePos(
+                model,
+                search,
+                dataValues[<span class="hljs-number">0</span>].width,
+                dataValues[<span class="hljs-number">0</span>].height,
+                dataValues[<span class="hljs-number">1</span>].width,
+                dataValues[<span class="hljs-number">1</span>].height,
+                <span class="hljs-string">"CV_TM_CCOEFF_NORMED"</span>
+            );
+            <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+            canvas.width = dataValues[<span class="hljs-number">0</span>].width;
+            canvas.height = dataValues[<span class="hljs-number">0</span>].height;
+            <span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">"2d"</span>);
+
+            ctx.drawImage(values[<span class="hljs-number">0</span>], <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+            ctx.strokeStyle = <span class="hljs-string">"red"</span>;
+            ctx.strokeRect(
+                posi.x,
+                posi.y,
+                dataValues[<span class="hljs-number">1</span>].width,
+                dataValues[<span class="hljs-number">1</span>].height
+            );
+            <span class="hljs-built_in">document</span>.body.appendChild(canvas);
+            &#125;
+        );
+    &#125;
+);</code></pre></p>
+<p>附算法思想：</p>
+<ul>
+<li><p>CV_TM_SQDIFF<br><img src="https://ae01.alicdn.com/kf/H2b860a5f03a94564908eeae2956257e7D.jpg" alt="CV_TM_SQDIFF"></p>
+</li>
+<li><p>CV_TM_SQDIFF_NORMED<br><img src="https://ae01.alicdn.com/kf/H8e953844d2e8442480cfe1e84f03fdf8M.jpg" alt="CV_TM_SQDIFF_NORMED"></p>
+</li>
+<li><p>CV_TM_CCORR<br><img src="https://ae01.alicdn.com/kf/Hecb52afa827a411e871bd85e16921a8fP.jpg" alt="CV_TM_CCORR"></p>
+</li>
+<li><p>CV_TM_CCORR_NORMED<br><img src="https://ae01.alicdn.com/kf/H2e13687eccad4fc99f5f53163f306910n.jpg" alt="CV_TM_CCORR_NORMED"></p>
+</li>
+<li><p>CV_TM_CCOEFF<br><img src="https://ae01.alicdn.com/kf/H3657b8ae5a6b4cbf9c1dde2a3ec93cbf7.jpg" alt="CV_TM_CCOEFF"></p>
+</li>
+<li><p>CV_TM_CCOEFF_NORMED<br><img src="https://ae01.alicdn.com/kf/H4927e65d187a4de09a35a00414617c7eZ.jpg" alt="CV_TM_CCOEFF_NORMED"></p>
+</li>
+</ul>
+<blockquote>
+<p>算法具体实现可参考 <a href="https://github.com/zxyty/xy-imageloader/blob/master/src/utils.ts" target="_blank" rel="noopener">xy-imageloader</a></p>
+</blockquote>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/index.html">文章</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

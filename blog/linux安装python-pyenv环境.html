@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>linux安装python-pyenv环境 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link current">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>linux安装python-pyenv环境</h1>
+    
+  
+    
+      
+        <span>十二月 23, 2018</span>
+      
+    
+  
+    <p>1.安装git,用于获取安装包<br><pre><code class="hljs bash">yum install git -y</code></pre></p>
+<p>2.安装python编译环境的依赖包<br><pre><code class="hljs bash">yum -y install gcc make patch gdbm-devel openssl openssl-devel openssl-static sqlite-devel readline readline-devel readline-static zlib-devel bzip2-devel libffi-devel
+
+<span class="hljs-comment"># The Python ssl extension was not compiled. Missing the OpenSSL lib?</span>
+<span class="hljs-comment"># yum install openssl openssl-devel openssl-static -y</span>
+
+<span class="hljs-comment"># 关于在centos下安装python3.7.0以上版本时报错ModuleNotFoundError: No module named '_ctypes'的解决办法</span>
+<span class="hljs-comment"># 3.7版本需要一个新的包libffi-devel，安装此包之后再次进行编译安装即可。</span></code></pre></p>
+<p>3.安装pyenv<br><pre><code class="hljs bash">curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
+<span class="hljs-comment"># 注意 安装完了后会有以下提示需要手动进行</span>
+<span class="hljs-comment"># WARNING: seems you still have not added 'pyenv' to the load path.</span>
+
+<span class="hljs-comment"># Load pyenv automatically by adding</span>
+<span class="hljs-comment"># the following to ~/.bashrc:</span>
+
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"/home/python/.pyenv/bin:<span class="hljs-variable">$PATH</span>"</span>
+<span class="hljs-built_in">eval</span> <span class="hljs-string">"<span class="hljs-variable">$(pyenv init -)</span>"</span>
+<span class="hljs-built_in">eval</span> <span class="hljs-string">"<span class="hljs-variable">$(pyenv virtualenv-init -)</span>"</span>
+
+<span class="hljs-built_in">source</span> ~/.bashrc</code></pre></p>
+<blockquote>
+<p>如果curl出现 curl: (35) SSL connect error ，是nss版本低的问题，更新它，然后再执行以上命令。<br><pre><code class="hljs bash">&gt; yum update nss    <span class="hljs-comment">#或者yum update</span>
+&gt;</code></pre></p>
+</blockquote>
+<p>4.使用pyenv安装指定的python版本<br><pre><code class="hljs bash">pyenv install --list        <span class="hljs-comment">#查看远程有效版本</span>
+
+pyenv install 2.7.15 -v     <span class="hljs-comment">#安装2.7.15版本</span>
+ 
+pyenv uninstall 2.7.15      <span class="hljs-comment">#卸载python</span></code></pre></p>
+<p>5.pyenv的python版本控制</p>
+<ul>
+<li>global<ul>
+<li>全局设置 $ pyenv global 2.7.15 可以看到所有受pyenv控制的窗口中都是2.7.15的 python版本了</li>
+</ul>
+</li>
+<li>shell<ul>
+<li>会话设置 影响只作用于当前会话 $ pyenv shell 2.7.15</li>
+</ul>
+</li>
+<li>local<ul>
+<li>本地设置 使用pyenv local设置从当前工作目录开始向下递归都继承这个设置。 $ pyenv<br>local 2.7.15</li>
+</ul>
+</li>
+</ul>
+<p>6.Virtualenv 虚拟环境设置</p>
+<blockquote>
+<p>为什么要使用虚拟环境? </p>
+</blockquote>
+<ul>
+<li><p>因为刚才使用的Python环境都是一个公共的空间，如果多个项目使用不同 Python版本开发，或者使用不同的Python版本部署运行，或者使用同样的版本开发的但不同项目使 用了不同版本的库，等等这些问题都会带来冲突。最好的解决办法就是每一个项目独立运行自己的 “独立小环境”中。</p>
+</li>
+<li><p>使用方法</p>
+<blockquote>
+<pre><code class="hljs bash">&gt; pyenv virtualenv 2.7.15 py2715
+&gt;</code></pre>
+</blockquote>
+</li>
+</ul>
+<p>将创建一个名为<code>py2715</code>的虚拟环境（目录），并且将 <code>python 2.7.15</code> 对应的bin和lib复制到该环境中。当该虚拟环境被激活后，所有的 python 操作都只在该环境中进行，从而和其它 python 内容隔离。<br><code>pyenv-virtualenv</code> 支持自动激活和退出虚拟环境。首先确保在 shell 配置文件中添加了<br><code>eval &quot;$(pyenv init -)&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;</code></p>
+<p>接着在需要使用虚拟环境的目录（通常是项目目录）中：建立一个<code>.python-version</code>的文本文件，将虚拟环境名称（如<code>py2715</code>）写在里面即可。之后每次进／出该目录时，虚拟环境都将自动激活／退出。</p>
+<p>7.导出包<br><pre><code class="hljs bash"><span class="hljs-comment"># 导出此虚拟环境下的包</span>
+pip freeze &gt; requirement.txt
+
+<span class="hljs-comment"># 安装包到新的环境下</span>
+pip install -r requirement.txt</code></pre></p>
+<p>8.安装jupyter<br><pre><code class="hljs bash">pip install jupyter
+
+jupyter notebook password   <span class="hljs-comment">#修改登录密码</span>
+
+jupyter notebook --ip=43.225.157.148 &gt; jupyter.log 2&gt;&amp;1 &amp;   <span class="hljs-comment">#后台运行并记录日志</span></code></pre></p>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/Vscode远程开发，本地翻墙神器.html">Vscode远程开发，本地翻墙神器</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

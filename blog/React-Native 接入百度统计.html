@@ -1,0 +1,572 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>React-Native 接入百度统计SDK — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link current">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>React-Native 接入百度统计SDK</h1>
+    
+  
+    
+      
+        <span>七月 16, 2018</span>
+      
+    
+  
+    <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li>申请百度账号；</li>
+<li><a href="https://mtj.baidu.com/web/welcome/login" target="_blank" rel="noopener">登录百度统计</a></li>
+<li>注册App应用，获取appkey  <img src="/images/vscode/1535010945498.jpg" alt="注册app"></li>
+<li>到<a href="https://mtj.baidu.com/web/dashboard" target="_blank" rel="noopener">我的报告</a>里查看应用appkey  <img src="/images/vscode/1535011007790.jpg" alt></li>
+</ol>
+<ul>
+<li>到这里你应该完成了ios和Android的appkey获取</li>
+</ul>
+<h3 id="IOS集成"><a href="#IOS集成" class="headerlink" title="IOS集成"></a>IOS集成</h3><blockquote><p>这里采用的手工集成sdk<br>采用Cocoapods集成可以查看官网 <a href="https://mtj.baidu.com/static/userguide/book/ios/sdk/cocoapods.html" target="_blank" rel="noopener">Cocoapods集成</a></p>
+</blockquote>
+<ol>
+<li><a href="https://mtj.baidu.com/web/sdk" target="_blank" rel="noopener">下载SDK</a> <img src="/images/vscode/1535011092039.jpg" alt></li>
+<li>下载sdk后解压，将<code>BaiduMobStat.h</code>和<code>libBaiduMobStat.a</code>添加到ios的工程中去  <img src="/images/vscode/1535011836773.jpg" alt="添加sdk01">  <img src="/images/vscode/1535011973542.jpg" alt="添加sdk02"></li>
+<li>添加完后  <img src="/images/vscode/1535012067509.jpg" alt="添加完后"></li>
+<li><p>在项目的Build Target添加Linked Frameworks and Libraries,添加列表如下：</p>
+<pre><code class="hljs cmd">Foundation.framework
+UIKit.framework
+CoreGraphics.framework
+CoreTelephony.framework
+SystemConfiguration.framework
+CoreLocation.framework
+Security.framework
+AdSupport.framework (V4.<span class="hljs-number">6</span>.<span class="hljs-number">4</span>版本更新后，新增IDFA采集)
+libstdc++.tbd
+libz.<span class="hljs-number">1</span>.<span class="hljs-number">2</span>.<span class="hljs-number">5</span>.tbd
+// 使用“无埋点”版本的SDK，需要额外引用以下两个系统库
+libicucore.tbd
+WebKit.framework(Optional)</code></pre>
+</li>
+<li><p>至此ios的sdk就集成完毕</p>
+</li>
+</ol>
+<h4 id="导出方法给react-native使用"><a href="#导出方法给react-native使用" class="headerlink" title="导出方法给react-native使用"></a>导出方法给react-native使用</h4><ol>
+<li>新建<code>MobStat</code>文件，如图  <img src="/images/vscode/1535012269196.jpg" alt="MobStat"></li>
+<li>编写代码<pre><code class="hljs objc"><span class="hljs-comment">//</span>
+<span class="hljs-comment">//  MobStatModule.m</span>
+<span class="hljs-comment">//  example</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//  Created by 曾相友 on 2018/8/22.</span>
+<span class="hljs-comment">//  Copyright © 2018年 Facebook. All rights reserved.</span>
+<span class="hljs-comment">//</span>
+
+<span class="hljs-comment">//#import &lt;Foundation/Foundation.h&gt;</span>
+<span class="hljs-meta">#import <span class="hljs-meta-string">&lt;React/RCTEventEmitter.h&gt;</span></span>
+<span class="hljs-meta">#import <span class="hljs-meta-string">&lt;React/RCTLog.h&gt;</span></span>
+<span class="hljs-meta">#import <span class="hljs-meta-string">"BaiduMobStat.h"</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MobStatModule</span> : <span class="hljs-title">NSObject</span> &lt;<span class="hljs-title">RCTBridgeModule</span>&gt;</span>
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MobStatModule</span></span>
+
+RCT_EXPORT_MODULE(MobStat);
+
+RCT_EXPORT_METHOD(setDebugOn:(<span class="hljs-built_in">BOOL</span>) on) &#123;
+  [[BaiduMobStat defaultStat] setEnableDebugOn: on];
+&#125;
+
+RCT_EXPORT_METHOD(setAppKey:(<span class="hljs-built_in">NSString</span> *) key) &#123;
+  [[BaiduMobStat defaultStat] startWithAppId:key];
+&#125;
+
+RCT_EXPORT_METHOD(onPageStart:(<span class="hljs-built_in">NSString</span> *)name) &#123;
+  [[BaiduMobStat defaultStat] pageviewStartWithName:name];
+&#125;
+
+RCT_EXPORT_METHOD(onPageEnd:(<span class="hljs-built_in">NSString</span> *)name) &#123;
+  [[BaiduMobStat defaultStat] pageviewEndWithName:name];
+&#125;
+
+<span class="hljs-keyword">@end</span></code></pre>
+</li>
+</ol>
+<h3 id="Android集成"><a href="#Android集成" class="headerlink" title="Android集成"></a>Android集成</h3><blockquote><p>这里采用的gradle集成sdk</p>
+</blockquote>
+<ol>
+<li><p>配置build.gradle</p>
+<pre><code class="hljs cmd">dependencies &#123;
+    ...
+     compile 'com.baidu.mobstat:mtj-sdk:latest.integration'
+    ...
+ &#125;</code></pre>
+</li>
+<li><p>编译工程</p>
+</li>
+<li><p>配置AndroidManifest.xml</p>
+<pre><code class="hljs cmd">&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /&gt;
+&lt;uses-permission android:name="android.permission.READ_PHONE_STATE" /&gt;
+&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.BLUETOOTH" /&gt;
+&lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.WRITE_SETTINGS" /&gt;
+&lt;uses-permission android:name="android.permission.GET_TASKS" /&gt;</code></pre>
+</li>
+<li><p>至此Android的sdk就集成完毕</p>
+</li>
+</ol>
+<h4 id="导出方法给react-native使用-1"><a href="#导出方法给react-native使用-1" class="headerlink" title="导出方法给react-native使用"></a>导出方法给react-native使用</h4><ol>
+<li>新建文件  <img src="/images/vscode/1535012698864.jpg" alt="MobStat.java"></li>
+<li><p>编写代码<code>MobStatPackage</code>:</p>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.shandudata.zhimekaimen.MobStat;
+
+<span class="hljs-keyword">import</span> com.facebook.react.ReactPackage;
+<span class="hljs-keyword">import</span> com.facebook.react.bridge.NativeModule;
+<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactApplicationContext;
+<span class="hljs-keyword">import</span> com.facebook.react.uimanager.ViewManager;
+
+<span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.Collections;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MobStatPackage</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ReactPackage</span> </span>&#123;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;NativeModule&gt; <span class="hljs-title">createNativeModules</span><span class="hljs-params">(ReactApplicationContext reactContext)</span> </span>&#123;
+        <span class="hljs-keyword">return</span> Arrays.&lt;NativeModule&gt;asList(<span class="hljs-keyword">new</span> MobStatModule(reactContext));
+    &#125;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;ViewManager&gt; <span class="hljs-title">createViewManagers</span><span class="hljs-params">(ReactApplicationContext reactContext)</span> </span>&#123;
+        <span class="hljs-keyword">return</span> Collections.emptyList();
+    &#125;
+&#125;</code></pre>
+</li>
+<li><p>编写代码<code>MobStatModule</code>:</p>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.shandudata.zhimekaimen.MobStat;
+
+<span class="hljs-keyword">import</span> com.baidu.mobstat.StatService;
+<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactApplicationContext;
+<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactContextBaseJavaModule;
+<span class="hljs-keyword">import</span> com.facebook.react.bridge.ReactMethod;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MobStatModule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ReactContextBaseJavaModule</span> </span>&#123;
+    <span class="hljs-keyword">private</span> ReactApplicationContext reactContext;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MobStatModule</span><span class="hljs-params">(ReactApplicationContext reactContext)</span> </span>&#123;
+        <span class="hljs-keyword">super</span>(reactContext);
+        <span class="hljs-keyword">this</span>.reactContext = reactContext;
+    &#125;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"MobStat"</span>;
+    &#125;
+
+    <span class="hljs-meta">@ReactMethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAppKey</span><span class="hljs-params">(String key)</span> </span>&#123;
+        StatService.setAppKey(key);
+    &#125;
+
+    <span class="hljs-meta">@ReactMethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setDebugOn</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> on)</span> </span>&#123;
+        StatService.setDebugOn(on);
+    &#125;
+
+    <span class="hljs-meta">@ReactMethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPageStart</span><span class="hljs-params">(String name)</span> </span>&#123;
+        StatService.onPageStart(<span class="hljs-keyword">this</span>.reactContext, name);
+    &#125;
+
+    <span class="hljs-meta">@ReactMethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPageEnd</span><span class="hljs-params">(String name)</span> </span>&#123;
+        StatService.onPageEnd(<span class="hljs-keyword">this</span>.reactContext, name);
+    &#125;
+&#125;</code></pre>
+</li>
+<li><p>在<code>MainApplication</code>中加入package导出 <img src="/images/vscode/1535012919985.jpg" alt="MainApplication"></p>
+<pre><code class="hljs java">...
+<span class="hljs-keyword">new</span> MobStatPackage(),
+...</code></pre>
+</li>
+</ol>
+<h3 id="react-native使用sdk"><a href="#react-native使用sdk" class="headerlink" title="react-native使用sdk"></a>react-native使用sdk</h3><ol>
+<li><p>新建<code>MobStat.js</code></p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; NativeModules, Platform &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"react-native"</span>;
+<span class="hljs-keyword">const</span> &#123; MobStat &#125; = NativeModules;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+    <span class="hljs-attr">setAppKey</span>: <span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> MobStat &amp;&amp; MobStat.setAppKey(Platform.select(key)),
+    <span class="hljs-attr">setDebugOn</span>: <span class="hljs-function"><span class="hljs-params">on</span> =&gt;</span> MobStat &amp;&amp; MobStat.setDebugOn(on),
+    <span class="hljs-attr">onPageStart</span>: <span class="hljs-function"><span class="hljs-params">name</span> =&gt;</span> MobStat &amp;&amp; MobStat.onPageStart(name),
+    <span class="hljs-attr">onPageEnd</span>: <span class="hljs-function"><span class="hljs-params">name</span> =&gt;</span> MobStat &amp;&amp; MobStat.onPageEnd(name)
+&#125;;</code></pre>
+</li>
+<li><p>使用</p>
+<pre><code class="hljs javascript">
+<span class="hljs-keyword">import</span> MobStat <span class="hljs-keyword">from</span> <span class="hljs-string">"./MobStat"</span>;
+
+<span class="hljs-comment">// 设置百度统计</span>
+MobStat.setAppKey(&#123;
+  <span class="hljs-attr">ios</span>: config.mobStatIosKey,  <span class="hljs-comment">// config.mobStatIosKey 就是在注册App应用时候获取的key</span>
+  <span class="hljs-attr">android</span>: config.mobStatAndroidKey <span class="hljs-comment">// config.mobStatAndroidKey 就是在注册App应用时候获取的key</span>
+&#125;);
+MobStat.setDebugOn(<span class="hljs-literal">true</span>);</code></pre>
+</li>
+<li><p>百度统计埋点设置</p>
+<pre><code class="hljs javascript">componentDidMount() &#123;
+    MobStat.onPageStart(<span class="hljs-string">`title`</span>)
+&#125;
+
+componentWillUnmount() &#123;
+    MobStat.onPageEnd(<span class="hljs-string">`title`</span>)
+&#125;</code></pre>
+</li>
+</ol>
+<ul>
+<li>至此完毕</li>
+</ul>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/Mongoose踩坑路.html">Mongoose踩坑路</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/DDA.html">DDA算法</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>xy-share-component — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "guide"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link current">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link current">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/guide/index.html" class="sidebar-link">组件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/guide/xy-imageloader.html" class="sidebar-link">xy-imageloader</a>
+    </li>
+  
+    
+    <li>
+      <a href="/guide/xy-share-component.html" class="sidebar-link current">xy-share-component</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content guide with-sidebar xy-share-component-guide">
+  
+  
+    
+      <h1>xy-share-component</h1>
+    
+  
+    
+      
+        <span>五月 04, 2020</span>
+      
+    
+  
+    <p>安装：<br><pre><code class="hljs shell">npm i --save xy-share-component</code></pre></p>
+<p>引用方式：<br><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; useShareComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"xy-share-component"</span>;</code></pre></p>
+<blockquote>
+<p>注意. 1.0.2 版本后使用systemjs进行import组件，所以需要在index.html文件里进行依赖添加<br>前置依赖<br><pre><code class="hljs html"> <span class="hljs-comment">&lt;!-- 建议此种script加载可于另外加载一个components-mapping 这样方便修改部署 --&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+   <span class="hljs-comment">// 必须声明此方法</span>
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_xyShareComponentLoader</span>(<span class="hljs-params">target</span>) </span>&#123;
+     <span class="hljs-keyword">return</span> System.import(target);
+   &#125;
+ </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ <span class="hljs-comment">&lt;!-- id不能为其他 --&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"remote-components-map"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"systemjs-importmap"</span>&gt;</span><span class="javascript">
+   &#123;
+     <span class="hljs-string">"imports"</span>: &#123;
+       <span class="hljs-string">"button"</span>: <span class="hljs-string">"http://localhost:6699/button/index.js"</span>,
+       <span class="hljs-string">"checkbox"</span>: <span class="hljs-string">"http://localhost:6699/checkbox/index.js"</span>,
+       <span class="hljs-string">"React"</span>: <span class="hljs-string">"https://unpkg.com/react@16/umd/react.production.min.js"</span>,
+       <span class="hljs-string">"ReactDOM"</span>: <span class="hljs-string">"https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"</span>,
+       <span class="hljs-string">"react"</span>: <span class="hljs-string">"https://unpkg.com/react@16/umd/react.production.min.js"</span>,
+       <span class="hljs-string">"react-dom"</span>: <span class="hljs-string">"https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"</span>
+     &#125;
+   &#125;
+ </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">crossorigin</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/react@16/umd/react.production.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">crossorigin</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.11"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://unpkg.com/systemjs@6.3.1/dist/system.js'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://unpkg.com/systemjs@6.3.1/dist/extras/amd.js'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://unpkg.com/systemjs@6.3.1/dist/extras/named-exports.js'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></p>
+</blockquote>
+<p>使用方式：<br><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; useShareComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-share-component'</span>;
+
+<span class="hljs-comment">// 直接使用systemjs mapping 关系引用对应组件</span>
+<span class="hljs-keyword">const</span> Button = useShareComponent(<span class="hljs-string">'button'</span>); 
+<span class="hljs-comment">// 则对应上面依赖中的 http://localhost:6699/button/index.js组件</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; &#123;
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test2<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test3<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test13223<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+&#125;;</code></pre></p>
+<p>远程组件props类型提示：<br><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; useShareComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-share-component'</span>;
+
+<span class="hljs-comment">// 导入对应的Button 定义文件</span>
+<span class="hljs-comment">// example: </span>
+interface ButtonProps &#123;
+  <span class="hljs-attr">type</span>: <span class="hljs-string">'primary'</span>;
+&#125;
+<span class="hljs-comment">// or import ButtonProps from 'xxxx';</span>
+
+<span class="hljs-keyword">const</span> Button = useShareComponent&lt;ButtonProps&gt;(<span class="hljs-string">'button'</span>); 
+
+<span class="hljs-comment">// 则使用的Button组件在编码coding时 例如vscode等ide会有props提示</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; &#123;
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test2<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test3<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Test13223<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+&#125;;</code></pre></p>
+<p><code>fallback</code>属性设置loading<br><pre><code class="hljs jsx"><span class="hljs-comment">// 远程加载组件可能为会网络延迟等</span>
+<span class="hljs-comment">// 所以可以配置fallback属性在loading时候的展示；</span>
+<span class="hljs-keyword">import</span> &#123; useShareComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-share-component'</span>;
+
+<span class="hljs-keyword">const</span> Button = useShareComponent(<span class="hljs-string">'button'</span>, <span class="hljs-string">'加载中...'</span>); 
+<span class="hljs-comment">// or</span>
+<span class="hljs-keyword">const</span> Button = useShareComponent(<span class="hljs-string">'button'</span>, &lt;div&gt;加载中&lt;<span class="hljs-regexp">/div&gt;);</span></code></pre></p>
+<p>引用远程组件静态属性：<code>useStatic</code><br><pre><code class="hljs js"><span class="hljs-comment">// 一些组件加载后默认导出时只有组件本身的内容</span>
+<span class="hljs-comment">// 而存在一些静态属性的情况则可以使用useStatic进行指定</span>
+<span class="hljs-keyword">import</span> &#123; useShareComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'xy-share-component'</span>;
+
+
+<span class="hljs-comment">// 比如Button上有一个Group的静态属性</span>
+<span class="hljs-keyword">const</span> Group = useShareComponent(<span class="hljs-string">'button'</span>, <span class="hljs-string">'加载中...'</span>, <span class="hljs-string">'Group'</span>);</code></pre></p>
+<p><code>useShareComponent</code>Api如下<br><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useShareComponent</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> <span class="hljs-title">Record</span>&lt;<span class="hljs-title">string</span>, <span class="hljs-title">any</span>&gt;&gt;(<span class="hljs-params">
+  url: string,
+  fallback: React.ReactNode = null,
+  usestatic = <span class="hljs-string">''</span>,
+</span>);</span></code></pre></p>
+
+    
+    
+      <div class="guide-links">
+        
+        
+        
+        
+          <span style="float: right;"><a href="/guide/index.html">组件</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

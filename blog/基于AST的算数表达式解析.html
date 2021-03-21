@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>基于AST的算数表达式解析 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link current">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>基于AST的算数表达式解析</h1>
+    
+  
+    
+      
+        <span>一月 08, 2021</span>
+      
+    
+  
+    <h3 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h3><p>之前在另一篇文章中&lt;&lt;<code>基于后缀算术表达式的代码解析</code>&gt;&gt;已经实现过简单的（<code>1 + 3 - 5 / 54 * 2</code>）等算术的运算，但是代码逻辑实现满足不了更多场景，如</p>
+<ul>
+<li>对数据的赋值：<code>a = b + c</code></li>
+<li>逻辑判断:   <code>a == b</code> or <code>a != b</code></li>
+<li>与或非: <code>a &amp;&amp; c</code> or <code>a || c</code></li>
+</ul>
+<p>所以为了更好的解决一些场景，这里使用AST（抽象语法树）来解决这部分的问题</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>表达式 转 AST</li>
+<li>AST 遍历</li>
+<li>数据作用域</li>
+</ul>
+<h4 id="1、表达式转AST"><a href="#1、表达式转AST" class="headerlink" title="1、表达式转AST"></a>1、表达式转AST</h4><p>首先可以参考<a href="https://astexplorer.net/" target="_blank" rel="noopener">AST在线转换</a>这里，比如<br><pre><code class="hljs js">a + <span class="hljs-number">4</span></code></pre></p>
+<p>js 代码实现：<br><pre><code class="hljs js">npm i acorn
+
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> acorn <span class="hljs-keyword">from</span> <span class="hljs-string">'acorn'</span>;
+
+<span class="hljs-keyword">const</span> code = <span class="hljs-string">'7 / (4 + 3)'</span>;
+<span class="hljs-keyword">const</span> ast = acorn.parse(code);</code></pre></p>
+<p>转换的效果如下：<br><pre><code class="hljs json">&#123;
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Program"</span>,
+  <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"end"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"body"</span>: [
+    &#123;
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"ExpressionStatement"</span>,
+      <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"end"</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">"expression"</span>: &#123;
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"BinaryExpression"</span>,
+        <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"end"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">"left"</span>: &#123;
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Literal"</span>,
+          <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"end"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"raw"</span>: <span class="hljs-string">"1"</span>
+        &#125;,
+        <span class="hljs-attr">"operator"</span>: <span class="hljs-string">"+"</span>,
+        <span class="hljs-attr">"right"</span>: &#123;
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Literal"</span>,
+          <span class="hljs-attr">"start"</span>: <span class="hljs-number">4</span>,
+          <span class="hljs-attr">"end"</span>: <span class="hljs-number">5</span>,
+          <span class="hljs-attr">"value"</span>: <span class="hljs-number">4</span>,
+          <span class="hljs-attr">"raw"</span>: <span class="hljs-string">"4"</span>
+        &#125;
+      &#125;
+    &#125;
+  ],
+  <span class="hljs-attr">"sourceType"</span>: <span class="hljs-string">"module"</span>
+&#125;</code></pre></p>
+<p>假如我们可以通过<code>遍历</code>的手段拿到ast中这里的解析运算值<br><img src="/images/ast/1.png" alt="AST"><br>我们只需要根据type:为（<code>BinaryExpression</code>）(每一个带type字段的对应节点都是一个astNode节点，都有对应的遍历函数)进行左右计算(<code>operator</code>)操作, 如:<br><pre><code class="hljs ts">BinaryExpression(node) &#123;
+    <span class="hljs-keyword">const</span> &#123; operator &#125; = node;
+    <span class="hljs-keyword">const</span> leftValue = node?.left?.value <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>;
+    <span class="hljs-keyword">const</span> rightValue = node?.right?.value <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span>;
+    <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'+'</span>) &#123;
+        node.value = leftValue + rightValue;    <span class="hljs-comment">// 关键：注意这里的操作计算值最后被定义赋值到AST node节点本身上了</span>
+    &#125;
+&#125;</code></pre></p>
+<blockquote>
+<p>Tips:<br>遍历AST时， 注意是从内到外的遍历，也就是从最child级遍历回到parent结束</p>
+</blockquote>
+<p>如：<code>7 / (4 + 3)</code> 对应AST<br><pre><code class="hljs json">&#123;
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Program"</span>,
+  <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"end"</span>: <span class="hljs-number">11</span>,
+  <span class="hljs-attr">"body"</span>: [
+    &#123;
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"ExpressionStatement"</span>,
+      <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"end"</span>: <span class="hljs-number">11</span>,
+      <span class="hljs-attr">"expression"</span>: &#123;
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"BinaryExpression"</span>,
+        <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"end"</span>: <span class="hljs-number">11</span>,
+        <span class="hljs-attr">"left"</span>: &#123;
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Literal"</span>,
+          <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"end"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"value"</span>: <span class="hljs-number">7</span>,   <span class="hljs-comment">// ③式</span>
+          <span class="hljs-attr">"raw"</span>: <span class="hljs-string">"7"</span>
+        &#125;,
+        <span class="hljs-attr">"operator"</span>: <span class="hljs-string">"/"</span>,
+        <span class="hljs-attr">"right"</span>: &#123;
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"BinaryExpression"</span>,
+          <span class="hljs-attr">"start"</span>: <span class="hljs-number">5</span>,
+          <span class="hljs-attr">"end"</span>: <span class="hljs-number">10</span>,
+          <span class="hljs-attr">"left"</span>: &#123;
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Literal"</span>,
+            <span class="hljs-attr">"start"</span>: <span class="hljs-number">5</span>,
+            <span class="hljs-attr">"end"</span>: <span class="hljs-number">6</span>,
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">4</span>, <span class="hljs-comment">// ①式</span>
+            <span class="hljs-attr">"raw"</span>: <span class="hljs-string">"4"</span>  
+          &#125;,
+          <span class="hljs-attr">"operator"</span>: <span class="hljs-string">"+"</span>, 
+          <span class="hljs-attr">"right"</span>: &#123;
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Literal"</span>,
+            <span class="hljs-attr">"start"</span>: <span class="hljs-number">9</span>,
+            <span class="hljs-attr">"end"</span>: <span class="hljs-number">10</span>,
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">3</span>, <span class="hljs-comment">// ②式</span>
+            <span class="hljs-attr">"raw"</span>: <span class="hljs-string">"3"</span>  
+          &#125;
+        &#125;
+      &#125;
+    &#125;
+  ],
+  <span class="hljs-attr">"sourceType"</span>: <span class="hljs-string">"module"</span>
+&#125;</code></pre></p>
+<p>这里就是需要从child节点的 <code>①式 + ②式</code> 计算完后再与 <code>③式</code> 进行操作</p>
+<h4 id="2、AST-遍历"><a href="#2、AST-遍历" class="headerlink" title="2、AST 遍历"></a>2、AST 遍历</h4><p>通常我们会在算术表达式里遇到以下的AST type节点：（当然你有更多的语法node节点需要支持，你可以再添加type遍历函数）<br><pre><code class="hljs js"><span class="hljs-keyword">const</span> walkNode = &#123;
+    Identifier(node) &#123;
+    <span class="hljs-comment">// 如 a, b, c等字符等</span>
+    &#125;,
+    Literal(node) &#123;
+        <span class="hljs-comment">// 如 1,2,3,4数字等</span>
+    &#125;,
+    CallExpression(node) &#123;
+        <span class="hljs-comment">// 如 func(a, v)</span>
+    &#125;,
+    AssignmentExpression(node) &#123;
+        <span class="hljs-comment">// 如 a = b + 1</span>
+    &#125;,
+    BinaryExpression(node) &#123;
+        <span class="hljs-comment">// 如 a + b</span>
+        <span class="hljs-comment">// 如 a - b</span>
+        <span class="hljs-comment">// 如 a * b</span>
+        <span class="hljs-comment">// 如 a / b</span>
+        <span class="hljs-comment">// 如 a &gt; b</span>
+        <span class="hljs-comment">// 如 a &lt; b</span>
+        <span class="hljs-comment">// 如 a &gt;= b</span>
+        <span class="hljs-comment">// 如 a &lt;= b</span>
+        <span class="hljs-comment">// 如 a == b</span>
+        <span class="hljs-comment">// 如 a === b</span>
+        <span class="hljs-comment">// 如 a != b</span>
+        <span class="hljs-comment">// 如 a !== b</span>
+    &#125;,
+    UnaryExpression(node) &#123;
+        <span class="hljs-comment">// 如 !a</span>
+    &#125;,
+    LogicalExpression(node) &#123;
+        <span class="hljs-comment">// 如 a || b</span>
+    &#125;,
+    ExpressionStatement(node) &#123;
+        <span class="hljs-comment">// 可看作AST遍历结束节点</span>
+    &#125;,
+&#125;</code></pre></p>
+<p>那这个时候只需要根据node的value及operator等进行相应的运算即可, 这里需要安装一个模块包:<br><pre><code class="hljs js">npm i acorn-walk
+
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> walk <span class="hljs-keyword">from</span> <span class="hljs-string">'acorn-walk'</span>
+
+walk.simple(ast, walkNode);</code></pre></p>
+<p>这样通过<code>acorn-walk</code>这个库可以轻松遍历ast的node节点，这个使用即可根据当前节点进行对应的操作.</p>
+<h4 id="3、数据作用域"><a href="#3、数据作用域" class="headerlink" title="3、数据作用域"></a>3、数据作用域</h4><p>一般我们解析对应的表达式都有变量的概念：比如<code>a + b</code>, 不是仅仅的等于<code>ab</code>， 而是根据当前a,b的可能是变量的概念，去进行相加（如 a = 3, b = 4）最后结果是7.</p>
+<p>这也是对应以<code>a,b,c...</code>这种字符为标识类型的节点进行计算时，需要注意的，而且我们来看下它的type类型：<br><pre><code class="hljs json"><span class="hljs-comment">// 如：a</span>
+&#123;
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Identifier"</span>,
+    <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"end"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"a"</span>
+&#125;</code></pre></p>
+<p>它的type为<code>Identifier</code>, 是一种标记的概念，本身可能就是一个变量。则遍历的时候需要去查找下当前作用域下对应的值<br><pre><code class="hljs js"><span class="hljs-keyword">const</span> walkNode = &#123;
+    ....
+    Literal(node) &#123;
+        node.value = dataScope[node?.name] || node?.name;   
+        <span class="hljs-comment">// dataScope 为自定义作用域</span>
+        <span class="hljs-comment">// Literal 需要节点赋值value属性保持在上一父节点拿到真实的值</span>
+    &#125;,
+    ...
+&#125;</code></pre></p>
+<p>因此有了作用域我们可以补全下我们的遍历函数：<br><pre><code class="hljs js"><span class="hljs-keyword">let</span> result;
+<span class="hljs-keyword">const</span> walkNode = &#123;
+    Identifier(node) &#123;
+        node.value = dataScope[node?.name] || node?.name;
+    &#125;,
+    Literal(node) &#123;
+        node.value = dataScope[node?.value] || node?.value;
+    &#125;,
+    CallExpression(node) &#123;
+        <span class="hljs-keyword">const</span> &#123; callee = &#123;&#125;, <span class="hljs-attr">arguments</span>: args = [] &#125; = node;
+        <span class="hljs-keyword">const</span> &#123; name &#125; = callee!;
+        <span class="hljs-keyword">const</span> argsParams = args.map(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> d.value) || [];
+        node.value = InnerFuncs[name!]?.(...argsParams);    
+        <span class="hljs-comment">// InnerFuncs 自己内置定义的函数调用</span>
+        <span class="hljs-comment">// import &#123; InnerFuncs &#125; from './Functions';</span>
+        <span class="hljs-comment">/**
+            InnerFuncs = &#123;
+                func1: () &#123;
+                    return data;
+                &#125;,
+                func2: () &#123;
+                    return data;
+                &#125;
+            &#125;;
+        */</span>
+    &#125;,
+    AssignmentExpression(node) &#123;
+        <span class="hljs-keyword">const</span> &#123; operator &#125; = node;
+        <span class="hljs-comment">// const leftValue = node?.left?.value as any;</span>
+        <span class="hljs-keyword">const</span> rightValue = node?.right?.value <span class="hljs-keyword">as</span> any;
+        <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'='</span>) &#123;
+            _lodashSet(dataScope, node.left.name, rightValue);  <span class="hljs-comment">// 需要引入import _lodashSet from 'lodash/set';</span>
+        &#125;
+    &#125;,
+    BinaryExpression(node) &#123;
+        <span class="hljs-keyword">const</span> &#123; operator &#125; = node;
+        <span class="hljs-keyword">const</span> leftValue = node?.left?.value <span class="hljs-keyword">as</span> any;
+        <span class="hljs-keyword">const</span> rightValue = node?.right?.value <span class="hljs-keyword">as</span> any;
+        <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'+'</span>) &#123;
+            node.value = leftValue + rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'-'</span>) &#123;
+            node.value = leftValue - rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'*'</span>) &#123;
+            node.value = leftValue * rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'/'</span>) &#123;
+            node.value = leftValue / rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'&gt;'</span>) &#123;
+            node.value = leftValue &gt; rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'&lt;'</span>) &#123;
+            node.value = leftValue &lt; rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'&gt;='</span>) &#123;
+            node.value = leftValue &gt;= rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'&lt;='</span>) &#123;
+            node.value = leftValue &gt;= rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'=='</span>) &#123;
+            node.value = leftValue == rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'==='</span>) &#123;
+            node.value = leftValue === rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'!='</span>) &#123;
+            node.value = leftValue != rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'!=='</span>) &#123;
+            node.value = leftValue !== rightValue;
+        &#125;
+    &#125;,
+    UnaryExpression(node) &#123;
+        <span class="hljs-keyword">const</span> &#123; operator &#125; = node;
+        <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'!'</span>) &#123;
+            node.value = !node?.argument?.value;
+        &#125;
+    &#125;,
+    LogicalExpression(node) &#123;
+        <span class="hljs-keyword">const</span> &#123; operator &#125; = node;
+        <span class="hljs-keyword">const</span> leftValue = node?.left?.value <span class="hljs-keyword">as</span> any;
+        <span class="hljs-keyword">const</span> rightValue = node?.right?.value <span class="hljs-keyword">as</span> any;
+        <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'||'</span>) &#123;
+            node.value = leftValue || rightValue;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (operator === <span class="hljs-string">'&amp;&amp;'</span>) &#123;
+            node.value = leftValue &amp;&amp; rightValue;
+        &#125;
+    &#125;,
+    ExpressionStatement(node) &#123;
+        result = node?.expression?.value;
+    &#125;
+&#125;</code></pre></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此种方式使用AST解析算术表达式，更加容易扩展语法及函数，带来更加方便的遍历操作。</p>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/index.html">文章</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

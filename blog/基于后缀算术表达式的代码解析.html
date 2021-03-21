@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>基于后缀算术表达式的代码解析 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link current">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>基于后缀算术表达式的代码解析</h1>
+    
+  
+    
+      
+        <span>三月 18, 2021</span>
+      
+    
+  
+    <h3 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h3><p>最近在设计一个数据字段的运算表达式控件，具体不废话，可以参看下面的动画截图：<br><br><img src="/images/suffix/1.gif" alt="capture1"></p>
+<p>截图里有一个表格内容数据(是程序运行时从其他外部网页抓取的数据)，而我需要根据表格的属性字段去做对应的算术运算，如<code>（加减乘除）</code>或者<code>(一些函数命令)</code><br></p>
+<p>然后则根据表达式解析计算出对应的结果，需求就是这样的。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>具体实现借用了 <code>入栈</code>的想法，将字符串分割出对应的<code>运算符</code>、<code>值</code>、<code>函数表达式</code>，我这里使用了mapping关系来处理，将整个字符串里的 运算符和函数表达式 替换出对应的<code>空值加key</code>的形式：<br><pre><code class="hljs js"><span class="hljs-comment">// 我的运算符和函数mapping表</span>
+<span class="hljs-keyword">const</span> operationOptions = [
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"取长度"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"取长度"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">10</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"转大写"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"转大写"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">10</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"转小写"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"转小写"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">10</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"-"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"-"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">1</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"+"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"+"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">1</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"/"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"/"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">2</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"*"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"*"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">2</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"("</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"("</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">9</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">")"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">")"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">9</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"（"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">"("</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">9</span>,
+    &#125;,
+    &#123;
+        <span class="hljs-attr">label</span>: <span class="hljs-string">"）"</span>,
+        <span class="hljs-attr">call</span>: <span class="hljs-string">")"</span>,
+        <span class="hljs-attr">weight</span>: <span class="hljs-number">9</span>,
+    &#125;,
+]
+<span class="hljs-comment">// 中缀表达式</span>
+<span class="hljs-keyword">const</span> converToInfix = <span class="hljs-function">(<span class="hljs-params">str</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">let</span> newStr = str;
+    operationOptions.forEach(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> &#123;
+        newStr = newStr.replace(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">`\\<span class="hljs-subst">$&#123;c.label&#125;</span>`</span>, <span class="hljs-string">"gi"</span>), <span class="hljs-string">" "</span> + c.call + <span class="hljs-string">" "</span>);
+    &#125;);
+
+    <span class="hljs-keyword">return</span> newStr.split(<span class="hljs-regexp">/\s/</span>).filter(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> c);
+&#125;</code></pre></p>
+<p>返回得到的是被分割好的<code>关键字代码数组</code>，还是中缀表达式<br></p>
+<p>得到关键字代码数组后，对于程序计算这个时候还是不太方便，所以我这边还将<code>中缀表达式</code>转换为了<code>后缀表达式</code>, 中缀表达式转后缀表达式的转换思想如下：<br><pre><code class="hljs js"><span class="hljs-comment">// 1、需遍历整个字符串</span>
+<span class="hljs-comment">// 2、开辟一个临时栈区，用数组表示即可，再开辟一个后缀表达式存储区</span>
+<span class="hljs-comment">// 如 const suffixArr = [];</span>
+<span class="hljs-comment">//    const stack = [];</span>
+
+<span class="hljs-comment">// 遍历时, 如果遇到数值类型 则直接压入 suffixArr</span>
+<span class="hljs-comment">//         比如遇到 3，则压入suffixArr，此时为：suffixArr = [3];</span>
+<span class="hljs-comment">//         如果遇到运算符（+-*/）等或者函数表达式，则需关注stack的存储：</span>
+<span class="hljs-comment">//             如果当前的运算符权重比stack中的栈顶（也就是最后一位）运算符权重小，</span>
+<span class="hljs-comment">//                  则需要将栈顶出栈，然后放入到suffixArr后面</span>
+<span class="hljs-comment">//                  接着继续比较当前的栈顶权重是否大于等于当前的运算符权重，如果大于等于，则继续出栈，放入到suffixArr后</span>
+<span class="hljs-comment">//                  直到当前的栈顶不存在或者权重小于当前运算符权重</span>
+<span class="hljs-comment">//                  最后把当前运算符加入到stack中</span>
+<span class="hljs-comment">//             如果当前的运算符权重比stack中栈顶运算符权重大，则直接将此运算符入栈stack</span>
+<span class="hljs-comment">//         </span>
+<span class="hljs-comment">//          如果遇到“(” 运算符</span>
+<span class="hljs-comment">//              则直接入栈stack</span>
+<span class="hljs-comment">//          如果遇到“)” 运算符</span>
+<span class="hljs-comment">//              则需在stack中出栈到最近的一个“(”运算符，出栈的运算符都加到suffixArr后</span>
+<span class="hljs-comment">//              如果出栈到最近的一个“(”运算符后，发现此时栈顶还是一个函数表达式，则还需将此表达式出栈到suffixArr中</span></code></pre></p>
+<p>以 <code>9 + 取长度(3 + 1 * (8 - 2) / 2) - 2 * 3 + 7</code> 为例：<br><br><pre><code class="hljs js">有 suffixArr = [] 和 stack = []</code></pre></p>
+<p>第1步：遇到数值 9, 加入到suffixArr中，此时 suffixArr = [9]; stack = [];<br><br>第2步: 遇到运算符 +, 加入到stack中，此时 suffixArr = [9]; stack = [+];<br><br>第3步: 遇到函数表达式 <code>取长度</code>, 加入到stack中，此时 suffixArr = [9]; stack = [+, 取长度];<br><br>第4步: 遇到优先级符号 (, 加入到栈中，此时 suffixArr = [9]; stack = [+, 取长度, (];<br><br>第5步: 遇到数值 3, 加入到suffixArr中，此时 suffixArr = [9, 3]; stack = [+, 取长度, (];<br><br>第6步: 遇到运算符 +, 因为此时的栈顶为(，不需要比较权重，则入栈，此时 suffixArr = [9, 3]; stack = [+, 取长度, (, +];<br><br>第7步: 遇到数值 1, 加入到suffixArr中，此时 suffixArr = [9, 3, 1]; stack = [+, 取长度, (, +];<br><br>第8步: 遇到运算符 <em>, 因为在mapping中定义的</em>的权重大于+，所以，当前stack的栈顶+比<em>的权重小，所以不用出栈，则直接入栈，此时 suffixArr = [9, 3, 1]; stack = [+, 取长度, (, +, </em>];<br><br>第9步: 遇到优先级符号 (, 加入到栈中，此时 suffixArr = [9, 3, 1]; stack = [+, 取长度, (, +, <em>, (];<br><br>第9步: 遇到数值 8,  加入到suffixArr中，此时 suffixArr = [9, 3, 1, 8]; stack = [+, 取长度, (, +, </em>, (];<br><br>第10步: 遇到运算符 -,  因为此时的栈定为(，不需要比较权重，则入栈，此时 suffixArr = [9, 3, 1, 8]; stack = [+, 取长度, (, +, <em>, (, -];<br><br>第11步: 遇到数值 2,  加入到suffixArr中，此时 suffixArr = [9, 3, 1, 8, 2]; stack = [+, 取长度, (, +, </em>, (, -];<br><br>第12步: 遇到优先级符号 ),  则需要将stack中从栈定依次出栈到最近的一个 “(“ 符号, 并加入到suffixArr后面，”(“ 符号不加入，此时 suffixArr = [9, 3, 1, 8, 2, -]; stack = [+, 取长度, (, +, <em>];<br><br>第13步: 遇到运算符 /,  因为此时栈顶为</em>，和/的权重一样，所以入栈，此时 suffixArr = [9, 3, 1, 8, 2, -]; stack = [+, 取长度, (, +, <em>, /];<br><br>第14步: 遇到数值 2,  加入到suffixArr中，此时 suffixArr = [9, 3, 1, 8, 2, -, 2]; stack = [+, 取长度, (, +, </em>, /];<br><br>第15步: 遇到优先级符号 ),  则需要将stack中从栈定依次出栈到最近的一个 “(“ 符号, 并加入到suffixArr后面，”(“ 符号不加入，此时 suffixArr = [9, 3, 1, 8, 2, -, 2, /, <em>, +]; stack = [+, 取长度]; 因为找到最近一个“(”后，当前的栈顶为<code>取长度</code>是函数表达式, 则需要出栈加入到suffixArr后，则此时，suffixArr = [9, 3, 1, 8, 2, -, 2, /, </em>, +, 取长度]; stack = [+]<br><br>第16步: 遇到运算符 -,  因为此时的栈定为+，权重和-是一样的，则直接入栈，此时 suffixArr = [9, 3, 1, 8, 2, -, 2, /, <em>, +, 取长度]; stack = [+, -];<br><br>第17步: 遇到数值 2,  加入到suffixArr中，此时 suffixArr = [9, 3, 1, 8, 2, -, 2, /, </em>, +, 取长度, 2]; stack = [+, -];<br><br>第18步: 遇到运算符 <em>,  因为此时的栈定为-，权重比栈顶大，则直接入栈，此时 suffixArr = [9, 3, 1, 8, 2, -, 2, /, </em>, +, 取长度, 2]; stack = [+, -, <em>];<br><br>第19步: 遇到数值 3,  加入到suffixArr中，此时 suffixArr = [9, 3, 1, 8, 2, -, 2, /, </em>, +, 取长度, 2, 3]; stack = [+, -, <em>];<br><br>第20步: 遇到运算符 +,  因为此时的栈顶为</em>，权重比栈顶小，则栈顶需出栈后加入到suffixArr中，此时 suffixArr = [9, 3, 1, 8, 2, -, 2, /, <em>, +, 取长度, 2, 3, </em>]; stack = [+, -]; 出栈后，需要再此查看接下来的当前stack中栈顶的权重是否大于等于<code>此时的运算符+</code>权重，如果权重大于等于<code>此时的运算符+</code>, 则依次出栈加入到suffixArr中，直到栈顶小于此时运算符的权重，则此时结果：suffixArr = [9, 3, 1, 8, 2, -, 2, /, <em>, +, 取长度, 2, 3, </em>, -, +]; stack = []; 出栈完后，则需要将<code>此时的运算符+</code>压栈到stack中，则此时 uffixArr = [9, 3, 1, 8, 2, -, 2, /, <em>, +, 取长度, 2, 3, </em>, -, +]; stack = [+];<br><br>第21步: 遇到数值 7,  加入到suffixArr中，此时：suffixArr = [9, 3, 1, 8, 2, -, 2, /, <em>, +, 取长度, 2, 3, </em>, -, +, 7]; stack = [+];<br><br>第22步：依次出栈stack加入到suffixArr中，则此时 suffixArr = [9, 3, 1, 8, 2, -, 2, /, <em>, +, 取长度, 2, 3, </em>, -, +, 7, +]; stack = [];<br></p>
+<p>则最后的后缀表达式为: <code>9 3 1 8 2 - 2 / * + 取长度 2 3 * - + 7 +</code>;</p>
+<p>代码实现如下：<br><pre><code class="hljs js"><span class="hljs-keyword">const</span> converToSuffix = <span class="hljs-function">(<span class="hljs-params">str</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">const</span> infixStrArr = converToInfix(str);
+    <span class="hljs-keyword">const</span> suffixArr = [];
+    <span class="hljs-keyword">const</span> stack = [];
+
+    <span class="hljs-comment">// 判断括号是否匹配</span>
+    <span class="hljs-keyword">let</span> leftBracketLen = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> rightBracketLen = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">let</span> stackTop;
+
+    infixStrArr.map(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> values = operationOptions.map(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> d.call).filter(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> d !== <span class="hljs-string">"("</span> &amp;&amp; d !== <span class="hljs-string">")"</span>);
+        <span class="hljs-keyword">if</span> (values.includes(c)) &#123;
+            <span class="hljs-comment">// 需要判断栈顶的的权重是否比需要入栈的权重大</span>
+            <span class="hljs-comment">// 如果栈顶权重比较大则需弹出</span>
+            <span class="hljs-comment">// 弹出后检查比当前op还大于等于的操作</span>
+            <span class="hljs-comment">// 最后弹出后再将op入栈</span>
+            <span class="hljs-keyword">const</span> op = operationOptions.find(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> d.call === c);
+            <span class="hljs-keyword">if</span> (stack.length) &#123;
+                stackTop = stack[stack.length - <span class="hljs-number">1</span>];
+            &#125;
+            <span class="hljs-comment">// 第一次判断</span>
+            <span class="hljs-keyword">if</span> (stackTop &amp;&amp; stackTop.weight &gt; op.weight &amp;&amp; stackTop.weight &lt; <span class="hljs-number">9</span>) &#123;
+                <span class="hljs-comment">// 出栈后继续判断</span>
+            suffixArr.push(stack.pop());
+                stackTop = stack[stack.length - <span class="hljs-number">1</span>] || <span class="hljs-literal">null</span>;
+
+                <span class="hljs-keyword">while</span> (stackTop &amp;&amp; stackTop.weight &gt;= op.weight &amp;&amp; stackTop.weight &lt; <span class="hljs-number">9</span>) &#123;
+                    suffixArr.push(stack.pop());
+                    stackTop = stack[stack.length - <span class="hljs-number">1</span>] || <span class="hljs-literal">null</span>;
+                &#125;
+            &#125;
+            
+            stack.push(op);
+            <span class="hljs-keyword">return</span>;
+        &#125;
+        <span class="hljs-keyword">if</span> (c === <span class="hljs-string">")"</span>) &#123;
+            rightBracketLen++;
+            <span class="hljs-comment">// 遇到右括号 则出栈对应的操作符到左括号</span>
+            stackTop = stack.pop();
+            <span class="hljs-keyword">while</span> (stackTop &amp;&amp; stackTop.call !== <span class="hljs-string">"("</span>) &#123;
+                suffixArr.push(stackTop);
+                stackTop = stack.pop() || <span class="hljs-literal">null</span>;
+            &#125;
+            <span class="hljs-comment">// 判断是否自定义的func</span>
+            <span class="hljs-keyword">let</span> lastStackTop = stack.length - <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">if</span> (stack[lastStackTop] &amp;&amp; stack[lastStackTop].weight &gt;= <span class="hljs-number">10</span>) &#123;
+                suffixArr.push(stack.pop());
+                lastStackTop = stack.length - <span class="hljs-number">1</span>;
+                stackTop = stack[lastStackTop] || <span class="hljs-literal">null</span>;
+            &#125;
+            <span class="hljs-keyword">return</span>;
+        &#125;
+        <span class="hljs-keyword">if</span> (c === <span class="hljs-string">"("</span>) &#123;
+            leftBracketLen++;
+            stackTop = operationOptions.find(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> d.call === <span class="hljs-string">'('</span>);
+            stack.push(stackTop);
+            <span class="hljs-keyword">return</span>;
+        &#125;
+        <span class="hljs-comment">// console.log(c, stack);</span>
+        suffixArr.push(&#123;<span class="hljs-attr">call</span>: c&#125;);
+    &#125;);
+
+    <span class="hljs-keyword">if</span> (leftBracketLen !== rightBracketLen) &#123;
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"操作运算符括号不匹配"</span>);
+    &#125;
+
+    <span class="hljs-keyword">return</span> [].concat(suffixArr.map(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> c.call), stack.reverse().map(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> c.call));
+&#125;</code></pre></p>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>有了后缀表达式的转换后，我们最后只需要实现后缀表达式的遍历运算即可，见下面代码：<br><pre><code class="hljs js"><span class="hljs-keyword">const</span> calc = <span class="hljs-function"><span class="hljs-params">str</span> =&gt;</span> &#123;
+    <span class="hljs-keyword">const</span> suffixArr = converToSuffix(str);
+    <span class="hljs-keyword">const</span> stack = [];
+    <span class="hljs-comment">// 不需要有()运算符参与了</span>
+    <span class="hljs-keyword">const</span> operators = operationOptions.map(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> c.call).filter(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> c !== <span class="hljs-string">"("</span> &amp;&amp; c !== <span class="hljs-string">")"</span>);
+    suffixArr.forEach(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> &#123;
+        <span class="hljs-keyword">if</span> (operators.includes(c)) &#123;
+            stack.push(
+                withOperation(stack, c)
+            )
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            stack.push(withData(c));
+        &#125;
+    &#125;)
+
+    <span class="hljs-keyword">return</span> stack.pop();
+&#125;;
+
+<span class="hljs-keyword">const</span> withData = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> &#123;
+    <span class="hljs-keyword">const</span> globalData = <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> === <span class="hljs-string">"undefined"</span> ? global : <span class="hljs-built_in">window</span>;
+    <span class="hljs-keyword">const</span> data = globalData[<span class="hljs-built_in">String</span>(c)] || <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">if</span> (data) &#123;
+        <span class="hljs-keyword">return</span> data;
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(<span class="hljs-built_in">Number</span>(c))) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">String</span>(c);
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Number</span>(c);
+&#125;;
+
+<span class="hljs-keyword">const</span> withOperation = <span class="hljs-function">(<span class="hljs-params">stack, type</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">let</span> result;
+    <span class="hljs-keyword">switch</span>(type) &#123;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"+"</span>: &#123;
+            result = withData(stack.pop()) + withData(stack.pop());
+            <span class="hljs-keyword">break</span>;
+        &#125;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"-"</span>: &#123;
+            <span class="hljs-keyword">const</span> rightValue = stack.pop();
+            <span class="hljs-keyword">const</span> leftValue = stack.pop();
+            result = withData(leftValue) - withData(rightValue);
+            <span class="hljs-keyword">break</span>;
+        &#125;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"*"</span>: &#123;
+            result = withData(stack.pop()) * withData(stack.pop());
+            <span class="hljs-keyword">break</span>;
+        &#125;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"/"</span>: &#123;
+            <span class="hljs-keyword">const</span> rightValue = stack.pop();
+            <span class="hljs-keyword">const</span> leftValue = stack.pop();
+            result = withData(leftValue) / withData(rightValue);
+            <span class="hljs-keyword">break</span>;
+        &#125;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"取长度"</span>: &#123;
+            <span class="hljs-comment">// 简单实现一个自定义的取长度功能</span>
+            <span class="hljs-keyword">const</span> value = withData(stack.pop());
+            result = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-built_in">Math</span>.abs(value)).fill(<span class="hljs-number">0</span>).length;
+            <span class="hljs-keyword">break</span>;
+        &#125;
+        <span class="hljs-attr">default</span>: &#123;
+            <span class="hljs-keyword">break</span>;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> result;
+&#125;</code></pre></p>
+<p>最后执行测试一下：</p>
+<pre><code class="hljs js">global.ffa = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">const</span> a = operation(<span class="hljs-string">"9 + 取长度(3 + 1 * (8 - 2) / 2) - 2 * 3 + ffa"</span>);
+
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// ---------&gt; 16</span></code></pre>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>对于一些数组如 arr[0] 或者 person.say()  可以语法可以再思考一下</p>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/index.html">文章</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

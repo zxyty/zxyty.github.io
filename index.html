@@ -1,530 +1,298 @@
+
+
 <!DOCTYPE html>
-<html lang="Zh-cn">
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+
+  </head>
+  <body class>
+    <div id="mobile-bar" class="top">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    码客库
-  </title>
-  <meta name="description" content="爱生活、爱技术、爱分享">
-  
-  <meta name="author" content="zxy">
+  </ul>
+</header>
 
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
-  <link rel="icon" type="image/x-icon" href>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-
-  
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-</head>
-
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
+    
+      <div id="primary" style="background: #F6F6F6; margin-bottom: -50px">
+    
+    <div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.65), #F6F6F6),
+            url();">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown" style="margin: 0;">
+            
+            
+                <b>「 </b>算法<b> 」</b>
+            
+            三月 18, 2021
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/blog/基于后缀算术表达式的代码解析.html" title="基于后缀算术表达式的代码解析" class="posttitle">基于后缀算术表达式的代码解析</a></h3>
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h3><p>最近在设计一个数据字段的运算表达式控件，具体不废话，可以参看下面的动画截图：<br><br></p>
+<p>截图里有一个表格内容数据(是程序运行时从其他外部网页抓取的数据)，而我需要根据表格的属性字段去做对应的算术运算，如<code>（加减乘除）</code>或者<code>(一些函数命令)</code><br></p>
+<p>然后则根据表达式解析计算出对应的结果，需求就是这样的。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>具体实现借用了 <code>入栈</code>的想法，将字符串分割出对应的<code>运算符</code>、<code>值</code>、<code>函数表达式</code>，我这里使用了mapping关系来处理，将整个字符串里的 运算符和函数表达式 替换出对应的<code>空值加key</code>的形式：<br><pre><code class="hljs js"><span class="hljs-comment">// 我的运算符和函数mapping...</span></code></pre></p>
+            
+            <span class="read-more"><a href="/blog/基于后缀算术表达式的代码解析.html" title="阅读更多" class="posttitle">阅读更多</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/archives">Archives</a></li>
-        
-        <!-- 
-        <li><a href="/categories">Categories</a></li>
-        
-        
-        <li><a href="/tags">Tags</a></li>
-         -->
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://avatars1.githubusercontent.com/u/17245817?s=460&amp;v=4"> <i class="fa fa-caret-down"></i></a>
-        </li>
-      </ul>
     </div>
-  </div>
-</nav>
-
-<div class="main-container">
-  
-
-<div class="container-lg">
-  
-
-<div class="blog-intro">
-  <div class="blog-intro-user">
-    <img class="avatar" src="https://avatars1.githubusercontent.com/u/17245817?s=460&amp;v=4">
-    <div class="user-name">
-      <div class="blog-title">码客库</div>
-      <div class="blog-author">zxy</div>
-        <ul class="user-detail mobile-only">
-    
-    <li>
-      <i class="fa fa-map-marker"></i>
-      Cheng du
-    </li>
-    
-    <li>
-      <i class="fa fa-envelope-o"></i>
-      <a href="mailto:zxy@zxyty.com">zxy@zxyty.com</a>
-    </li>
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="https://github.com/zxyty">https://github.com/zxyty</a>
-    </li>
-  </ul>
-    </div>
-    <div class="blog-description">
-      爱生活、爱技术、爱分享
-    </div>
-  </div>
-
-  <ul class="user-detail desktop-only">
-    
-    <li>
-      <i class="fa fa-map-marker"></i>
-      Cheng du
-    </li>
-    
-    <li>
-      <i class="fa fa-envelope-o"></i>
-      <a href="mailto:zxy@zxyty.com">zxy@zxyty.com</a>
-    </li>
-    
-    <li>
-      <i class="fa fa-link"></i>
-      <a href="https://github.com/zxyty">https://github.com/zxyty</a>
-    </li>
-  </ul>
-
-  <div class="social-media desktop-only">
-    <h4>Social Media</h4>
-    <ul>
-      
-      <li class="social-media-item"><a href="https://github.com/zxyty" target="_blank"><i class="fa fa-github"></i></a></li>
-      
-    </ul>
-  </div>
 </div>
 
 
-  <div class="blog-detail">
-    
-<nav class="blog-detail-nav desktop-only">
-  <ul class="clearfix">
-    <li class="selected">
-      <a href="/">Overview</a></li>
-    <li class>
-      <a href="/archives">Posts <span class="counter">29</span></a>
-    </li>
-    <!-- <li class="">
-      <a href="/categories">Categories <span
-                class="counter">20</span></a></li>
-    <li class="">
-      <a href="/tags">Tags <span class="counter">37</span></a></li> -->
-  </ul>
-</nav>
-
-    <div class="body-secondary">
-      <p class="right-title">Recent post</p>
-      <ul class="recent-post clearfix">
-        
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2019/07/28/ubuntu搭建shadowsocks服务/">ubuntu搭建shadowsocks服务</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                    安装软件       1   2       $ apt-get install pyt
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/ubuntu/"><i class="fa fa-folder-open"></i> ubuntu</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 1 </span>
-            </p>
-          </div>
-        </li>
-        
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2019/07/28/React16/react fiber reconciler解密/">react16特性：fiber reconciler解密</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                    前篇  React是一款用于构建用户界面的库，React会跟踪组件内的状态变化并将这些变
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/Fiber/"><i class="fa fa-folder-open"></i> Fiber</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 3 </span>
-            </p>
-          </div>
-        </li>
-        
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2019/07/28/yum-404-error/">yum-404-error</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                  最近在CentOS 6.6 x64操作系统下使用yum时会报如图-1所示的404错误： 
- 
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/linux/"><i class="fa fa-folder-open"></i> linux</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 1 </span>
-            </p>
-          </div>
-        </li>
-        
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2019/04/05/前端面试题收集/">前端面试题收集</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                    2019-03-20  
- 自我介绍； 
- react的生命周期； 
- react第一次
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/面试/"><i class="fa fa-folder-open"></i> 面试</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 1 </span>
-            </p>
-          </div>
-        </li>
-        
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2019/04/05/linux常用命令/">linux常用命令</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                    1.终端提示颜色   Linux 环境中 PS1 环境变量是用来格式终端提示符信息的，设
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/linux/"><i class="fa fa-folder-open"></i> linux</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 1 </span>
-            </p>
-          </div>
-        </li>
-        
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2019/03/20/算法探索-排序/">算法-排序</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                    冒泡算法  时间复杂度 $$ O(n^2) $$ 
- 首先我们可以看下冒泡排序的一个过程
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/算法/"><i class="fa fa-folder-open"></i> 算法</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 1 </span>
-            </p>
-          </div>
-        </li>
-        
-      </ul>
-      <div class="calendar-container" id="calendar">
-  <div class="calendar">
-    <h3>
-      {{posts.length}} contributions in the last year
-    </h3>
-    <div class="calendar-graph-container">
-      <div class="calendar-graph">
-        <svg width="676" height="104" @mouseout="mouseoverDate=null">
-          <g transform="translate(16, 20)">
-            <g v-for="week in calendar" :transform="week.transform">
-              <rect v-for="day in week.days" :x="day.x" :y="day.y" :fill="day.fill" @click="selectedDate=day.date" @mouseover="mouseoverDate=day.date" :class="{active:selectedDate===day.date}" data-count="{{day.posts.length}}" data-date="{{day.date}}" class="day" width="10" height="10"/>
-            </g>
-
-            <text v-for="month in monthLabels" :x="month.x" y="-5" class="month">{{month.text}}
-            </text>
-
-
-            <text text-anchor="start" class="wday" dx="-14" dy="8" style="display: none;">S
-            </text>
-            <text text-anchor="start" class="wday" dx="-14" dy="20">Mon</text>
-            <text text-anchor="start" class="wday" dx="-14" dy="32" style="display: none;">T
-            </text>
-            <text text-anchor="start" class="wday" dx="-14" dy="44">Wed</text>
-            <text text-anchor="start" class="wday" dx="-14" dy="57" style="display: none;">T
-            </text>
-            <text text-anchor="start" class="wday" dx="-14" dy="69">Fri</text>
-            <text text-anchor="start" class="wday" dx="-14" dy="81" style="display: none;">S
-            </text>
-          </g>
-        </svg>
-        <div class="svg-tip svg-tip-one-line" v-bind:style="{ top: svgtip.top, left: svgtip.left, display: svgtip.display}">
-          <strong>{{svgtip.text}}</strong> on
-          {{moment(mouseoverDate).format('MMM DD, YYYY')}}
-        </div>
-      </div>
-      <div class="calendar-footer clearfix">
-      <span>
-        <a href="#">Learn how we count contributions.</a>
-      </span>
-        <div class="calendar-legend">
-          <span>Less</span>
-          <ul class="legend">
-            <li style="background-color: #eee"></li>
-            <li style="background-color: #d6e685"></li>
-            <li style="background-color: #8cc665"></li>
-            <li style="background-color: #44a340"></li>
-            <li style="background-color: #1e6823"></li>
-          </ul>
-          <span>More</span>
-        </div>
-      </div>
+    <div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.65), #F6F6F6),
+            url();">
     </div>
-  </div>
-
-  <h3>Contribution activity</h3>
-  <div class="contribution-list">
-    <ul>
-      <li v-for="post in posts | filterBy selectedDate in 'date'">
-        <a href="{{post.url}}">{{post.title}}
-        </a>
-        <span>{{post.date}}</span>
-      </li>
-    </ul>
-  </div>
+    <div class="else">
+        <p class="animated fadeInDown" style="margin: 0;">
+            
+            
+                <b>「 </b>算法<b> 」</b>
+            
+            一月 08, 2021
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/blog/基于AST的算数表达式解析.html" title="基于AST的算数表达式解析" class="posttitle">基于AST的算数表达式解析</a></h3>
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h3><p>之前在另一篇文章中&lt;&lt;<code>基于后缀算术表达式的代码解析</code>&gt;&gt;已经实现过简单的（<code>1 + 3 - 5 / 54 * 2</code>）等算术的运算，但是代码逻辑实现满足不了更多场景，如</p>
+<ul>
+<li>对数据的赋值：<code>a = b + c</code></li>
+<li>逻辑判断:   <code>a == b</code> or <code>a != b</code></li>
+<li>与或非: <code>a &amp;&amp; c</code> or <code>a || c</code></li>
+</ul>
+<p>所以为了更好的解决一些场景，这里使用AST（抽象语法树）来解决这部分的问题</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>表达式 转 AST</li>
+<li>AST 遍历</li>
+<li>数据作用域</li>
+</ul>
+<h4 id="1、表达式转AST"><a href="#1、表达式转AST" class="headerlink" title="1、表达式转AST"></a>1、表达式转AST</h4><p>首先可以参考<a href="https://astexplorer.net/" target="_blank" rel="noopener">AST...</a></p>
+            
+            <span class="read-more"><a href="/blog/基于AST的算数表达式解析.html" title="阅读更多" class="posttitle">阅读更多</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
 </div>
 
 
+    <div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.65), #F6F6F6),
+            url();">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown" style="margin: 0;">
+            
+            
+                <a href="javascript:;"><b>「 </b>default_category<b> 」</b></a>
+            
+            五月 16, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/guide/xy-imageloader.html" title="xy-imageloader" class="posttitle">xy-imageloader</a></h3>
+        <div class="md-content animated fadeIn">
+            
+                <p>安装：<br><pre><code class="hljs shell">npm i --save xy-imageloader</code></pre></p>
+<ul>
+<li>普通加载</li>
+</ul>
+<pre><code class="hljs js">imgLoader(<span class="hljs-string">"./lena.png"</span>).then(<span class="hljs-function"><span class="hljs-params">image</span> =&gt;</span> &#123;
+  ...
+&#125;)</code></pre>
+<ul>
+<li>普通加载, ImageData</li>
+</ul>
+<pre><code class="hljs js">getImageData(<span class="hljs-string">"./lena.png"</span>).then(<span class="hljs-function"><span class="hljs-params">imageData</span> =&gt;</span> &#123;
+  ...
+&#125;)</code></pre>
+<ul>
+<li>模板匹配示例</li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-keyword">import</span> imgLoader, &#123; getImageData, rgbToGary &#125; <span class="hljs-keyword">from...</span></code></pre>
+            
+            <span class="read-more"><a href="/guide/xy-imageloader.html" title="阅读更多" class="posttitle">阅读更多</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+    <div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.65), #F6F6F6),
+            url();">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown" style="margin: 0;">
+            
+            
+                <b>「 </b>环境搭建<b> 」</b>
+            
+            五月 04, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/blog/vscode-java 环境配置.html" title="Vscode Java 环境配置" class="posttitle">Vscode Java 环境配置</a></h3>
+        <div class="md-content animated fadeIn">
+            
+                <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>java jdk1.8 安装配置</li>
+<li>mvn 安装配置</li>
+</ul>
+<blockquote>
+<p>以上较为普通，随便网上搜下安装包，配置下环境变量即可</p>
+</blockquote>
+<h3 id="VSCode-插件安装"><a href="#VSCode-插件安装" class="headerlink" title="VSCode 插件安装"></a>VSCode 插件安装</h3><p>1、Language Support for Java(TM) by Red Hat<br>2、Java Test Runner<br>3、Debugger for Java<br>4、Maven for Java<br>5、Java Extension Pack</p>
+<h3 id="配置vscode-mvn源"><a href="#配置vscode-mvn源" class="headerlink" title="配置vscode mvn源"></a>配置vscode mvn源</h3><p>1、修改Vscode插件<code>Maven for Java</code>默认使用的mvn路径<br><br></p>
+<p></p>
+<p>2、修改mvn的镜像...</p>
+            
+            <span class="read-more"><a href="/blog/vscode-java 环境配置.html" title="阅读更多" class="posttitle">阅读更多</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+    <div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.65), #F6F6F6),
+            url();">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown" style="margin: 0;">
+            
+            
+                <a href="javascript:;"><b>「 </b>default_category<b> 」</b></a>
+            
+            五月 04, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/guide/xy-share-component.html" title="xy-share-component" class="posttitle">xy-share-component</a></h3>
+        <div class="md-content animated fadeIn">
+            
+                <p>安装：<br><pre><code class="hljs shell">npm i --save xy-share-component</code></pre></p>
+<p>引用方式：<br><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; useShareComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">"xy-share-component"</span>;</code></pre></p>
+<blockquote>
+<p>注意. 1.0.2 版本后使用systemjs进行import组件，所以需要在index.html文件里进行依赖添加<br>前置依赖<br><pre><code class="hljs html"> <span class="hljs-comment">&lt;!-- 建议此种script加载可于另外加载一个components-mapping 这样方便修改部署 --&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+   <span class="hljs-comment">//...</span></span></code></pre></p></blockquote>
+            
+            <span class="read-more"><a href="/guide/xy-share-component.html" title="阅读更多" class="posttitle">阅读更多</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+<div style="text-align: center; height: 40px;">© 2020 Zxyty Inc.</div>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 <script>
-  var posts = [{"date":"2018-07-31","title":"说明","url":"https://github.com/zxyty/2018/07/31/thanks/"},{"date":"2018-08-08","title":"前端入门篇","url":"https://github.com/zxyty/2018/08/08/前端入门介绍/"},{"date":"2018-08-13","title":"DDA算法","url":"https://github.com/zxyty/2018/08/13/DDA/"},{"date":"2018-08-15","title":"Markdown数学公式","url":"https://github.com/zxyty/2018/08/15/markdown数学公式/"},{"date":"2018-08-15","title":"Docker-Mysql8.0安装及初始化配置","url":"https://github.com/zxyty/2018/08/15/docker-Mysql8.0安装初始化配置/"},{"date":"2018-08-22","title":"Vscode-Threejs代码智能提示","url":"https://github.com/zxyty/2018/08/22/vscode-Threejs代码智能提示/"},{"date":"2018-08-23","title":"React-Native 接入百度统计SDK","url":"https://github.com/zxyty/2018/08/23/React-Native 接入百度统计/"},{"date":"2018-08-29","title":"git获取第一次commit提交记录","url":"https://github.com/zxyty/2018/08/29/git获取第一次commit/"},{"date":"2018-09-04","title":"git-pull获取指定文件","url":"https://github.com/zxyty/2018/09/04/git-pull获取指定文件/"},{"date":"2018-09-04","title":"docker-pm2发布node服务","url":"https://github.com/zxyty/2018/09/04/docker-pm2发布node服务/"},{"date":"2018-10-08","title":"极光推送RN集成","url":"https://github.com/zxyty/2018/10/08/极光推送/"},{"date":"2018-11-08","title":"Docker安装部署taiga项目","url":"https://github.com/zxyty/2018/11/08/docker安装taiga项目/"},{"date":"2018-11-22","title":"斐波拉契数列js实现","url":"https://github.com/zxyty/2018/11/22/斐波拉契数列/"},{"date":"2018-11-22","title":"数组ArrayFlatten","url":"https://github.com/zxyty/2018/11/22/数组ArrayFlatten/"},{"date":"2019-02-01","title":"Mongoose踩坑路","url":"https://github.com/zxyty/2019/02/01/Mongoose踩坑路/"},{"date":"2019-02-01","title":"开发人员良心工具","url":"https://github.com/zxyty/2019/02/01/开发人员良心工具/"},{"date":"2019-02-15","title":"linux系统nvm指定版本安装","url":"https://github.com/zxyty/2019/02/15/linux系统nvm安装/"},{"date":"2019-02-20","title":"linux安装python-pyenv环境","url":"https://github.com/zxyty/2019/02/20/linux安装python-pyenv环境/"},{"date":"2019-02-21","title":"linux安装nginx","url":"https://github.com/zxyty/2019/02/21/linux安装nginx/"},{"date":"2019-02-23","title":"git子模块","url":"https://github.com/zxyty/2019/02/23/git子模块/"},{"date":"2019-02-24","title":"docker-使用yum安装","url":"https://github.com/zxyty/2019/02/24/docker-使用yum安装/"},{"date":"2019-03-06","title":"CodePush尝试","url":"https://github.com/zxyty/2019/03/06/codepush尝试/"},{"date":"2019-03-18","title":"ReactNative项目选型设计","url":"https://github.com/zxyty/2019/03/18/ReactNative项目选型设计/"},{"date":"2019-03-20","title":"算法-排序","url":"https://github.com/zxyty/2019/03/20/算法探索-排序/"},{"date":"2019-04-05","title":"前端面试题收集","url":"https://github.com/zxyty/2019/04/05/前端面试题收集/"},{"date":"2019-04-05","title":"linux常用命令","url":"https://github.com/zxyty/2019/04/05/linux常用命令/"},{"date":"2019-07-28","title":"yum-404-error","url":"https://github.com/zxyty/2019/07/28/yum-404-error/"},{"date":"2019-07-28","title":"ubuntu搭建shadowsocks服务","url":"https://github.com/zxyty/2019/07/28/ubuntu搭建shadowsocks服务/"},{"date":"2019-07-28","title":"react16特性：fiber reconciler解密","url":"https://github.com/zxyty/2019/07/28/React16/react fiber reconciler解密/"}];
-  var today = moment().format('YYYY-MM-DD');
-  var oneYearAgo = moment(today).subtract(1, 'years');
-  posts = posts.filter(function(post) {
-    return new Date(post.date) > oneYearAgo;
-  });
-  var monthLabels = [];
-  var monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  var calendar = getCalendar(posts);
-
-  var dateRange = {
-    start: moment(oneYearAgo).format('MMM D, YYYY'),
-    end: moment().format('MMM D, YYYY')
-  }
-
-  var app = new Vue({
-    el: '#calendar',
-    data: {
-      posts: posts,
-      selectedDate: null,
-      calendar: calendar,
-      dateRange: dateRange,
-      mouseoverDate: null,
-      moment: moment,
-      monthLabels: monthLabels
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
     },
-    created: function() {
-      this.selectedDate = 'none';
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     },
-    methods: {},
-    computed: {
-      svgtip: function() {
-        var date = this.mouseoverDate;
-        var display = date ? 'block' : 'none';
-        if (date) {
-          var coordinator = getIndexByDate(date);
-          var x = coordinator[0];
-          var y = coordinator[1];
-          var len = this.calendar[x].days[y].posts.length;
-          var text = len ? len + ' contributions' : 'No contributions';
-          var left = coordinator[0] * 12 - 37 + 'px';
-          coordinator[1] = coordinator[0] ? coordinator[1] : coordinator[1] + oneYearAgo.day();
-          var top = coordinator[1] * 12 + 12 - 32 + 'px';
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
         }
-        return {
-          text: text,
-          left: left,
-          top: top,
-          display: display
-        }
+      },
+      Macros: {
+        href: "{}"
       }
-    }
+    },
+    messageStyle: "none"
   });
-
-  function getCalendar(posts) {
-    // raw calendar
-    var maxCount = 0;
-    var tmr = new Date();
-    tmr.setDate(tmr.getDate() + 1);
-    var tmrStr = tmr.toISOString().slice(0, 10);
-    var date = new Date();
-    date.setYear(date.getFullYear() - 1); // start date is a year ago;
-    var calendar = [];
-    while (date.toISOString().slice(0, 10) !== tmrStr) {
-      var day = date.getDay();
-      if (day === 0 || calendar.length === 0) {
-        var x = calendar.length * 13;
-        calendar.push({
-          transform: 'translate(' + x + ',0)',
-          days: []
-        })
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
       }
+    });
+  }
 
-      calendar[calendar.length - 1].days.push({
-        x: 14 - calendar.length,
-        y: day * 12,
-        date: date.toISOString().slice(0, 10),
-        posts: []
-      });
-
-      if (day === 0 && date.getDate() < 8) {
-        monthLabels.push({
-          x: 14 - calendar.length + x,
-          text: monthName[date.getMonth() - 1]
-        })
-      }
-
-      date.setDate(date.getDate() + 1);
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
     }
-
-    // handle post info
-    posts.forEach(function(post) {
-      var x = getIndexByDate(post.date)[0];
-      var y = getIndexByDate(post.date)[1];
-
-      calendar[x].days[y].posts.push({
-        title: post.title,
-        url: post.url
-      });
-
-      var len = calendar[x].days[y].posts.length;
-      maxCount = Math.max(len, maxCount);
-    })
-
-    // handle fill color
-    calendar.forEach(function(week) {
-      week.days.forEach(function(day) {
-        day.fill = getColorByLength(day.posts.length, maxCount);
-      })
-    })
-
-    return calendar;
   }
-
-  function getIndexByDate(date) {
-    date = moment(date);
-    var firstColumnLen = 7 - oneYearAgo.day();
-    var days = date.diff(oneYearAgo, 'days');
-
-    var x = days > firstColumnLen - 1 ? Math.ceil((days - firstColumnLen + 1) / 7) : 0;
-    var y = days > firstColumnLen - 1 ? date.day() : date.day() - oneYearAgo.day();
-    return [x, y];
-  }
-
-  function getColorByLength(len, max) {
-    var colors = ['#eee', '#d6e685', '#8cc665', '#44a340', '#1e6823'];
-    var colorsLen = colors.length - 1;
-    var color = len ? colors[0] : colors[1];
-    var interval = max / colorsLen;
-    if (max < colorsLen) {
-      color = colors[len];
-    } else {
-      color = colors[Math.ceil(len / interval)];
-    }
-    return color;
-  }
-
 </script>
 
-
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="https://github.com/zxyty" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2018 zxy</li>
-      <li><a href="https://github.com/zxyty">Home</a></li>
-      
-      <li><a href="https://github.com/zxyty">Github</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-<script src="https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js"></script>
-</html>
+  <script>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
+</script></body></html>

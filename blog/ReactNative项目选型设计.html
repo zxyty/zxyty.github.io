@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>ReactNative项目选型设计 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link current">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>ReactNative项目选型设计</h1>
+    
+  
+    
+      
+        <span>八月 18, 2018</span>
+      
+    
+  
+    <h3 id="React-Native项目架构设计"><a href="#React-Native项目架构设计" class="headerlink" title="React-Native项目架构设计"></a>React-Native项目架构设计</h3><h4 id="路由-react-native-navigation-wix-v2"><a href="#路由-react-native-navigation-wix-v2" class="headerlink" title="路由(react-native-navigation wix v2)"></a>路由(react-native-navigation wix v2)</h4><p>考虑：</p>
+<ul>
+<li>适用性</li>
+<li>简易性</li>
+<li>可扩展性</li>
+<li>性能稳定</li>
+<li>文档可查<ul>
+<li><a href="https://wix.github.io/react-native-navigation/#/" target="_blank" rel="noopener">React Native Navigation Docs</a></li>
+<li>DeepLink</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据流-redux-dva"><a href="#数据流-redux-dva" class="headerlink" title="数据流(redux/dva)"></a>数据流(redux/dva)</h4><ul>
+<li>react-redux</li>
+<li>dva-core</li>
+</ul>
+<h4 id="数据状态持久化-redux-persist"><a href="#数据状态持久化-redux-persist" class="headerlink" title="数据状态持久化(redux-persist)"></a>数据状态持久化(redux-persist)</h4><ul>
+<li>whiteList</li>
+<li>blackList</li>
+</ul>
+<h4 id="异常错误捕获-sentry"><a href="#异常错误捕获-sentry" class="headerlink" title="异常错误捕获(sentry)"></a>异常错误捕获(sentry)</h4><ul>
+<li>context</li>
+</ul>
+<h4 id="热更新-code-push"><a href="#热更新-code-push" class="headerlink" title="热更新(code-push)"></a>热更新(code-push)</h4><ul>
+<li>更新界面</li>
+<li>静默/强制</li>
+</ul>
+<h4 id="调试输出-reactotron"><a href="#调试输出-reactotron" class="headerlink" title="调试输出(reactotron)"></a>调试输出(reactotron)</h4><ul>
+<li>reactotron-react-native </li>
+<li>reactotron-redux </li>
+</ul>
+<h4 id="推送-jpush"><a href="#推送-jpush" class="headerlink" title="推送(jpush)"></a>推送(jpush)</h4><ul>
+<li>极光推送</li>
+</ul>
+<h4 id="第三方登录集成"><a href="#第三方登录集成" class="headerlink" title="第三方登录集成"></a>第三方登录集成</h4><ul>
+<li>微信</li>
+<li>QQ</li>
+</ul>
+<h4 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h4><ul>
+<li>朋友圈</li>
+<li>QQ空间</li>
+<li>微信好友</li>
+<li>QQ好友</li>
+</ul>
+<h4 id="页面统计-baiduMobStat"><a href="#页面统计-baiduMobStat" class="headerlink" title="页面统计(baiduMobStat)"></a>页面统计(baiduMobStat)</h4><ul>
+<li>埋点</li>
+<li>行为报告</li>
+</ul>
+<h4 id="本地国际化-i18n"><a href="#本地国际化-i18n" class="headerlink" title="本地国际化(i18n)"></a>本地国际化(i18n)</h4><ul>
+<li>FormatMessage</li>
+</ul>
+<h4 id="Touchable设计"><a href="#Touchable设计" class="headerlink" title="Touchable设计"></a>Touchable设计</h4><ul>
+<li>页面跳转(禁用所有按钮可重复操作)</li>
+</ul>
+<h4 id="icon-image管理"><a href="#icon-image管理" class="headerlink" title="icon/image管理"></a>icon/image管理</h4><ul>
+<li>统一使用svg</li>
+</ul>
+<h4 id="动画效果"><a href="#动画效果" class="headerlink" title="动画效果"></a>动画效果</h4><ul>
+<li>Lottie(View)</li>
+</ul>
+<h4 id="图片放大器"><a href="#图片放大器" class="headerlink" title="图片放大器"></a>图片放大器</h4><ul>
+<li>暂无解决方案（希望找到类似微信等图片查看器效果的插件）</li>
+</ul>
+<h4 id="socket方案"><a href="#socket方案" class="headerlink" title="socket方案"></a>socket方案</h4><ul>
+<li>SocketIo</li>
+<li>WebSocket</li>
+</ul>
+<h4 id="启动屏"><a href="#启动屏" class="headerlink" title="启动屏"></a>启动屏</h4><ul>
+<li>暂无解决方案（需调研）</li>
+</ul>
+<h4 id="UI库"><a href="#UI库" class="headerlink" title="UI库"></a>UI库</h4><ul>
+<li>暂无</li>
+</ul>
+<h4 id="手势控件"><a href="#手势控件" class="headerlink" title="手势控件"></a>手势控件</h4><ul>
+<li>下拉刷新</li>
+<li>上拉刷新</li>
+</ul>
+<h4 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h4><ul>
+<li>canvas绘图组件</li>
+<li>map地图</li>
+<li>时间选择器</li>
+<li>省市区选择器</li>
+<li>支付组件</li>
+<li>统计报表<ul>
+<li>svg</li>
+<li>chart<ul>
+<li>worker 计算数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/Docker安装taiga项目.html">Docker安装部署taiga项目</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

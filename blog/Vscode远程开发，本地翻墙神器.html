@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>Vscode远程开发，本地翻墙神器 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link current">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>Vscode远程开发，本地翻墙神器</h1>
+    
+  
+    
+      
+        <span>十二月 15, 2019</span>
+      
+    
+  
+    <h2 id="Vscode-Web-Online"><a href="#Vscode-Web-Online" class="headerlink" title="Vscode Web Online"></a>Vscode Web Online</h2><p>随着微软<code>Vscode Online</code>发布，自己开始慢慢滑步跟随着Remote Develop 的步伐，亲身试验了以下Online的功能，不得不说，让人大吃一惊。微软一直都很<code>硬</code></p>
+<blockquote>
+<p>首先 我们要使用Vscode Online 需要注册一个<code>Azure账号</code>，赶紧哦，现在Online刚上线，Azure注册后，可免费使用其中Azure1年的服务，友情提示：<code>需信用卡才能注册</code></p>
+</blockquote>
+<p><img src="/images/vscode/online_01.png" alt="Online"><br>访问地址<a href="https://online.visualstudio.com/" target="_blank" rel="noopener">Vscode Online</a></p>
+<p>注册后登录Online，创建我们的环境<code>(Environment)</code>，你可以理解为创建项目<br><img src="/images/vscode/online_02.png" alt="Environment"></p>
+<p>跟着创建好后，界面就会多一个Environment，然后等它启动后，就可以连接使用它：<br><img src="/images/vscode/online_03.png" alt="Connect"></p>
+<p>连接上后，就可以在网页上打开一个Vscode的编辑器:<br><img src="/images/vscode/online_04.png" alt="Web Vscode"></p>
+<h2 id="Vscode-Local-Online"><a href="#Vscode-Local-Online" class="headerlink" title="Vscode Local Online"></a>Vscode Local Online</h2><p>当然每次使用都要去网页打开也很不方便，这个使用可以使用vscode安装插件<code>Remote Development</code>，推荐也把<code>Remote-SSH</code> 也安装好：<br><img src="/images/vscode/online_05.png" alt="Plugin"></p>
+<p>安装好后，配置好Azure账号信息，点击左侧菜单并选择Vs Online选项，就可以看到自己的Online Environment<br><img src="/images/vscode/online_06.png" alt="Plugin02"></p>
+<p>然后点击连接Environment<br><img src="/images/vscode/online_07.png" alt="Plugin03"></p>
+<h2 id="Vscode-Online-Network"><a href="#Vscode-Online-Network" class="headerlink" title="Vscode Online Network"></a>Vscode Online Network</h2><p>当连接到Vscode的online环境后，我们打开vscode的终端可以发现，它其实应该是一个容器，类似于（docker container）<br><img src="/images/vscode/online_08.png" alt="Vcode Online Terminal"></p>
+<p>这都不是关键，关键是现在我们的项目是在Online上，则可以理解为在微软的云上跑着，这个云里有个容器（也就是这个环境）。则容器也连这个云，它有自己的网络，并且可以和微软的云通信，那么我们此时在容器里使用各种网络操作，那是否可以说都会跑到微软的云上，并由微软云帮我们代理？</p>
+<p>简单实验：<br>我本地是没翻墙的，访问不了<code>Google</code>，而在这个容器终端里可以<code>Curl google</code>, 返回对应的内容，说明这个容器在有网（微软云的网），并且此网还可以访问微软云以外的网：<br><img src="/images/vscode/online_09.png" alt="Curl Google"></p>
+<p>这都不是关键，这个应该不是太让人激动功能，大招在后</p>
+<h2 id="Vscode-Local-Connect-Online-Network"><a href="#Vscode-Local-Connect-Online-Network" class="headerlink" title="Vscode Local Connect Online Network"></a>Vscode Local Connect Online Network</h2><p>因为Vscode 启用远程开发这种功能，那么必然要让开发者有完整开发体验（你不能让开发者就远程开发写点代码吧？没有调试的功能撒？那不是太鸡肋了，如果没有，我是不会用！）。。。。，所以关键功能来了：</p>
+<blockquote>
+<p>当我们的Node项目要调试接口，那么在Online的容器里启动程序，我在电脑本地测试接口，怎么用？</p>
+</blockquote>
+<p>神器：<code>端口转发</code>来了，<br><img src="/images/vscode/online_10.png" alt="Port 01"></p>
+<p><img src="/images/vscode/online_11.png" alt="Port 02"></p>
+<blockquote>
+<p>比如我们的一段Node程序需要跑服务，并且运行的端口是9000，那么我们可以配置下端口转发到本地的端口9000，那么并且可以使用<code>localhost:9000</code>进行访问Online Network， What ? 可观啊</p>
+</blockquote>
+<p>为此，我特意使用这种逻辑想法，写了一段Online Network代理访问Google，本地访问Online Network, 则我们本地可以访问Google的代码啊:<br><pre><code class="hljs javascript"><span class="hljs-meta">'use strict'</span>;
+ 
+<span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">var</span> https = <span class="hljs-built_in">require</span>(<span class="hljs-string">'https'</span>);
+<span class="hljs-keyword">var</span> httpProxy = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http-proxy'</span>);
+<span class="hljs-keyword">var</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">'url'</span>);
+ 
+<span class="hljs-keyword">var</span> PROXY_PORT = <span class="hljs-number">9000</span>;
+<span class="hljs-keyword">var</span> proxy, server;
+ 
+proxy = httpProxy.createProxy(&#123;&#125;);
+ 
+proxy.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(err);
+&#125;);
+ 
+server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-comment">//var finalUrl = req.url,</span>
+    <span class="hljs-keyword">var</span> finalUrl = <span class="hljs-string">'https://www.google.com.hk'</span>;
+    <span class="hljs-keyword">var</span> finalAgent = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">var</span> parsedUrl = url.parse(finalUrl);
+ 
+    <span class="hljs-keyword">if</span> (parsedUrl.protocol === <span class="hljs-string">'https:'</span>) &#123;
+        finalAgent = https.globalAgent;
+    &#125; <span class="hljs-keyword">else</span> &#123;
+        finalAgent = http.globalAgent;
+    &#125;
+ 
+    proxy.web(req, res, &#123;
+        <span class="hljs-attr">target</span>: finalUrl,
+        <span class="hljs-attr">agent</span>: finalAgent,
+        <span class="hljs-attr">headers</span>: &#123; <span class="hljs-attr">host</span>: parsedUrl.hostname &#125;,
+        <span class="hljs-attr">prependPath</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">xfwd</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">hostRewrite</span>: finalUrl.host,
+        <span class="hljs-attr">protocolRewrite</span>: parsedUrl.protocol
+    &#125;);
+&#125;);
+ 
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'listening on port '</span> + PROXY_PORT);
+server.listen(PROXY_PORT);</code></pre></p>
+<p>开启Online的程序，<br><img src="/images/vscode/online_12.png" alt="Run Online Code"></p>
+<p>则本地访问<code>localhost:9000</code>：<br><img src="/images/vscode/online_13.gif" alt="Access Google"></p>
+<blockquote>
+<p>Oh! 访问google成功 刺不刺激</p>
+</blockquote>
+<p>这种方式目前在公司级别（路由过滤）都不能阻止访问google，简直是我目前公司访问google的神器方法。</p>
+<h2 id="Vscode-Online-Later"><a href="#Vscode-Online-Later" class="headerlink" title="Vscode Online Later"></a>Vscode Online Later</h2><p>目前Vscode Online 其实也不太完美（对我而言），本地（公司）级别的包（如<code>npm</code>）是私有的，在Online安装不了，（不知道是不是我配置不会，有人会可以告知），所以我（就此缺陷）展望微软以后会利用<code>Github</code>的优势，发布一种类似<code>Npm Yarn</code>包的管理器，在Vscode online里可以使用，然后代理到私有仓库。就目前而言，Vscode Online 这种容器化的环境开发方式，还是挺让人心动的，期待以后更多功能！</p>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/index.html">文章</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>极光推送RN集成 — zxyty</title>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <script>
+      window.PAGE_TYPE = "post"
+    </script>
+
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <header id="header">
+  <a id="logo" href="/">
+    <span>满堂大杂烩</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">组件</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="/guide/" class="nav-link">文档</a></li>
+        <li><a href="/api/" class="nav-link">API</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container resources">
+  <a href="/blog/" class="nav-link current">文章</a>
+</li>
+
+<li class="nav-dropdown-container resources">
+    <a href="/about/" class="nav-link">关于</a>
+</li>
+
+
+  </ul>
+</header>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+    <li>
+      <a href="/blog/index.html" class="sidebar-link">文章</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于后缀算术表达式的代码解析.html" class="sidebar-link">基于后缀算术表达式的代码解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/基于AST的算数表达式解析.html" class="sidebar-link">基于AST的算数表达式解析</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/vscode-java 环境配置.html" class="sidebar-link">Vscode Java 环境配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/纯前端实现图片的模板匹配.html" class="sidebar-link">纯前端实现图片的模板匹配</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/测试用例管理工具Luckyframe安装.html" class="sidebar-link">测试用例管理工具Luckyframe安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode远程开发，本地翻墙神器.html" class="sidebar-link">Vscode远程开发，本地翻墙神器</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/yum-404-error.html" class="sidebar-link">yum-404-error</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React16/react fiber reconciler解密.html" class="sidebar-link">react16特性：fiber reconciler解密</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/cmd终端设置代理.html" class="sidebar-link">cmd终端设置代理</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端面试题收集.html" class="sidebar-link">前端面试题收集</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git子模块.html" class="sidebar-link">git子模块</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/算法探索-排序.html" class="sidebar-link">算法-排序</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装python-pyenv环境.html" class="sidebar-link">linux安装python-pyenv环境</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/开发人员良心工具.html" class="sidebar-link">开发人员良心工具</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/斐波拉契数列.html" class="sidebar-link">斐波拉契数列js实现</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/数组ArrayFlatten.html" class="sidebar-link">数组ArrayFlatten</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/极光推送.html" class="sidebar-link current">极光推送RN集成</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/git获取第一次commit.html" class="sidebar-link">git获取第一次commit提交记录</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ReactNative项目选型设计.html" class="sidebar-link">ReactNative项目选型设计</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-Mysql8.0安装初始化配置.html" class="sidebar-link">Docker-Mysql8.0安装及初始化配置</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/DDA.html" class="sidebar-link">DDA算法</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/ubuntu搭建shadowsocks服务.html" class="sidebar-link">ubuntu搭建shadowsocks服务</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/React-Native 接入百度统计.html" class="sidebar-link">React-Native 接入百度统计SDK</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/docker-使用yum安装.html" class="sidebar-link">docker-使用yum安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/前端入门介绍.html" class="sidebar-link">前端入门篇</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/codepush尝试.html" class="sidebar-link">CodePush尝试</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/markdown数学公式.html" class="sidebar-link">Markdown数学公式</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Mongoose踩坑路.html" class="sidebar-link">Mongoose踩坑路</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/Vscode-Threejs代码智能提示.html" class="sidebar-link">Vscode-Threejs代码智能提示</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/linux常用命令.html" class="sidebar-link">linux常用命令</a>
+    </li>
+  
+    
+    <li>
+      <a href="/blog/thanks.html" class="sidebar-link">说明</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content post with-sidebar ">
+  
+  
+    
+      <h1>极光推送RN集成</h1>
+    
+  
+    
+      
+        <span>十一月 08, 2018</span>
+      
+    
+  
+    <!-- ### 极光推送账号 -->
+<!-- 1.  账号 shandudata 密码 Shandudata@2018 -->
+<h3 id="Android项目配置"><a href="#Android项目配置" class="headerlink" title="Android项目配置"></a>Android项目配置</h3><ol>
+<li><p>settings.gradle 配置</p>
+<pre><code class="hljs javascript">include <span class="hljs-string">':jcore-react-native'</span>
+project(<span class="hljs-string">':jcore-react-native'</span>).projectDir = <span class="hljs-keyword">new</span> File(rootProject.projectDir, <span class="hljs-string">'../node_modules/jcore-react-native/android'</span>)
+
+include <span class="hljs-string">':jpush-react-native'</span>
+project(<span class="hljs-string">':jpush-react-native'</span>).projectDir = <span class="hljs-keyword">new</span> File(rootProject.projectDir, <span class="hljs-string">'../node_modules/jpush-react-native/android'</span>)</code></pre>
+</li>
+<li><p>android-build.gradle 配置</p>
+<pre><code class="hljs javascript">defaultConfig &#123;
+    <span class="hljs-comment">// 这里与极光推送 后台配置的应用包名一致：com.example</span>
+    applicationId <span class="hljs-string">"com.example"</span>
+
+    minSdkVersion <span class="hljs-number">16</span>
+    targetSdkVersion <span class="hljs-number">26</span>
+    versionCode <span class="hljs-number">1</span>
+    versionName <span class="hljs-string">"1.0"</span>
+
+    <span class="hljs-comment">// 这里新增配置</span>
+    manifestPlaceholders = [
+        JPUSH_APPKEY: <span class="hljs-string">"9b65e821e1f045880ca7f024"</span>,   <span class="hljs-comment">// 极光推送生成的应用key</span>
+        <span class="hljs-attr">APP_CHANNEL</span> : <span class="hljs-string">"default"</span>                     <span class="hljs-comment">// 默认</span>
+    ]
+
+    ndk &#123;
+        abiFilters <span class="hljs-string">"armeabi-v7a"</span>, <span class="hljs-string">"x86"</span>
+    &#125;
+&#125;</code></pre>
+</li>
+<li><p>AndroidManifest.xml 配置</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">application</span>&gt;</span>
+...
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
+        <span class="hljs-attr">android:name</span>=<span class="hljs-string">"JPUSH_APPKEY"</span>
+        <span class="hljs-attr">android:value</span>=<span class="hljs-string">"$&#123;JPUSH_APPKEY&#125;"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">"JPUSH_CHANNEL"</span>
+    <span class="hljs-attr">android:value</span>=<span class="hljs-string">"$&#123;APP_CHANNEL&#125;"</span> /&gt;</span>
+...
+<span class="hljs-tag">&lt;/<span class="hljs-name">application</span>&gt;</span></code></pre>
+</li>
+<li><p>package包集成</p>
+<pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">protected</span> List&lt;ReactPackage&gt; <span class="hljs-title">getPackages</span><span class="hljs-params">()</span> </span>&#123;
+<span class="hljs-comment">// Add additional packages you require here</span>
+<span class="hljs-comment">// No need to add RnnPackage and MainReactPackage</span>
+    <span class="hljs-keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(
+        <span class="hljs-comment">// eg. new VectorIconsPackage()</span>
+        <span class="hljs-keyword">new</span> LottiePackage(),
+        <span class="hljs-keyword">new</span> SvgPackage(),
+        <span class="hljs-keyword">new</span> RNSentryPackage(MainApplication.<span class="hljs-keyword">this</span>),
+        <span class="hljs-keyword">new</span> AMapGeolocationPackage(),
+        <span class="hljs-keyword">new</span> SplashScreenReactPackage(),
+        <span class="hljs-keyword">new</span> ImagePickerPackage(),
+        <span class="hljs-keyword">new</span> JPushPackage(<span class="hljs-keyword">false</span>, <span class="hljs-keyword">false</span>)  <span class="hljs-comment">// 新增</span>
+    );
+&#125;</code></pre>
+</li>
+</ol>
+<h3 id="ios配置"><a href="#ios配置" class="headerlink" title="ios配置"></a>ios配置</h3><ol>
+<li>在 iOS 工程中设置 TARGETS-&gt; BUILD Phases -&gt; LinkBinary with Libraries 找到 UserNotifications.framework 把 status 设为 optional  </li>
+<li><p>在 iOS 工程中如果找不到头文件可能要在 TARGETS-&gt; BUILD SETTINGS -&gt; Search Paths -&gt; Header Search Paths 添加如下路径</p>
+<pre><code class="hljs javascript">$(SRCROOT)/../node_modules/jpush-react-native/ios/RCTJPushModule</code></pre>
+</li>
+<li><p>在 xcode8 之后需要点开推送选项： TARGETS -&gt; Capabilities -&gt; Push Notification 设为 on 状态</p>
+</li>
+</ol>
+<h3 id="ios集成证书配置"><a href="#ios集成证书配置" class="headerlink" title="ios集成证书配置"></a>ios集成证书配置</h3><ol>
+<li><a href="https://docs.jiguang.cn/jpush/client/iOS/ios_cer_guide/" target="_blank" rel="noopener">具体参考官方介绍</a></li>
+</ol>
+<h3 id="调用推送"><a href="#调用推送" class="headerlink" title="调用推送"></a>调用推送</h3><ol>
+<li><p>使用<a href="https://docs.jiguang.cn/jpush/server/push/server_overview/" target="_blank" rel="noopener">REST API v3</a></p>
+<pre><code class="hljs javascript">curl --insecure -X POST -v https:<span class="hljs-comment">//api.jpush.cn/v3/push -H "Content-Type: application/json" -u "9b65e821e1f045880ca7f024:90cd1ef396c86675417be793"  -d  '&#123;"platform":"all","audience":"all","notification":&#123;"alert":"Hi,JPush!"&#125;&#125;'</span></code></pre>
+</li>
+<li><p><a href="https://www.jiguang.cn/jpush/#/app/9b65e821e1f045880ca7f024/push/notification" target="_blank" rel="noopener">使用极光后台管理系统推送</a></p>
+</li>
+</ol>
+
+    
+    
+      <div class="guide-links">
+        
+        
+          <span>← <a href="/blog/DDA.html">DDA算法</a></span>
+        
+        
+        
+          <span style="float: right;"><a href="/blog/Vscode远程开发，本地翻墙神器.html">Vscode远程开发，本地翻墙神器</a> →</span>
+        
+      </div>
+    
+  
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+  </body>
+</html>
