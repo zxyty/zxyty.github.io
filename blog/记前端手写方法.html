@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head><meta name="generator" content="Hexo 3.9.0">
-    <title>Docker安装部署taiga项目 — zxyty</title>
+    <title>记前端手写方法 — zxyty</title>
     <meta charset="utf-8">
     <meta name="msapplication-TileColor" content="#4fc08d">
     <meta name="theme-color" content="#4fc08d">
@@ -102,7 +102,7 @@
   
     
     <li>
-      <a href="/blog/记前端手写方法.html" class="sidebar-link">记前端手写方法</a>
+      <a href="/blog/记前端手写方法.html" class="sidebar-link current">记前端手写方法</a>
     </li>
   
     
@@ -167,7 +167,7 @@
   
     
     <li>
-      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link current">Docker安装部署taiga项目</a>
+      <a href="/blog/Docker安装taiga项目.html" class="sidebar-link">Docker安装部署taiga项目</a>
     </li>
   
     
@@ -271,24 +271,111 @@
   
   
     
-      <h1>Docker安装部署taiga项目</h1>
+      <h1>记前端手写方法</h1>
     
   
     
       
-        <span>十一月 08, 2018</span>
+        <span>十二月 11, 2019</span>
       
     
   
-    <h3 id="安装docker依赖"><a href="#安装docker依赖" class="headerlink" title="安装docker依赖"></a>安装docker依赖</h3><pre><code class="hljs cmd">docker pull postgres:laster
-docker pull ipedrazas/taiga-back
-docker pull ipedrazas/taiga-front</code></pre>
-<h3 id="启用postgres-5433端口随意-我只是热衷而已。。。"><a href="#启用postgres-5433端口随意-我只是热衷而已。。。" class="headerlink" title="启用postgres 5433端口随意 我只是热衷而已。。。"></a>启用postgres 5433端口随意 我只是热衷而已。。。</h3><pre><code class="hljs cmd">docker run -p <span class="hljs-number">5433</span>:<span class="hljs-number">5432</span> -d --name taiga-postgres  postgres</code></pre>
-<p><code>这里的端口必须是8000</code> 因为前端的代码里写的8000端口<br><pre><code class="hljs cmd">docker run -d --name taiga-back  -p <span class="hljs-number">8000</span>:<span class="hljs-number">8000</span> -e API_NAME=www.zxyty.com --link taiga-postgres:postgres ipedrazas/taiga-back
-docker run -d --name taiga-front -p <span class="hljs-number">8929</span>:<span class="hljs-number">80</span> -e API_NAME=www.zxyty.com --link taiga-back:taiga-back --volumes-from taiga-back ipedrazas/taiga-front</code></pre></p>
-<h3 id="初始化数据"><a href="#初始化数据" class="headerlink" title="初始化数据"></a>初始化数据</h3><pre><code class="hljs cmd">docker run -it --link taiga-postgres:postgres --rm postgres sh -c "su postgres --command 'createuser -h "'$POSTGRES_PORT_5432_TCP_ADDR'" -p "'$POSTGRES_PORT_5432_TCP_PORT'" -d -r -s taiga'"
-docker run -it --link taiga-postgres:postgres --rm postgres sh -c "su postgres --command 'createdb -h "'$POSTGRES_PORT_5432_TCP_ADDR'" -p "'$POSTGRES_PORT_5432_TCP_PORT'" -O taiga taiga'"
-docker run -it --rm --link taiga-postgres:postgres ipedrazas/taiga-back bash regenerate.sh</code></pre>
+    <h3 id="call、apply、bind-实现"><a href="#call、apply、bind-实现" class="headerlink" title="call、apply、bind 实现"></a>call、apply、bind 实现</h3><blockquote>
+<p>call、apply、bind 本质都是改变 this 的指向，不同点 call、aplly 是直接调用函数，bind 是返回一个新的函数。call 跟 aplly 就只有参数上不同。</p>
+</blockquote>
+<h4 id="bind-实现"><a href="#bind-实现" class="headerlink" title="bind 实现"></a>bind 实现</h4><ul>
+<li>箭头函数的 this 永远指向它所在的作用域</li>
+<li>函数作为构造函数用 new 关键字调用时，不应该改变其 this 指向，因为 new 绑定 的优先级高于 显示绑定 和 硬绑定</li>
+</ul>
+<pre><code class="hljs js"><span class="hljs-built_in">Function</span>.prototype.myBind = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">thisArg</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span> !== <span class="hljs-string">"function"</span>) &#123;
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"only can bind funtion"</span>);
+  &#125;
+
+  <span class="hljs-keyword">const</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">const</span> _this = <span class="hljs-keyword">this</span>;
+  <span class="hljs-keyword">const</span> nop = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;&#125;; <span class="hljs-comment">// 用于箭头函数</span>
+
+  <span class="hljs-keyword">const</span> bound = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> _this.apply(
+      <span class="hljs-keyword">this</span> <span class="hljs-keyword">instanceof</span> nop ? <span class="hljs-keyword">this</span> : thisArg,
+      args.concat(<span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>))
+    );
+  &#125;;
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.prototype) &#123;
+    nop.prototype = <span class="hljs-keyword">this</span>.prototype;
+  &#125;
+
+  bound.prototype = <span class="hljs-keyword">new</span> nop();
+
+  <span class="hljs-keyword">return</span> bound;
+&#125;;</code></pre>
+<h4 id="apply-call-实现"><a href="#apply-call-实现" class="headerlink" title="apply call 实现"></a>apply call 实现</h4><pre><code class="hljs js"><span class="hljs-built_in">Function</span>.prototype.myCall = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span> !== <span class="hljs-string">"function"</span>) &#123;
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"error"</span>);
+  &#125;
+
+  <span class="hljs-keyword">const</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
+  target.fn = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-keyword">const</span> result = target.fn(...args);
+
+  <span class="hljs-keyword">delete</span> target.fn;
+
+  <span class="hljs-keyword">return</span> result;
+&#125;;
+
+<span class="hljs-built_in">Function</span>.prototype.myApply = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span> !== <span class="hljs-string">"function"</span>) &#123;
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"error"</span>);
+  &#125;
+
+  <span class="hljs-keyword">const</span> args = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>];
+  target.fn = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-keyword">const</span> result = target.fn(args);
+
+  <span class="hljs-keyword">delete</span> target.fn;
+
+  <span class="hljs-keyword">return</span> result;
+&#125;;
+
+<span class="hljs-keyword">const</span> bar = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name, <span class="hljs-built_in">arguments</span>);
+&#125;;
+
+bar.prototype.name = <span class="hljs-string">"bar"</span>;
+
+<span class="hljs-keyword">const</span> foo = &#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"foo"</span>,
+&#125;;
+
+bar.myCall(foo, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// foo [1, 2, 3]</span>
+bar.myApply(foo, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]); <span class="hljs-comment">// foo [1, 2, 3]</span></code></pre>
+<h4 id="new-实现"><a href="#new-实现" class="headerlink" title="new 实现"></a>new 实现</h4><blockquote>
+<p>我们需要知道当 new 的时候做了什么事情<br>创建一个新对象；<br>将构造函数的作用域赋给新对象（因此 this 就指向了这个新对象）<br>执行构造函数中的代码（为这个新对象添加属性）<br>返回新对象。</p>
+</blockquote>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myNew</span>(<span class="hljs-params">fn</span>) </span>&#123;
+  <span class="hljs-keyword">const</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
+
+  <span class="hljs-keyword">const</span> o = &#123;&#125;;
+  <span class="hljs-comment">// 实现继承，实例可以访问构造器的属性</span>
+  o.__proto__ = fn.prototype;
+  <span class="hljs-keyword">const</span> result = fn.call(o, ...args);
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> result === <span class="hljs-string">"object"</span> ? result : o;
+&#125;
+
+<span class="hljs-keyword">const</span> testNewFun = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">name</span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.name = name;
+&#125;;
+
+<span class="hljs-keyword">const</span> newObj = myNew(testNewFun, <span class="hljs-string">"foo"</span>);
+
+<span class="hljs-built_in">console</span>.log(newObj); <span class="hljs-comment">// &#123; name: "foo" &#125;</span>
+<span class="hljs-built_in">console</span>.log(newObj <span class="hljs-keyword">instanceof</span> testNewFun); <span class="hljs-comment">// true</span></code></pre>
+
     
     
       <div class="guide-links">
@@ -298,7 +385,7 @@ docker run -it --rm --link taiga-postgres:postgres ipedrazas/taiga-back bash reg
         
         
         
-          <span style="float: right;"><a href="/blog/cmd终端设置代理.html">cmd终端设置代理</a> →</span>
+          <span style="float: right;"><a href="/blog/Vscode远程开发，本地翻墙神器.html">Vscode远程开发，本地翻墙神器</a> →</span>
         
       </div>
     

@@ -102,6 +102,11 @@
   
     
     <li>
+      <a href="/blog/记前端手写方法.html" class="sidebar-link">记前端手写方法</a>
+    </li>
+  
+    
+    <li>
       <a href="/blog/node/2020年Node新功能/2020Node新增功能.html" class="sidebar-link">Node 2020年新增功能</a>
     </li>
   
@@ -167,12 +172,12 @@
   
     
     <li>
-      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
+      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
     </li>
   
     
     <li>
-      <a href="/blog/git-pull获取指定文件.html" class="sidebar-link">git-pull获取指定文件</a>
+      <a href="/blog/docker-pm2发布node服务.html" class="sidebar-link">docker-pm2发布node服务</a>
     </li>
   
     
@@ -232,12 +237,12 @@
   
     
     <li>
-      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
+      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
     </li>
   
     
     <li>
-      <a href="/blog/linux系统nvm安装.html" class="sidebar-link">linux系统nvm指定版本安装</a>
+      <a href="/blog/linux安装nginx.html" class="sidebar-link">linux安装nginx</a>
     </li>
   
     
@@ -266,7 +271,7 @@
   
   
     
-<p style="text-align: center;">「共计 37 篇文章」</p>
+<p style="text-align: center;">「共计 38 篇文章」</p>
 <ul class="timeline timeline-centered" style="padding-left: 0;">
     
     
@@ -432,6 +437,26 @@ Maven.
                     Vscode Web Online随着微软Vscode Online发布，自己开始慢慢滑步跟随着Remote Develop 的步伐，亲身试验了以下Online的功能，不得不说，让人大吃一惊。微软一直都很硬
 
 首先 我们要使用Vscode Online 需要注册一个Azure账号，赶紧哦，现在Online刚上线，Azure注册后，可免费使用其中Azure1年的服务，友情提示：需信用卡才能注册...
+                </p>
+            </div>
+        </li>
+    
+        
+        
+        <li class="timeline-item">
+            <div class="timeline-info">
+                <span class="gradient-text">十二月 11, 2019</span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <a class="timeline-title" target="_self" href="/blog/记前端手写方法.html">记前端手写方法</a>
+                <p>
+                    call、apply、bind 实现
+call、apply、bind 本质都是改变 this 的指向，不同点 call、aplly 是直接调用函数，bind 是返回一个新的函数。call 跟 aplly 就只有参数上不同。
+
+bind 实现
+箭头函数的 this 永远指向它所在的作用域
+函数作为构造函数用 new 关键字调用时，不应该改变其 this 指向，因为 new 绑定 的优先级高于 ...
                 </p>
             </div>
         </li>
@@ -719,16 +744,13 @@ flatten 用法：概念：可以理解为将嵌套数组的维数减少，flatte
             </div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <a class="timeline-title" target="_self" href="/blog/极光推送.html">极光推送RN集成</a>
+                <a class="timeline-title" target="_self" href="/blog/Docker安装taiga项目.html">Docker安装部署taiga项目</a>
                 <p>
-                    
-
-Android项目配置
-settings.gradle 配置
-include ':jcore-react-native'
-project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
-
-include ':...
+                    安装docker依赖docker pull postgres:laster
+docker pull ipedrazas/taiga-back
+docker pull ipedrazas/taiga-front
+启用postgres 5433端口随意 我只是热衷而已。。。docker run -p 5433:5432 -d --name taiga-postgres  postgres
+这里的...
                 </p>
             </div>
         </li>
@@ -741,13 +763,16 @@ include ':...
             </div>
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-                <a class="timeline-title" target="_self" href="/blog/Docker安装taiga项目.html">Docker安装部署taiga项目</a>
+                <a class="timeline-title" target="_self" href="/blog/极光推送.html">极光推送RN集成</a>
                 <p>
-                    安装docker依赖docker pull postgres:laster
-docker pull ipedrazas/taiga-back
-docker pull ipedrazas/taiga-front
-启用postgres 5433端口随意 我只是热衷而已。。。docker run -p 5433:5432 -d --name taiga-postgres  postgres
-这里的...
+                    
+
+Android项目配置
+settings.gradle 配置
+include ':jcore-react-native'
+project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
+
+include ':...
                 </p>
             </div>
         </li>
